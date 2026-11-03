@@ -5,6 +5,6 @@
 | 日期 | 执行者 | 类型 | 记录 | 达到阶段 |
 | --- | --- | --- | --- | --- |
 | 2026-11-03 | 框架初始化 | 结构与纯逻辑检查 | [初始化验证](2026-11-03-bootstrap.md) | 结构通过、17 项 Node 纯逻辑检查通过，未做鸿蒙构建/运行 |
-| 2026-11-03 | B | 路由与 Agent 核心检查及 ArkTS 编译 | [B 路由与编译验证](2026-11-03-B-routing.md) | 结构检查、Node 路由/编排检查、Hvigor `assembleHap`（未签名）通过；未做设备安装与运行 |
+| 2026-11-03 | 脚手架修正与独立审阅 | 结构、核心逻辑、真实构建、GitHub 规则核验 | [本轮验证](2026-11-03-review.md) | 23 项纯逻辑检查及未签名 HAP 构建通过 |
 
-原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。目前已补充命令行未签名 HAP 编译记录，仍不包含设备安装、应用运行、扩展组件、系统 Skill 或真机端到端的成功证据。
+原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已包含 DevEco/Hvigor 未签名构建证据；尚无设备安装、应用运行、扩展组件、系统 Skill 或真机端到端的成功证据。

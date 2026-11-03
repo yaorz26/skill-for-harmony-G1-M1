@@ -32,13 +32,30 @@ export interface IntentDecision {
   argument: string;
 }
 
-// 意图路由可替换端口；采用异步签名以便后续替换大模型或远端路由时无需改动契约与调用方。
+// 独立路由与入参预检结果，供路由单测或装配层在不触发执行器的前提下判定错误分类。
+export interface RouteEvaluation {
+  ok: boolean;
+  matched: boolean;
+  skillId: string;
+  argument: string;
+  errCode: string;
+  errMsg: string;
+}
+
+// v0 同步路由端口，与当前 AgentService 调用方式保持零改动兼容。
 export interface IntentRouting {
-  /** 根据原始输入与当前白名单目录产出路由决策，不触发任何能力执行。 */
-  route(text: string, skills: SkillDescriptor[]): Promise<IntentDecision>;
+  /** 根据输入与白名单目录同步产出路由决策，不触发能力执行。 */
+  route(text: string, skills: SkillDescriptor[]): IntentDecision;
+}
+
+// 可选异步路由端口，供后续接入大模型或远端路由时由装配层按需选用。
+export interface AsyncIntentRouting {
+  /** 根据输入与白名单目录异步产出路由决策，不触发能力执行。 */
+  routeAsync(text: string, skills: SkillDescriptor[]): Promise<IntentDecision>;
 }
 
 export interface SkillInvoker {
+  executionPath: string;
   /** 按统一的 SkillCall 执行目标能力并返回结构化结果。 */
   invoke(call: SkillCall): Promise<SkillResult>;
 }

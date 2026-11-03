@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-11-03T18:45:28.083089+08:00",
+  "repository": "yaorz26/skill-for-harmony-G1-M1",
+  "results": [
+    {
+      "name": "main",
+      "status": 200,
+      "data": {
+        "name": "main",
+        "protected": true,
+        "protection": {
+          "enabled": true,
+          "required_status_checks": {
+            "enforcement_level": "everyone",
+            "contexts": [
+              "structure"
+            ],
+            "checks": [
+              {
+                "context": "structure",
+                "app_id": 15368
+              }
+            ]
+          }
+        },
+        "sha": "eccefd5f3269eddbe061c5a8eb70a1debd6951a1"
+      }
+    },
+    {
+      "name": "protection",
+      "status": 401
+    },
+    {
+      "name": "rulesets",
+      "status": 200,
+      "data": []
+    },
+    {
+      "name": "effective_rules",
+      "status": 200,
+      "data": []
+    }
+  ]
+}

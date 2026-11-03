@@ -1,6 +1,6 @@
 # 接口契约 v0
 
-源码定义：[Contracts.ets](../entry/src/main/ets/agent/Contracts.ets)。由 B 维护，A/C 作为调用方共同确认。
+源码定义：[Contracts.ets](../entry/src/main/ets/agent/Contracts.ets)。由 B 维护。各工作包直接基于现有 v0 开发；接口变更先通过 PR 提交影响和兼容说明，合入后再交接下游。
 
 ## 1. 输入与路由
 
@@ -23,7 +23,7 @@
 - 分隔符只认普通空格 U+0020：制表符、全角空格 U+3000 或无空格（`回显你好`）不匹配；前缀必须整词命中，`echoes x`、`回显长度 abc` 同样不匹配。
 - 参数 = 前缀之后的文本去掉首尾空白；参数内部的空格和关键字原样保留，不会二次路由（`回显 长度 abc` → `g1-echo`，参数 `长度 abc`）。
 - 多个前缀同时命中时取最长前缀；同一输入、同一目录永远得到同一个 Skill。目录在构造时校验：`id` 为小写连字符格式且唯一、`name` 非空、前缀无首尾或非法空白（制表符/换行/全角空格）且全局唯一，否则抛错而不是静默覆盖。
-- 路由只产出 `IntentDecision`，不执行能力。`AgentService` 会再次核对 `skillId` 在注册表内（不在则按未命中处理），并在构造 `SkillCall` 时统一对 `argument` 做 `trim`。
+- 路由只产出 `IntentDecision`，不执行能力；另提供 `IntentRouter.evaluate(request, skills, supportedHint?)` 在不依赖执行器的前提下独立判定初检、白名单复核与参数长度边界。
 
 | 输入 | 结果 |
 | --- | --- |
@@ -66,23 +66,21 @@
 
 ## 3. 适配器与超时
 
-`SkillInvoker.invoke(call): Promise<SkillResult>` 是后续接真实调用的边界。当前仅 `InAppSkillInvoker`。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
+`SkillInvoker` 包含 `executionPath: string` 与 `invoke(call): Promise<SkillResult>`，是后续接真实调用的边界。通过 `new AgentService(invoker)` 注入适配器；前置日志、失败和超时使用该适配器声明的路径，返回值也应保持一致。当前默认仅 `InAppSkillInvoker`，不能用测试路径当作系统调用证据。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
 
 当前不自动重试、不保留会话，也不保证相同 `requestId` 的重复请求幂等。演示页禁用运行中的按钮；后续外部入口要验证重复请求与并发隔离。系统调用适配器须补返回校验及调用方鉴权，不能接受任意脚本路径。
 
-## 3.1 可替换点（由 B 维护）
+## 3.1 路由与目录装配契约（由 B 交付 A）
 
-`AgentService` 的构造函数可注入三个边界，默认值即当前应用内演示：
+B 模块对现有 `AgentService` 保持 **100% 向后兼容**（无需改动 `AgentService.ets` 即可直接使用）：
 
-| 边界 | 类型 | 默认 | 说明 |
-| --- | --- | --- | --- |
-| 路由 | `IntentRouting.route(text, skills): Promise<IntentDecision>` | `IntentRouter` 规则匹配 | 路由异常 → `ERR_INTERNAL`；返回未注册的 `skillId` → `ERR_NO_SKILL` |
-| 目录 | `SkillRegistry(descriptors?)` | 内置两个 Skill | 唯一的能力白名单，对外返回防御性副本 |
-| 调用 | `SkillInvoker` | `InAppSkillInvoker`（C 维护） | 真实系统调用适配器从这里接入 |
+| 模块 / 接口 | 签名与职责 | 兼容性与说明 |
+| --- | --- | --- |
+| `IntentRouter` | `route(text, skills): IntentDecision`、`match(text, skills)`、`evaluate(request, skills, hint?)` | 同步 `route` 与现有 `AgentService` 直接兼容；同时实现 `AsyncIntentRouting.routeAsync` 预留异步替换 |
+| `SkillRegistry` | `new SkillRegistry(descriptors?)`、`list()`、`get(id)`、`contains(id)`、`supportedHint()` | 默认注册 `g1-echo` 与 `g1-text-length`；所有读取接口返回防御性深拷贝 |
+| `IntentRouting` / `AsyncIntentRouting` | 新增于 `Contracts.ets` 的可选契约接口 | 纯增量类型定义，不破坏 C 的 `SkillInvoker` 或 A 的 `AgentService` |
 
-路由边界采用异步 `Promise<IntentDecision>`，以便后续在不修改 `Contracts.ets` 和 `AgentService` 的前提下替换异步路由器（如大模型或远端路由）；规则匹配另提供纯同步静态方法 `IntentRouter.match(text, skills)` 供确定性校验调用。
-
-与建仓前本地 `HarmonyAgent` 工程的边界：B 模块仅吸收其目录严格校验、防御性副本和路由端口解耦设计，保持纯 ArkTS 逻辑、零 `@kit` 平台依赖；旧工程中的云端模型网络请求、多轮会话以及基础工具/Skill 执行循环属于外部依赖或成员 C 的执行范畴，不迁入 B 模块。
+成员 A 在装配阶段可直接保留 `new SkillRegistry()` 与 `new IntentRouter()` 默认接线；如需自定义白名单或动态提示文本，可调用 `registry.supportedHint()` 或 `router.evaluate(request, registry.list(), registry.supportedHint())`。与建仓前本地 `HarmonyAgent` 工程的边界：B 模块仅吸收其目录严格校验、防御性副本与路由端口解耦，保持零 `@kit` 平台依赖，不迁入云端模型网络请求、会话与工具执行循环。
 
 ## 4. 日志节点
 

@@ -77,9 +77,19 @@ const echo = await agent.handle({ requestId: 'echo', text: '回显 你好，鸿�
 assert.equal(echo.data.text, '你好，鸿蒙');
 checks += 3;
 
+for (const [count, status, code] of [[512, 'success', ''], [513, 'failed', 'ERR_INVALID_PARAMS']]) {
+  const result = AppSkillService.execute({
+    requestId: `unicode-boundary-${count}`, skillId: 'g1-text-length', argument: '😀'.repeat(count)
+  }, 'in-app');
+  assert.equal(result.status, status);
+  assert.equal(result.errCode, code);
+  if (status === 'success') assert.equal(result.data.length, 1024);
+  checks++;
+}
+
 const registry = new SkillRegistry();
 const call = { requestId: 'runtime', skillId: 'g1-echo', argument: 'test' };
-const throwing = new SkillExecutor({ invoke: async () => { throw new Error('injected'); } });
+const throwing = new SkillExecutor({ executionPath: 'in-app', invoke: async () => { throw new Error('injected'); } });
 assert.equal((await throwing.execute(call, registry)).errCode, 'ERR_INTERNAL');
 assert.equal((await throwing.execute({ ...call, skillId: 'unknown' }, registry)).errCode, 'ERR_NO_SKILL');
 assert.equal((await throwing.execute({ ...call, argument: '' }, registry)).errCode, 'ERR_INVALID_PARAMS');
@@ -87,18 +97,40 @@ checks += 3;
 
 let completed = 0;
 const slow = new SkillExecutor({
+  executionPath: 'test-external',
   invoke: async (value) => {
     await new Promise((resolve) => setTimeout(resolve, 30));
     completed++;
-    return AppSkillService.execute(value, 'in-app');
+    return AppSkillService.execute(value, 'test-external');
   }
 }, 2);
 const timedOut = await slow.execute(call, registry);
 assert.equal(timedOut.errCode, 'ERR_TIMEOUT');
+assert.equal(timedOut.executionPath, 'test-external');
 await new Promise((resolve) => setTimeout(resolve, 45));
 assert.equal(completed, 1);
 assert.equal(timedOut.errCode, 'ERR_TIMEOUT', 'Late completion must not overwrite the returned timeout.');
 checks++;
+
+const external = new AgentService({
+  executionPath: 'test-external',
+  invoke: async (value) => AppSkillService.execute(value, 'test-external')
+});
+const externalSuccess = await external.handle({ requestId: 'external-success', text: '回显 test' });
+assert.equal(externalSuccess.status, 'success');
+assert.equal(externalSuccess.executionPath, 'test-external');
+const externalUnmatched = await external.handle({ requestId: 'external-unmatched', text: 'unknown' });
+assert.equal(externalUnmatched.errCode, 'ERR_NO_SKILL');
+assert.equal(externalUnmatched.executionPath, 'test-external');
+const externalInvalid = await external.handle({ requestId: 'external-invalid', text: '' });
+assert.equal(externalInvalid.errCode, 'ERR_INVALID_PARAMS');
+assert.equal(externalInvalid.executionPath, 'test-external');
+const externalFailure = await new AgentService({
+  executionPath: 'test-external', invoke: async () => { throw new Error('external failure'); }
+}).handle({ requestId: 'external-error', text: '回显 test' });
+assert.equal(externalFailure.errCode, 'ERR_INTERNAL');
+assert.equal(externalFailure.executionPath, 'test-external');
+checks += 4;
 
 console.log(`PASS: ${checks} core checks (routing, parameters, Unicode length, errors and late completion).`);
 console.log('Node execution of pure ETS logic only. ArkTS compilation and HarmonyOS runtime remain unverified.');

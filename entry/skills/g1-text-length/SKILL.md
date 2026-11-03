@@ -17,6 +17,8 @@ exec-cli(command: ohos-arkTSScript --skillName 'g1-text-length' --scriptPath 'sc
 
 执行参数：`arg1 → argv[0]`。文本长度 1–1024 个 UTF-16 码元，不能全为空白。
 
+下方标准 JSON Schema 的 `maxLength` 按 Unicode 码点计数，只作宽松预校验；入口再校验 UTF-16 码元限制及非全空白约束。例：512 个“😀”占 1024 个码元，可接受；513 个即返回 `ERR_INVALID_PARAMS`。Schema 通过不代表已通过全部业务校验。
+
 ```json
 {
   "args": {

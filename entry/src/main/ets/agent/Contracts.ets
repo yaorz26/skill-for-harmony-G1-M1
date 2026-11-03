@@ -33,6 +33,7 @@ export interface IntentDecision {
 }
 
 export interface SkillInvoker {
+  executionPath: string;
   invoke(call: SkillCall): Promise<SkillResult>;
 }
 

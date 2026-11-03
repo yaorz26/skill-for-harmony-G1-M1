@@ -1,52 +1,33 @@
-# GitHub 协作规则与设置状态
+# GitHub 提交与合并
 
-## 1. 工作流
+## 工作流
 
-每人从最新 `main` 创建自己的分支 → 自测 → 提交 PR → **yaorz26－姚睿哲综合审阅** → 在 GitHub 开启 auto-merge → 必需检查通过后由 GitHub 合入 `main`。不直接推送 `main`，不在本地合并后推送，不安排成员之间的交叉审阅。
+从最新 `main` 创建工作分支 → 完成本人自测 → 提交 PR，说明改动、证据和交接 → 处理讨论 → 开启 auto-merge → 必需检查通过后由 GitHub 合入。不要直接推送、强推或在本地合并后推送 `main`。
 
-B/C/D 交付的 PR 由姚睿哲审阅。姚睿哲本人的 PR 同样保留自测、变更说明和必需检查，但不要求另找一位成员审阅；GitHub 不允许 PR 作者批准自己的 PR，因此不能简单对所有 PR 强制“至少一位其他人批准”而仍保证只有姚睿哲综合审阅。
+合并前检查接口兼容性、实测范围和未测项。审批人数暂不设为强制条件；不安排交叉审阅。CODEOWNERS 用于建议审阅人，不等于服务器端的批准门槛。
 
-## 2. 当前实际状态（2026-11-03）
+## 已核验状态（2026-11-03）
 
-**远端分支保护和自动合并设置尚未应用，不能把此文档或 CODEOWNERS 当成已生效的保护。**
+| 项目 | 状态 | 依据 |
+| --- | --- | --- |
+| 默认分支 | `main` | GitHub 公开 API |
+| main 分支保护 | 已开启，`protected: true` | GitHub 公开 API |
+| 必需检查 | `structure`，来源 GitHub Actions（app ID 15368） | GitHub 公开 API |
+| 检查适用范围 | `everyone`，包括管理员 | GitHub 公开 API；此字段仅表示检查执行范围 |
+| 必须提交 PR | 已在用户提供的配置截图中勾选 | 详细保护 API 需登录，尚未逐项读取保存值 |
+| 分支保持最新、解决讨论、禁止绕过 | 已在配置截图中勾选 | 同上 |
+| Require approvals | 截图中未勾选 | 同上 |
+| 仓库 auto-merge | 截图中已开启 | 公开仓库 API 不暴露该字段 |
+| 合并方式 | 截图中仅保留 Squash | 同上 |
+| Rulesets | 公开 API 返回空列表 | 本仓库使用 classic branch protection，不代表保护失效 |
 
-已通过 GitHub 的公开分支 API 核实 `main.protected = false`，main 仍为初始化提交 `eccefd5`；本轮没有把工作分支直接合入 main。
+当前 `structure` 工作流执行文件/契约结构检查与 Node 纯逻辑检查。它没有鸿蒙 SDK，不能替代 DevEco 构建、安装或真机调度验证。
 
-- 已准备：分工、目录归属、前后交接、PR 模板，以及指定 `@yaorz26` 的 `.github/CODEOWNERS`。
-- 待应用：仓库 auto-merge、main 分支保护、必需检查，以及综合审阅授权的强制执行方式。
-- 阻断：浏览器控制因无法可靠识别当前 URL 被环境中止；Git 的 SSH 登录可推送分支，但现有 HTTPS 凭据助手没有提供 GitHub API 凭据，无法用现有通道修改仓库设置或创建 PR。
-- 本轮只推送独立工作分支，不更新 `main`。本文件合入默认分支后 CODEOWNERS 才能用于后续 PR 的审阅路由。
+## 保护范围与限制
 
-## 3. 需要应用的基础设置
+1. `Allow auto-merge` 开启后，仍需对每个 PR 单独启用。所有条件已满足时，GitHub 可能只显示立即合并按钮。
+2. 当前配置**不会禁止在 PR 页面手动合并，也不会要求某一位成员批准**。因此“只接受 PR 和必需检查”与“技术上只能自动合并”是不同的验收项，后者尚未实现。
+3. 仓库没有公开可验证的“自动合并身份专属权限”或合并队列证据；不能把团队约定当作此类权限限制。若后续仍需严格限制，需单独设计、配置并验证相应门禁，不能绕过现有保护。
+4. 本地只向工作分支推送；不以向 main 试推真实提交的方式验证保护，避免误更新主分支。
 
-仓库 [General 设置](https://github.com/yaorz26/skill-for-harmony-G1-M1/settings)：
-
-| 位置 | 目标值 |
-| --- | --- |
-| Pull Requests → Allow auto-merge | 开启 |
-| 合并方式 | 建议统一使用 Squash merge |
-
-仓库 [Branches 设置](https://github.com/yaorz26/skill-for-harmony-G1-M1/settings/branches)，新增或更新匹配 `main` 的保护规则：
-
-| 选项 | 目标值 / 说明 |
-| --- | --- |
-| Require a pull request before merging | 开启，禁止直接推送 |
-| Require approvals | 基础规则先不强制其他人批准，以免姚睿哲自己的 PR 被锁住；综合审阅的强制门禁见下节 |
-| Require status checks to pass before merging | 开启；选择现有 Actions 的 `structure` 检查 |
-| Require branches to be up to date before merging | 开启，确保基于最新 main 检查 |
-| Require conversation resolution before merging | 开启 |
-| Do not allow bypassing the above settings | 开启，管理员也遵守 PR 与检查规则 |
-| Allow force pushes | 关闭 |
-| Allow deletions | 关闭 |
-
-检查来源应限定 GitHub Actions，规则作用于 `main` 且没有 bypass actor。上述设置是待应用清单，不是远端当前值。[GitHub 保护分支说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
-
-## 4. 综合审阅和“只能自动合并”的精确边界
-
-**开启 auto-merge 只提供自动合并功能，不会单独禁止手动点击合并。** 基础保护可以确保 PR 与必需检查，但要严格落实“只有姚睿哲决定放行、全部由 GitHub 自动合并”，还需要额外门禁，不能仅勾选 Allow auto-merge 后宣称全部完成。[GitHub auto-merge 说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository)
-
-建议补一个受保护的审阅/放行工作流：B/C/D 的 PR 必须获得 `yaorz26` 对当前版本的批准；A 自己的 PR 则由 A 在 GitHub 显式放行。门禁须校验当前 head commit，并仅允许姚睿哲触发授权。然后由 GitHub 的自动合并通道更新 main。CI 配置、门禁源码和分支规则也应受同一审阅约束。
-
-如需在权限层面完全去掉其他人手动合并的能力，需要结合 GitHub 当前计划支持的规则、合并队列或受限合并执行身份核实；不能为此留下管理员绕过或引入新的永久凭据。本次因设置通道受阻，未创建机器人、访问令牌或此类门禁，也没有修改成员权限。
-
-恢复可用的 GitHub 设置通道后，应先应用基础保护，再完成门禁和一次 PR 验证：直接 push 被拒绝、未放行/检查未通过不能合并、由姚睿哲放行后自动合入，最后把本节待办更新为真实设置及证据。
+参考：[GitHub 保护分支说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)、[auto-merge 说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository)。

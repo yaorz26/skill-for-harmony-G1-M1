@@ -3,7 +3,7 @@
 ## 1. 基线与前置条件
 
 - 项目：Stage、ArkTS，目标/兼容版本均配置为 `26.0.0`，设备类型为 phone/tablet。
-- 工程配置形式参考本地已有的 DevEco 26.0.0 模板；本次新增代码仍需目标工具链构建验证。
+- 工程已通过本地 DevEco 26.0.0.865 / SDK 26.0.0.105 / Hvigor 6.26.9 构建，生成未签名 HAP；记录见[构建与审阅验证](records/2026-11-03-review.md)。签名、安装与真机调用仍待验证。
 - 使用 DevEco Studio 26.0.0 及相应 HarmonyOS SDK。由 A 首次构建时记录完整版本、Build 号、Hvigor/ohpm 版本、宿主系统和实际设备信息。
 - 无业务网络调用、云密钥或额外业务权限。设备部署签名由每人本地配置。
 
@@ -22,6 +22,14 @@ Skill 从 API 26.0.0 开始提供；ArkTS 入口方式仅支持 Stage。以[官�
 
 5. 如需真机部署，在 IDE 的 Signing Configs 中配置调试签名。共享 `build-profile.json5` 默认没有签名；不要把证书、密码或本机签名路径提交。
 6. 按[模板](templates/build-record.md)建记录；编译失败也提交失败记录，不填“预计成功”。
+
+Windows 已安装完整 DevEco 时，也可使用 [build-hap.ps1](../tools/build-hap.ps1)，无需把工具链永久加入 PATH：
+
+```powershell
+.\tools\build-hap.ps1 -DevEcoRoot 'D:\你的安装目录\DevEco Studio'
+```
+
+若 SDK 不在安装目录的 `sdk/` 下，补 `-SdkRoot '实际SDK根目录'`。脚本只临时设置工具路径并在结束后恢复，输出产物通常为 `entry/build/default/outputs/default/entry-default-unsigned.hap`；产物与本机配置不提交。
 
 ## 3. 应用内演示
 

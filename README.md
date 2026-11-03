@@ -1,6 +1,6 @@
 # G1-M1：可调用应用 Skill 的自建 Agent
 
-四人共同完成任务一：先交付可继续开发的鸿蒙 Agent 框架，再在真机上验证应用 Skill 调用。框架交付截止 **2026-11-09（周一）**。**成员 A：yaorz26－姚睿哲，负责工程入口、最终整合及综合审阅**；B/C/D 在[四人分工](docs/team-plan.md)中认领，不安排交叉审阅。
+四人共同完成任务一：先交付可继续开发的鸿蒙 Agent 框架，再在真机上验证应用 Skill 调用。框架交付截止 **2026-11-09（周一）**。成员身份、目录分工和交接条件见[四人分工](docs/team-plan.md)。
 
 ## 先看这些
 
@@ -38,7 +38,7 @@ entry/
     resources/
 docs/                             分工、流程、验收、记录（成员 D 汇总）
 tools/check-structure.mjs          无 SDK 的工程结构检查
-.github/                          审阅归属、PR 模板与 CI（成员 A）
+.github/                          PR 模板与 CI
 ```
 
 在 DevEco Studio 26.0.0 中打开仓库根目录，完成 SDK 同步、构建和设备签名；详见[运行指南](docs/build-and-run.md)。只检查文件和注册关系时可运行：
@@ -49,3 +49,5 @@ node tools/check-core.mjs
 ```
 
 结构检查及纯逻辑检查均不会编译 ArkTS、生成 HAP 或调用设备。当前实测进展只以[记录目录](docs/records/README.md)中的证据为准。
+
+当前验证：结构检查、23 项纯逻辑检查以及 DevEco/Hvigor 的未签名 HAP 构建通过；安装、设备运行与系统调用未测。独立审阅结果见[脚手架审阅](docs/reviews/2026-11-03-scaffold-review.md)。

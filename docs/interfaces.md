@@ -1,6 +1,6 @@
 # 接口契约 v0
 
-源码定义：[Contracts.ets](../entry/src/main/ets/agent/Contracts.ets)。由 B 维护，A（yaorz26－姚睿哲）综合审阅。各工作包直接基于现有 v0 开发，无需等待其他成员先完成模块；接口变更先提交影响/兼容说明，经 A 审阅合入后再交接下游。
+源码定义：[Contracts.ets](../entry/src/main/ets/agent/Contracts.ets)。由 B 维护。各工作包直接基于现有 v0 开发；接口变更先通过 PR 提交影响和兼容说明，合入后再交接下游。
 
 ## 1. 输入与路由
 
@@ -49,7 +49,7 @@
 
 ## 3. 适配器与超时
 
-`SkillInvoker.invoke(call): Promise<SkillResult>` 是后续接真实调用的边界。当前仅 `InAppSkillInvoker`。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
+`SkillInvoker` 包含 `executionPath: string` 与 `invoke(call): Promise<SkillResult>`，是后续接真实调用的边界。通过 `new AgentService(invoker)` 注入适配器；前置日志、失败和超时使用该适配器声明的路径，返回值也应保持一致。当前默认仅 `InAppSkillInvoker`，不能用测试路径当作系统调用证据。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
 
 当前不自动重试、不保留会话，也不保证相同 `requestId` 的重复请求幂等。演示页禁用运行中的按钮；后续外部入口要验证重复请求与并发隔离。系统调用适配器须补返回校验及调用方鉴权，不能接受任意脚本路径。
 

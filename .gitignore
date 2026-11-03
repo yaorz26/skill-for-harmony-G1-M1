@@ -1,0 +1,25 @@
+# 本机 IDE / SDK / 签名配置
+.idea/
+.vscode/
+local.properties
+.hvigor/
+.ohos/
+oh_modules/
+node_modules/
+build/
+coverage/
+*.hap
+*.app
+*.hsp
+*.p12
+*.p7b
+*.cer
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+*.log
+!docs/records/**/*.log
+.DS_Store
+Thumbs.db

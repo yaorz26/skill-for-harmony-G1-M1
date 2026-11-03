@@ -1,0 +1,16 @@
+# 文档索引
+
+| 文档 | 用途 | 维护人 |
+| --- | --- | --- |
+| [四人分工](team-plan.md) | 认领、边界、交付、每日里程碑 | 全员；D 汇总 |
+| [架构与流程](architecture.md) | 调度流程图、模块边界、当前与目标路径 | B/C |
+| [共享接口](interfaces.md) | 输入输出、错误码、日志与适配契约 | B |
+| [构建与运行](build-and-run.md) | DevEco 工程导入、构建、签名和演示 | A/D |
+| [验收用例](acceptance.md) | 正常、失败、系统调用及组件验证 | D |
+| [真机排期](device-schedule.md) | 与实验组共享设备，预约与交接 | D |
+| [记录目录](records/README.md) | 实际构建、调用和阻断证据 | 全员 |
+| [构建记录模板](templates/build-record.md) | 每次构建填写 | 构建执行者 |
+| [运行/实验报告模板](templates/run-report.md) | 每次运行或实验填写 | 实验执行者 |
+| [原始实验方案](reference/harmonyos-skill-runtime-comparison-plan.md) | 保留任务二 A/B/C/D 的原始口径 | 参考资料 |
+
+本仓库主要交付任务一。任务二实验组可复用我们的样例工程、C3 调度日志和环境记录；实验 C/D 的其他路径和性能结论由实验组独立完成。

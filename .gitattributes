@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.pdf binary
+# 原始方案保留 Markdown 的行尾双空格（硬换行）。
+docs/reference/harmonyos-skill-runtime-comparison-plan.md whitespace=-blank-at-eol

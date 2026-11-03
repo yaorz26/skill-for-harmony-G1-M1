@@ -1,0 +1,43 @@
+import { AgentRequest, SkillCall, SkillResult, failedResult } from './Contracts';
+import { TraceReporter } from './TraceReporter';
+import { IntentRouter } from '../router/IntentRouter';
+import { SkillRegistry } from '../registry/SkillRegistry';
+import { SkillExecutor } from '../runtime/SkillExecutor';
+import { InAppSkillInvoker } from '../adapters/InAppSkillInvoker';
+
+export class AgentService {
+  private registry: SkillRegistry = new SkillRegistry();
+  private router: IntentRouter = new IntentRouter();
+  private executor: SkillExecutor = new SkillExecutor(new InAppSkillInvoker());
+
+  async handle(request: AgentRequest): Promise<SkillResult> {
+    TraceReporter.emit(request.requestId, 'request_received', '', 'in-app');
+    if (request.requestId.trim().length === 0 || request.text.trim().length === 0 ||
+      request.text.length > 1100) {
+      const result = failedResult(request.requestId, '', 'ERR_INVALID_PARAMS',
+        'requestId 和指令不能为空，指令最长 1100 个 UTF-16 码元', 'in-app');
+      TraceReporter.emit(request.requestId, 'response_returned', '', 'in-app', result.errCode);
+      return result;
+    }
+
+    const decision = this.router.route(request.text, this.registry.list());
+    TraceReporter.emit(request.requestId, 'intent_matched', decision.skillId, 'in-app',
+      decision.matched ? '' : 'ERR_NO_SKILL');
+    if (!decision.matched) {
+      const result = failedResult(request.requestId, '', 'ERR_NO_SKILL',
+        '支持：回显 文本；长度 文本', 'in-app');
+      TraceReporter.emit(request.requestId, 'response_returned', '', 'in-app', result.errCode);
+      return result;
+    }
+
+    const call: SkillCall = {
+      requestId: request.requestId,
+      skillId: decision.skillId,
+      argument: decision.argument
+    };
+    const result = await this.executor.execute(call, this.registry);
+    TraceReporter.emit(request.requestId, 'response_returned', result.skillId,
+      result.executionPath, result.errCode);
+    return result;
+  }
+}

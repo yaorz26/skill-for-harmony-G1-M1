@@ -1,0 +1,89 @@
+---
+name: g1-echo
+description: 原样返回用户指定的非空文本，用于测试应用 Skill 的参数传递、执行和返回；响应“回显这段文本”等明确请求。
+---
+
+# 回显 Skill
+
+## 触发场景
+
+用户明确要求回显指定文本，例如“回显 你好，鸿蒙”。本能力不访问网络、不读文件，不处理天气、音乐或系统设置。
+
+## 场景1：回显（echo）
+
+```text
+exec-cli(command: ohos-arkTSScript --skillName 'g1-echo' --scriptPath 'scripts/EchoSkill.ets' --functionName 'echo' --args '{"arg1":"你好，鸿蒙"}')
+```
+
+执行参数：`arg1 → argv[0]`。文本长度 1–1024 个 UTF-16 码元，不能全为空白。
+
+```json
+{
+  "args": {
+    "type": "object",
+    "properties": {
+      "arg1": { "type": "string", "minLength": 1, "maxLength": 1024, "description": "需要原样回显的文本，不能全为空白" }
+    },
+    "required": ["arg1"],
+    "additionalProperties": false
+  }
+}
+```
+
+## 执行返回值
+
+成功示例（requestId 以系统实际 requestCode 为准）：
+
+```json
+{
+  "type": "result", "requestId": "system-request-001", "skillId": "g1-echo",
+  "status": "success", "data": { "text": "你好，鸿蒙" },
+  "errCode": "", "errMsg": "", "executionPath": "system-skill"
+}
+```
+
+缺参、全空白或超长时返回失败：
+
+```json
+{
+  "type": "result", "requestId": "system-request-001", "skillId": "g1-echo",
+  "status": "failed", "data": {}, "errCode": "ERR_INVALID_PARAMS",
+  "errMsg": "文本长度应为 1–1024 个 UTF-16 码元且不能全为空白", "executionPath": "system-skill"
+}
+```
+
+返回值 Schema：
+
+```json
+{
+  "type": "object",
+  "required": ["type", "requestId", "skillId", "status", "data", "errCode", "errMsg", "executionPath"],
+  "properties": {
+    "type": { "const": "result" },
+    "requestId": { "type": "string" },
+    "skillId": { "const": "g1-echo" },
+    "status": { "enum": ["success", "failed"] },
+    "data": { "type": "object" },
+    "errCode": { "type": "string" },
+    "errMsg": { "type": "string" },
+    "executionPath": { "const": "system-skill" }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "status": { "const": "success" },
+        "data": { "properties": { "text": { "type": "string" } }, "required": ["text"] },
+        "errCode": { "const": "" }, "errMsg": { "const": "" }
+      }
+    },
+    {
+      "properties": {
+        "status": { "const": "failed" }, "data": { "maxProperties": 0 },
+        "errCode": { "const": "ERR_INVALID_PARAMS" }, "errMsg": { "type": "string", "minLength": 1 }
+      }
+    }
+  ]
+}
+```
+
+脚本通过 `completeArkTSScriptInApp` 上报；上报失败仅记日志，不能视为调用方已收到结果。本文件是待构建、待真机验证的声明。

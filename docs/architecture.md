@@ -43,8 +43,8 @@ sequenceDiagram
 ```mermaid
 flowchart LR
     Client[受支持调用方] -.连接/认证待验证.-> Extension[AgentExtensionAbility 成员A]
-    Extension -.转 AgentRequest.-> Agent[AgentService 成员B]
-    Agent --> Routing[应用自行路由]
+    Extension -.转 AgentRequest.-> Agent[AgentService 成员A装配]
+    Agent --> Routing[应用自行路由 成员B]
     Routing --> Executor[SkillExecutor 成员C]
     Executor -.替换 SkillInvoker.-> System[真实系统 Skill 调用适配器 待实现]
     System -.待核实调度API.-> Target[目标应用 Skill / Ability]

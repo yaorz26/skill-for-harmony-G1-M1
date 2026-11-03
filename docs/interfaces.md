@@ -1,6 +1,6 @@
 # 接口契约 v0
 
-源码定义：[Contracts.ets](../entry/src/main/ets/agent/Contracts.ets)。由 B 维护，A/C 作为调用方共同确认。
+源码定义：[Contracts.ets](../entry/src/main/ets/agent/Contracts.ets)。由 B 维护，A（yaorz26－姚睿哲）综合审阅。各工作包直接基于现有 v0 开发，无需等待其他成员先完成模块；接口变更先提交影响/兼容说明，经 A 审阅合入后再交接下游。
 
 ## 1. 输入与路由
 

@@ -9,7 +9,7 @@
 | 成员 | 姓名 | 主责 | 主要修改目录 | 第一交付 | 配对审阅 |
 | --- | --- | --- | --- | --- | --- |
 | A | 待填 | 鸿蒙工程、入口、组件接入 | `AppScope/`、构建配置、`entryability/`、`pages/`、`agentextension/`、`module.json5`、资源 | 可构建安装的 Demo、环境基线、入口/组件日志 | C |
-| B | 待填 | Agent 编排、意图路由、Skill 目录 | `agent/`、`router/`、`registry/`、`docs/interfaces.md` | 固定契约、规则路由、结构化响应、路由用例 | D |
+| B | 李朝阳 | Agent 编排、意图路由、Skill 目录 | `agent/`、`router/`、`registry/`、`docs/interfaces.md` | 固定契约、规则路由、结构化响应、路由用例 | D |
 | C | 待填 | 应用 Skill、执行器、真实调用接入 | `entry/skills/`、`runtime/`、`adapters/`、`service/` | 两个样例 Skill、统一回包、系统调用可行性与适配 | A |
 | D | 待填 | 集成验收、设备协调、证据与交付 | `tools/`、`.github/`、`docs/acceptance.md`、`docs/records/`、排期 | 联调报告、调度图、可复现记录、最终演示包 | B |
 

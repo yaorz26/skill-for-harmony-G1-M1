@@ -1,6 +1,7 @@
 import { TraceEvent } from './Contracts';
 
 export class TraceReporter {
+  /** 输出带 [G1M1] 前缀的结构化阶段日志，不记录用户输入全文。 */
   static emit(requestId: string, stage: string, skillId: string,
     executionPath: string, errCode: string = ''): void {
     const event: TraceEvent = {

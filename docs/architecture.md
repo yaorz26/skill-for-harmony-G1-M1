@@ -4,20 +4,28 @@
 
 ```mermaid
 flowchart TD
-    UI[演示页输入 requestId/text] --> Agent[AgentService 参数初检]
-    Agent --> Router[IntentRouter 规则匹配]
-    Registry[SkillRegistry 应用内白名单] --> Router
-    Router --> Match{有匹配?}
-    Match -->|否| Error[结构化错误]
-    Match -->|是| Executor[SkillExecutor 注册/参数检查]
-    Executor --> Invoker[InAppSkillInvoker]
-    Invoker --> Service[AppSkillService 回显/长度]
-    Service --> Result[SkillResult]
-    Executor -->|超时/异常| Error
-    Error --> Response[关联 requestId 并返回]
+    UI["演示页输入 requestId/text"] --> Agent["AgentService 初检 (request_received)"]
+    Agent -->|空请求/超长 1100| PreErr["ERR_INVALID_PARAMS"]
+    Registry["SkillRegistry 应用内白名单"] --> Router["IntentRouting 路由 (默认 IntentRouter 最长前缀匹配)"]
+    Agent --> Router
+    Router -->|路由抛错| RouteErr["ERR_INTERNAL"]
+    Router --> Match{"命中且在白名单内?"}
+    Registry --> Match
+    Match -->|否 intent_matched| NoSkill["ERR_NO_SKILL"]
+    Match -->|是 intent_matched + trim 参数| Executor["SkillExecutor 注册/参数检查"]
+    Executor --> Invoker["InAppSkillInvoker"]
+    Invoker --> Service["AppSkillService 回显/长度"]
+    Service --> Result["SkillResult"]
+    Executor -->|缺参/超长 1024/超时/异常| ExecErr["结构化错误"]
+    PreErr --> Response["关联 requestId 并返回 (response_returned)"]
+    RouteErr --> Response
+    NoSkill --> Response
+    ExecErr --> Response
     Result --> Response
     Response --> UI
 ```
+
+Agent 部分的构成：`AgentService` 通过构造函数持有 `IntentRouting`、`SkillRegistry`、`SkillInvoker` 三个可替换边界，默认分别是规则 `IntentRouter`、内置白名单、`InAppSkillInvoker`；路由异常返回 `ERR_INTERNAL`，路由器给出未注册 `skillId` 时按 `ERR_NO_SKILL` 拦截（路由不能越过白名单），组装 `SkillCall` 时统一 `trim` 参数。详见 [接口文档](interfaces.md)。
 
 这是当前代码的实际调用关系。规则匹配由应用实现；目录由代码显式注册。调用适配器直接复用业务，没有启动一个新 Ability，也没有运行 `srcEntries` 指向的 Skill 入口。
 

@@ -1,0 +1,4 @@
+PASS: 66 B routing & registry checks (sync/async route, standalone evaluate, longest prefix, registry invariants, AgentService compatibility).
+Node execution of pure ETS logic only.
+(node:20380) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

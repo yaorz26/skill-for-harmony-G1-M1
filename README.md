@@ -50,4 +50,4 @@ node tools/check-core.mjs
 
 结构检查及纯逻辑检查均不会编译 ArkTS、生成 HAP 或调用设备。当前实测进展只以[记录目录](docs/records/README.md)中的证据为准。
 
-当前验证：结构检查、50 项纯逻辑检查以及含 Agent 组件的 DevEco/Hvigor 未签名 HAP 构建通过；安装、设备运行与系统调用未测。最新证据见 [A 装配记录](docs/records/2026-11-04-A-integration.md)，早期独立审阅见[脚手架审阅](docs/reviews/2026-11-03-scaffold-review.md)。
+当前验证：共享结构检查、原有 23 项核心检查、A 交付目录内独立的 32 项入口/装配自测，以及含 Agent 组件的 DevEco/Hvigor 未签名 HAP 构建通过；安装、设备运行与系统调用未测。A 自测未并入 D 的共享 CI。最新证据及 B/D 交接建议见 [A 装配记录](docs/records/2026-11-04-A-integration.md)，早期独立审阅见[脚手架审阅](docs/reviews/2026-11-03-scaffold-review.md)。

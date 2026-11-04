@@ -5,8 +5,6 @@
 ```mermaid
 flowchart TD
     UI[演示页输入 requestId/text] --> Agent[AgentService 参数初检]
-    Ext[AgentExtensionAbility 已编译/非导出] --> Bridge[按连接隔离的 JSON 请求桥接]
-    Bridge --> Agent
     Agent --> Router[IntentRouter 规则匹配]
     Registry[SkillRegistry 应用内白名单] --> Router
     Router --> Match{有匹配?}
@@ -19,11 +17,9 @@ flowchart TD
     Error --> Response[关联 requestId 并返回]
     Result --> Response
     Response --> UI
-    Response --> Bridge
-    Bridge --> Send[proxy.sendData 返回/真机未测]
 ```
 
-这是当前代码的调用关系，组件线仅经过编译和 Node 桥接检查，设备回调尚未验证。规则匹配由应用实现；目录由代码显式注册。调用适配器直接复用业务，没有启动一个新 Ability，也没有运行 `srcEntries` 指向的 Skill 入口。`AgentService(invoker, router, registry)` 接收 B 的路由端口/目录与 C 的调用适配器；默认仍使用规则路由。
+这是当前代码的实际调用关系。规则匹配由应用实现；目录由代码显式注册。调用适配器直接复用业务，没有启动一个新 Ability，也没有运行 `srcEntries` 指向的 Skill 入口。
 
 ## 2. 已放置的系统 Skill 入口源码
 
@@ -47,7 +43,7 @@ sequenceDiagram
 ```mermaid
 flowchart LR
     Client[受支持调用方] -.连接/认证待验证.-> Extension[AgentExtensionAbility 成员A]
-    Extension -->|已实现桥接/设备未测| Agent[AgentService 成员A装配]
+    Extension -.转 AgentRequest.-> Agent[AgentService 成员A装配]
     Agent --> Routing[应用自行路由 成员B]
     Routing --> Executor[SkillExecutor 成员C]
     Executor -.替换 SkillInvoker.-> System[真实系统 Skill 调用适配器 待实现]

@@ -42,7 +42,7 @@ export default class G1M1AgentExtensionAbility extends AgentExtensionAbility {
   onData(proxy: common.AgentHostProxy, data: string): void {
     const bridge = this.connections.get(proxy);
     if (bridge === undefined) {
-      TraceReporter.emit('', 'agent_request_rejected', '', 'agent-extension', 'ERR_NOT_CONNECTED');
+      AgentRequestBridge.rejectUnconnected(data, new HostResponseSender(proxy));
       return;
     }
     void bridge.receive(data, new HostResponseSender(proxy));

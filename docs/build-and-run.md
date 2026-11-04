@@ -4,7 +4,7 @@
 
 - 项目：Stage、ArkTS，目标/兼容版本均配置为 `26.0.0`，设备类型为 phone/tablet。
 - 工程已通过本地 DevEco 26.0.0.865 / SDK 26.0.0.105 / Hvigor 6.26.9 构建，生成未签名 HAP；记录见[构建与审阅验证](records/2026-11-03-review.md)。签名、安装与真机调用仍待验证。
-- 最新 [A 装配构建](records/2026-11-04-A-integration.md)包含已注册的 Agent 组件/AgentCard 与 B 路由交付，结构及 50 项纯逻辑检查通过。组件非导出、认证未配置，没有设备成功记录。
+- 最新 [A 装配构建](records/2026-11-04-A-integration.md)包含已注册的 Agent 组件/AgentCard 与 B 路由交付，共享 23 项检查及 A 目录内 32 项独立自测通过；不改动 D 的共享检查器/CI。组件非导出、认证未配置，没有设备成功记录。
 - 使用 DevEco Studio 26.0.0 及相应 HarmonyOS SDK。由 A 首次构建时记录完整版本、Build 号、Hvigor/ohpm 版本、宿主系统和实际设备信息。
 - 无业务网络调用、云密钥或额外业务权限。设备部署签名由每人本地配置。
 

@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-04",
+  "source": "Installed official HarmonyOS SDK 26.0.0.105",
+  "declaredSince": 24,
+  "syscap": "SystemCapability.Ability.AgentRuntime.Core",
+  "stageOnly": true,
+  "component": "AgentExtensionAbility",
+  "proxyType": "common.AgentHostProxy",
+  "returnMethod": "sendData(data: string): void",
+  "registration": {
+    "type": "agent",
+    "metadata": "ohos.extension.agent",
+    "exported": false,
+    "resource": "$profile:agent_config"
+  },
+  "deviceAvailable": false,
+  "authenticationVerified": false,
+  "supportedCallerVerified": false,
+  "runtimeVerified": false,
+  "files": [
+    {
+      "sha256": "eed42236cefc51d82e71707399d5189cd2d11e1ad86880923e2ef019a3a466df",
+      "path": "openharmony/ets/api/@ohos.app.agent.AgentExtensionAbility.d.ts"
+    },
+    {
+      "sha256": "24201e56fe5bd0cf69cd396545a1419fb8afe47e0aab66a9dd5000d3b7641542",
+      "path": "openharmony/ets/api/application/AgentHostProxy.d.ts"
+    },
+    {
+      "sha256": "e0d21bf00b4deb538d33900ae3dd11d52a5eb9e9c295a13c558bcddbfc8e0328",
+      "path": "openharmony/ets/api/application/AgentExtensionContext.d.ts"
+    },
+    {
+      "sha256": "97956e7cb994b90c55a03bb48806ad1f44b62977f2f0701314a0761aa6a336cc",
+      "path": "openharmony/ets/api/application/AgentCard.d.ts"
+    },
+    {
+      "sha256": "9c6c9c0a1206f6c2cfad3a2af84424a494c1291c40e99d678ea7c9fdc13fef2c",
+      "path": "openharmony/toolchains/modulecheck/agentCard.json"
+    },
+    {
+      "sha256": "3f0dad7741b4ced9d005d2b31c90013ff6989655aeabf0f2a176a62282a74fe5",
+      "path": "openharmony/toolchains/modulecheck/module.json"
+    }
+  ]
+}

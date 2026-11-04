@@ -4,6 +4,7 @@
 
 - 项目：Stage、ArkTS，目标/兼容版本均配置为 `26.0.0`，设备类型为 phone/tablet。
 - 工程已通过本地 DevEco 26.0.0.865 / SDK 26.0.0.105 / Hvigor 6.26.9 构建，生成未签名 HAP；记录见[构建与审阅验证](records/2026-11-03-review.md)。签名、安装与真机调用仍待验证。
+- 最新 [A 装配构建](records/2026-11-04-A-integration.md)包含已注册的 Agent 组件/AgentCard 与 B 路由交付，共享 23 项检查及 A 目录内 32 项独立自测通过；不改动 D 的共享检查器/CI。组件非导出、认证未配置，没有设备成功记录。
 - 使用 DevEco Studio 26.0.0 及相应 HarmonyOS SDK。由 A 首次构建时记录完整版本、Build 号、Hvigor/ohpm 版本、宿主系统和实际设备信息。
 - 无业务网络调用、云密钥或额外业务权限。设备部署签名由每人本地配置。
 
@@ -38,6 +39,8 @@ Windows 已安装完整 DevEco 时，也可使用 [build-hap.ps1](../tools/build
 3. 输入 `长度 你好ABC`，检查 `data.length: 5`、`unit: utf16-code-unit`。
 4. 输入 `查天气` 和 `回显`，分别检查 `ERR_NO_SKILL`、`ERR_INVALID_PARAMS`。
 5. 在日志窗口按 `[G1M1]` 过滤，保存同一 `requestId` 的链路。以上预期均需实测后才能标通过。
+
+页面提供回显、长度和未命中快捷样例，请求 ID 可复制；日志 `page_loaded` 仅证明页面加载，不能代替组件连接。组件请求格式、调用方/认证阻断和设备补测步骤见 [AgentExtensionAbility](../entry/src/main/ets/agentextension/README.md)。
 
 ## 4. 系统应用 Skill 验证（独立步骤）
 

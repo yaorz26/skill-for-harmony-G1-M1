@@ -18,7 +18,7 @@
 
 同时提供两份应用 Skill 的 `SKILL.md`、ETS 入口及 `skillProfiles` 注册，供后续小艺路径验证；ETS 入口与应用内演示复用业务实现。
 
-**当前自建 Agent 的默认适配器仅调用本应用业务函数。** 它验证框架接口，不等于通过系统 Skill 调度器调用脚本，也不证明可以发现或调用其他应用 Skill。`AgentExtensionAbility`、真实系统 Skill 调用适配器、外部调用鉴权和真机端到端验证，分别是成员 A/C/D 的后续工作。当前没有接入 LLM、WebView 或 A2A。
+**当前自建 Agent 的默认适配器仅调用本应用业务函数。** 它验证框架接口，不等于通过系统 Skill 调度器调用脚本，也不证明可以发现或调用其他应用 Skill。B 的规则路由/目录已装配；A 已实现并注册 `AgentExtensionAbility`、AgentCard 和按连接隔离的 JSON 请求桥接，已通过编译，组件仍保持非导出。真实调用方/认证、真实系统 Skill 调用适配器与真机端到端验证尚未完成。当前没有接入 LLM、WebView 或 A2A。
 
 ## 目录
 
@@ -34,7 +34,7 @@ entry/
       router/  registry/         路由与能力目录（成员 B）
       runtime/  adapters/         执行器与调用适配（成员 C）
       service/                   无网络样例业务（成员 C）
-      agentextension/            AgentExtensionAbility 接入任务（成员 A）
+      agentextension/            AgentExtensionAbility 与请求桥接（成员 A）
     resources/
 docs/                             分工、流程、验收、记录（成员 D 汇总）
 tools/check-structure.mjs          无 SDK 的工程结构检查
@@ -50,4 +50,4 @@ node tools/check-core.mjs
 
 结构检查及纯逻辑检查均不会编译 ArkTS、生成 HAP 或调用设备。当前实测进展只以[记录目录](docs/records/README.md)中的证据为准。
 
-当前验证：结构检查、23 项纯逻辑检查以及 DevEco/Hvigor 的未签名 HAP 构建通过；安装、设备运行与系统调用未测。独立审阅结果见[脚手架审阅](docs/reviews/2026-11-03-scaffold-review.md)。
+当前验证：共享结构检查、原有 23 项核心检查、A 交付目录内独立的 32 项入口/装配自测，以及含 Agent 组件的 DevEco/Hvigor 未签名 HAP 构建通过；安装、设备运行与系统调用未测。A 自测未并入 D 的共享 CI。最新证据及 B/D 交接建议见 [A 装配记录](docs/records/2026-11-04-A-integration.md)，早期独立审阅见[脚手架审阅](docs/reviews/2026-11-03-scaffold-review.md)。

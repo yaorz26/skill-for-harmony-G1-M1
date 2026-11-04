@@ -26,6 +26,20 @@
         ]
       }
     ],
+    "extensionAbilities": [
+      {
+        "name": "AgentExtensionAbility",
+        "srcEntry": "./ets/agentextension/AgentExtensionAbility.ets",
+        "type": "agent",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.agent",
+            "resource": "$profile:agent_config"
+          }
+        ]
+      }
+    ],
     "skillProfiles": [
       {
         "name": "g1-echo",

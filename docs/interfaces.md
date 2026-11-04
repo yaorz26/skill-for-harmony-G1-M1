@@ -66,9 +66,9 @@
 
 ## 3. 适配器与超时
 
-`SkillInvoker` 包含 `executionPath: string` 与 `invoke(call): Promise<SkillResult>`，是后续接真实调用的边界。通过 `new AgentService(invoker)` 注入适配器；前置日志、失败和超时使用该适配器声明的路径，返回值也应保持一致。当前默认仅 `InAppSkillInvoker`，不能用测试路径当作系统调用证据。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
+`SkillInvoker` 包含 `executionPath: string` 与 `invoke(call): Promise<SkillResult>`，是后续接真实调用的边界。通过 `new AgentService(invoker)` 注入适配器；A 装配增加可选的 `router: IntentRouting` 与 `registry: SkillRegistry` 第二、三个参数，旧调用兼容。前置日志、失败和超时使用该适配器声明的路径，返回值也应保持一致。当前默认仅 `InAppSkillInvoker`，不能用测试路径当作系统调用证据。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
 
-当前不自动重试、不保留会话，也不保证相同 `requestId` 的重复请求幂等。演示页禁用运行中的按钮；后续外部入口要验证重复请求与并发隔离。系统调用适配器须补返回校验及调用方鉴权，不能接受任意脚本路径。
+AgentService 本身不自动重试、不保留会话，也不保证相同 `requestId` 的重复请求幂等。演示页禁用运行中的按钮；A 的组件桥接对每个连接独立记 ID，重复 ID 拒绝，不重新执行也不重放结果；最多 8 个并行请求、128 个 ID，断开后丢弃迟到回包。外部信封字段/长度和错误关联规则见 [组件接口](../entry/src/main/ets/agentextension/README.md)。此机制不是跨重连幂等保证。组件仍非导出，真实调用方鉴权待核验；系统调用适配器还须补返回校验，不能接受任意脚本路径。
 
 ## 3.1 路由与目录装配契约（由 B 交付 A）
 
@@ -89,6 +89,7 @@ B 模块对现有 `AgentService` 保持 **100% 向后兼容**（无需改动 `Ag
 - 应用内：`request_received → intent_matched → skill_started → skill_finished → response_returned`。未命中时 `intent_matched` 的 `errCode` 为 `ERR_NO_SKILL`、`skillId` 为空，随后直接 `response_returned`。
 - 初检或缺参失败可在执行前结束，不要求出现 `skill_started`。
 - 系统脚本：`system_skill_entered → system_result_reported` 或 `system_report_failed`。
-- 组件/真实调用接入后另补 `agent_connected`、`agent_data_received`、`system_call_started`、`system_call_returned`；当前没有这些事件。
+- 组件源码已提供 `agent_connected`、`agent_data_received`、`agent_request_rejected`、`agent_response_sent`、`agent_response_send_failed`、`agent_response_dropped`、`agent_disconnected` 等节点；仅 Node 桥接节点有测试证据，真实设备组件日志未测。组件节点的路径为 `agent-extension`，业务仍为 `in-app`。
+- 真实系统调用尚未接入，`system_call_started/system_call_returned` 不属于当前证据。
 
 `status: success` 只代表该路径的业务结果。`executionPath: in-app` 不能证明系统 Skill 执行；`system_result_reported` 也不能单独证明整个 Agent 入口链路已经完成。

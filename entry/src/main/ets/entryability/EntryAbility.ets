@@ -6,7 +6,9 @@ export default class EntryAbility extends UIAbility {
     windowStage.loadContent('pages/Index', (error) => {
       if (error.code) {
         console.error(`[G1M1] loadContent failed: ${error.code}`);
+        return;
       }
+      console.info('[G1M1] {"stage":"page_loaded","page":"pages/Index"}');
     });
   }
 }

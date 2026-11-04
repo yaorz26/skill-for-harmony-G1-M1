@@ -1,0 +1,36 @@
+{
+  "agentCards": [
+    {
+      "agentId": "g1m1-skill-agent",
+      "name": "Skill Agent Demo",
+      "description": "通过明确指令路由到应用内的回显和文本长度能力。",
+      "version": "1.0.0",
+      "defaultInputModes": ["application/json"],
+      "defaultOutputModes": ["application/json"],
+      "skills": [
+        {
+          "id": "g1-echo",
+          "name": "回显",
+          "description": "原样返回输入文本。",
+          "tags": ["回显", "echo"],
+          "examples": ["回显 你好，鸿蒙"]
+        },
+        {
+          "id": "g1-text-length",
+          "name": "文本长度",
+          "description": "计算文本的 UTF-16 码元长度。",
+          "tags": ["长度", "字数", "length"],
+          "examples": ["长度 你好ABC"]
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/yaorz26/skill-for-harmony-G1-M1/main/AppScope/resources/base/media/app_icon.svg",
+      "category": "productivity",
+      "appInfo": {
+        "bundleName": "com.g1m1.skillagent",
+        "moduleName": "entry",
+        "abilityName": "AgentExtensionAbility",
+        "deviceTypes": ["phone", "tablet"]
+      }
+    }
+  ]
+}

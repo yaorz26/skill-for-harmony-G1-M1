@@ -37,6 +37,17 @@ try {
   for (const ability of module.abilities) {
     assert.ok(existsSync(resolve(dirname(modulePath), ability.srcEntry)), `Ability 入口不存在：${ability.name}`);
   }
+  const extension = module.extensionAbilities.find((item) => item.type === 'agent');
+  assert.ok(extension, '缺少 AgentExtensionAbility 注册');
+  assert.equal(extension.exported, false, '调用方认证未核验前保持非导出');
+  assert.ok(existsSync(resolve(dirname(modulePath), extension.srcEntry)), 'Agent 组件入口不存在');
+  const agentMetadata = extension.metadata.find((item) => item.name === 'ohos.extension.agent');
+  assert.equal(agentMetadata.resource, '$profile:agent_config');
+  const card = config('entry/src/main/resources/base/profile/agent_config.json').agentCards[0];
+  assert.equal(card.appInfo.bundleName, app.bundleName);
+  assert.equal(card.appInfo.moduleName, module.name);
+  assert.equal(card.appInfo.abilityName, extension.name);
+  assert.deepEqual(card.skills.map((item) => item.id).sort(), module.skillProfiles.map((item) => item.name).sort());
   const profiles = module.skillProfiles;
   const names = new Set();
   for (const profile of profiles) {

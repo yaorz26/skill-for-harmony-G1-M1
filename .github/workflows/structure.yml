@@ -13,5 +13,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node tools/check-structure.mjs
-      - run: node tools/check-core.mjs
+      - name: Collect host baseline evidence
+        run: node tools/run-acceptance.mjs --out "${{ runner.temp }}/g1m1-evidence"
+      - name: Upload host baseline logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: host-baseline-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/g1m1-evidence
+          if-no-files-found: warn
+          retention-days: 14

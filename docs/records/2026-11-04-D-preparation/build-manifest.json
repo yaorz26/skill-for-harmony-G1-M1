@@ -1,0 +1,148 @@
+{
+  "exitCode": 0,
+  "node": "24.14.1",
+  "hvigor": "6.26.8",
+  "sdk": "26.0.0.105",
+  "pathRedaction": "Local workspace and toolchain roots replaced with placeholders",
+  "ideSync": "not-tested",
+  "ohpm": "26.0.0.630",
+  "applicationSourcesMatchHead": true,
+  "scope": "baseline-unsigned-build",
+  "sourceFiles": [
+    {
+      "path": "AppScope/app.json5",
+      "sha256": "2a18af36ca3879db3871f7486a356d4234ff2f11fd0b52fdfee0003cf0e1585e"
+    },
+    {
+      "path": "AppScope/resources/base/element/string.json",
+      "sha256": "6ff1c86162857f4c5805310d26b87e8a70203f98a121c7db4f5f7ed0dca64192"
+    },
+    {
+      "path": "AppScope/resources/base/media/app_icon.svg",
+      "sha256": "865e6194eb883fada153674eaddf1d45a0606a1aed742d279d8fc1c431e086fd"
+    },
+    {
+      "path": "build-profile.json5",
+      "sha256": "2db85900d88820215977a98dc47ee6f8197f090cc95bc410ffe9f7689b32a90f"
+    },
+    {
+      "path": "entry/build-profile.json5",
+      "sha256": "ab6a89261d46045602e8387d49dd8a9bbca8390247c95116eb5ba84cdac7601b"
+    },
+    {
+      "path": "entry/hvigorfile.ts",
+      "sha256": "96b0c1c4c9492360b6d72fd457625aafe460c9a616f74a159c3f5da524d1d3ba"
+    },
+    {
+      "path": "entry/oh-package.json5",
+      "sha256": "bf4f0457fff134f8f9a858ce0c84e624bdd94c99c495015520dc3772daad7679"
+    },
+    {
+      "path": "entry/skills/g1-echo/SKILL.md",
+      "sha256": "d85fbb199b6a716cd647a16a5776a6e73300c3441d51bf1a8a41d3acb25709f5"
+    },
+    {
+      "path": "entry/skills/g1-echo/scripts/EchoSkill.ets",
+      "sha256": "52f4c6eb81ce602e47861612f58d7ce0dc90ecac9cd09b30f331bdd6994fc8f3"
+    },
+    {
+      "path": "entry/skills/g1-text-length/SKILL.md",
+      "sha256": "131eed0183264a8aaac4ef5101bacdce771315ee0d3be952ca2fb267bdc657a7"
+    },
+    {
+      "path": "entry/skills/g1-text-length/scripts/TextLengthSkill.ets",
+      "sha256": "eb36a42f9fe0ea83bb55f835045ccd60cfcc2aee441049e33e73b64dfc7ce937"
+    },
+    {
+      "path": "entry/src/main/ets/adapters/InAppSkillInvoker.ets",
+      "sha256": "369ea105c6261673511016d00d29363a5c08a65ea1e4d41565e13cdb488f5eec"
+    },
+    {
+      "path": "entry/src/main/ets/adapters/README.md",
+      "sha256": "ab0225cbad755cf47f16b3bdeb1da81985a43ac8eacf1575ef595c7c1c5be470"
+    },
+    {
+      "path": "entry/src/main/ets/agent/AgentService.ets",
+      "sha256": "34cd912da51da24d9d8207c913a93117151d0711e4c70da7982fe5584714c210"
+    },
+    {
+      "path": "entry/src/main/ets/agent/Contracts.ets",
+      "sha256": "56114196a24793337b62bba9ec65d1e3c70743336251ce30f4a58acf39a7d08f"
+    },
+    {
+      "path": "entry/src/main/ets/agent/TraceReporter.ets",
+      "sha256": "548bf5dd5240477bc1de084dea4a916070d9ce3b6c25e202db1e581a75ad6979"
+    },
+    {
+      "path": "entry/src/main/ets/agentextension/README.md",
+      "sha256": "bc8ce19fde97d08467f3a32591810b036b1be4698f27c6d6bb7b8c5b6e0c640e"
+    },
+    {
+      "path": "entry/src/main/ets/entryability/EntryAbility.ets",
+      "sha256": "7b0e7dd1b6568112a3fbfbce84ef1931d138c93d7540b354c064e341534a2b27"
+    },
+    {
+      "path": "entry/src/main/ets/pages/Index.ets",
+      "sha256": "0a1da99b38e9854bd2ec6160af873860671c83547a66bd7c6cd12923ef6d4dde"
+    },
+    {
+      "path": "entry/src/main/ets/registry/SkillRegistry.ets",
+      "sha256": "a800062c04dd16544cab8f501e354699e51e44fa2b68f7423b2d1a0001e54612"
+    },
+    {
+      "path": "entry/src/main/ets/router/IntentRouter.ets",
+      "sha256": "4bfb6d62d6110e964f5c2a71b9e3583c3e880ec18f7ab8f999f2af6bab12e40c"
+    },
+    {
+      "path": "entry/src/main/ets/runtime/SkillExecutor.ets",
+      "sha256": "1bbc8b32ca6e442f83c13b7574adb9224fbb5eda8287f5554c726689ac38f0fb"
+    },
+    {
+      "path": "entry/src/main/ets/runtime/SystemSkillReporter.ets",
+      "sha256": "c443d80f7a3420f20cb26f75d4bdd7a57ce79e1dbbcddee22ef9a94ebfa89f3b"
+    },
+    {
+      "path": "entry/src/main/ets/service/AppSkillService.ets",
+      "sha256": "7ea12f1f0813340eaddb46b32a7aa8adf57e475e77517b4ba59a7be144b21183"
+    },
+    {
+      "path": "entry/src/main/module.json5",
+      "sha256": "723c8c8cdf115d00267b3920f9c1d9816befb91e02216338accd5177ceda0b27"
+    },
+    {
+      "path": "entry/src/main/resources/base/element/color.json",
+      "sha256": "3d3152c4b035532c0e41ab436b8d8b19b37d93b175278abdde6ddc4bd9eb1ec5"
+    },
+    {
+      "path": "entry/src/main/resources/base/element/string.json",
+      "sha256": "feef00bb271a0bcd53099010a3c5cc3fa6e9dcd09d371f9bb138cd263d89cb78"
+    },
+    {
+      "path": "entry/src/main/resources/base/profile/main_pages.json",
+      "sha256": "5308f930c5518fda4f244086266274cf6e1f09c8a3c1200830cfef22bbd7ae74"
+    },
+    {
+      "path": "hvigor/hvigor-config.json5",
+      "sha256": "7ceee45e457e60c4f3c414a8b5166ea56801cd0cefc786a4cc1f4a337b3b7620"
+    },
+    {
+      "path": "hvigorfile.ts",
+      "sha256": "561d3af07f6c82dbb7bb20bc1b6f719d0d83d0ca6b0131657b8fab55e255b7b4"
+    },
+    {
+      "path": "oh-package.json5",
+      "sha256": "92c51cf90f1fb02fe062e37f7d8e55de8f81ae8d5d22f8e052b314f25f25655b"
+    }
+  ],
+  "buildNumber": "261.23567.138.36.2600851",
+  "deveco": "26.0.0.851",
+  "commit": "3463f2537bf8901a32f94fafac569cc6867231ef",
+  "deviceRuntime": "not-tested",
+  "buildLogSha256": "426ec2dcf3845d95acb0fb345d7db1a7ef526dc58d578666128311c06aaf17ed",
+  "copiedSourcesMatch": true,
+  "hap": {
+    "path": "entry/build/default/outputs/default/entry-default-unsigned.hap",
+    "sha256": "fae07c1d6acad902a54d1b541095b0d3e87e62e765c352a6c1c5f34edd55f46b",
+    "bytes": 74127
+  }
+}

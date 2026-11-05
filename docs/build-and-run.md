@@ -13,6 +13,7 @@ Skill 从 API 26.0.0 开始提供；ArkTS 入口方式仅支持 Stage。以[官�
 ## 2. 导入与构建
 
 1. 在 DevEco Studio 打开仓库根目录（包含 `AppScope`、`entry`、`build-profile.json5` 和 `hvigorfile.ts`）。
+   Windows 使用全英文的真实目录。已观察到中文路径被 DevEco 拒绝，英文目录联接仍可能被解析到中文真实路径；使用独立英文副本时必须核对源码哈希，避免混用旧产物。
 2. 配置 SDK，执行工程同步，等待 IDE 获取匹配的构建工具。仓库未携带本机 SDK 路径或 Hvigor 二进制包装器。
 3. 选 `default` product、`entry` 模块、debug 模式，执行 `Build > Build Hap(s)/APP(s) > Build Hap(s)`，或当前版本等效菜单。
 4. 保存完整构建输出、首条错误/错误码、退出状态及实际产物路径。在工具链已经提供 Hvigor 的终端中，可用以下任务参数；执行程序路径取自本人 DevEco 安装，不假设系统存在 `hvigorw`：
@@ -51,6 +52,8 @@ Windows 已安装完整 DevEco 时，也可使用 [build-hap.ps1](../tools/build
 5. 扩展组件接入按 [agentextension 任务说明](../entry/src/main/ets/agentextension/README.md)独立验证。
 
 ## 5. 没有工具链或设备时
+
+D 可用 `node tools/run-acceptance.mjs --out ../g1m1-evidence-001` 一次保存本机检查证据。Node.js 24+，目录必须不存在；详见[工具说明](../tools/README.md)。完整设备操作和阶段判定见[D 验收手册](acceptance-runbook.md)。
 
 可先做接口联调准备、结构检查、静态审阅和记录整理：
 

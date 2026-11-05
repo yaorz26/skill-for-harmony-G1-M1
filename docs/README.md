@@ -8,9 +8,15 @@
 | [共享接口](interfaces.md) | 输入输出、错误码、日志与适配契约 | B |
 | [构建与运行](build-and-run.md) | DevEco 工程导入、构建、签名和演示 | A/D |
 | [验收用例](acceptance.md) | 正常、失败、系统调用及组件验证 | D |
+| [D 验收执行手册](acceptance-runbook.md) | 固定版本、逐项操作、证据采集与失败回交 | D |
+| [验收工具](../tools/README.md) | 本机检查、清单与日志生成 | D |
+| [D 交付索引](delivery-index.md) | 准备材料、实测记录与剩余依赖 | D |
+| [固定版本交接模板](templates/acceptance-handoff.md) | A 向 D 交付固定版本和运行前提 | A/D |
+| [验收问题模板](templates/acceptance-issue.md) | 首个失败节点、分派与复测证据 | D |
 | [真机排期](device-schedule.md) | 与实验组共享设备，预约与交接 | D |
 | [记录目录](records/README.md) | 实际构建、调用和阻断证据 | 全员 |
 | [A 工程入口与装配](records/2026-11-04-A-integration.md) | 接收 B 交付、组件注册、桥接与当前真机阻断 | A |
+| [C 执行器与调用调研](records/2026-11-05-C-runtime/handoff.md) | F08/F09 独立检查、API 26 调研与 A02 阻断 | C |
 | [独立审阅](reviews/2026-11-03-scaffold-review.md) | 脚手架、分工、需求与 GitHub 规则的审阅及问题处理 | 项目记录 |
 | [构建记录模板](templates/build-record.md) | 每次构建填写 | 构建执行者 |
 | [运行/实验报告模板](templates/run-report.md) | 每次运行或实验填写 | 实验执行者 |

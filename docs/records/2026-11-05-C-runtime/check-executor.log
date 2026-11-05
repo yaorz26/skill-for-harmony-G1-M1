@@ -1,0 +1,8 @@
+[G1M1] {"requestId":"f08","stage":"skill_started","skillId":"g1-echo","executionPath":"test-fault","timestampMs":1793868262475,"errCode":""}
+[G1M1] {"requestId":"f08","stage":"skill_finished","skillId":"g1-echo","executionPath":"test-fault","timestampMs":1793868262476,"errCode":"ERR_INTERNAL"}
+[G1M1] {"requestId":"f09","stage":"skill_started","skillId":"g1-echo","executionPath":"test-external","timestampMs":1793868262509,"errCode":""}
+[G1M1] {"requestId":"f09","stage":"skill_finished","skillId":"g1-echo","executionPath":"test-external","timestampMs":1793868262524,"errCode":"ERR_TIMEOUT"}
+[G1M1] {"requestId":"ok","stage":"skill_started","skillId":"g1-text-length","executionPath":"test-external","timestampMs":1793868262601,"errCode":""}
+[G1M1] {"requestId":"ok","stage":"skill_finished","skillId":"g1-text-length","executionPath":"test-external","timestampMs":1793868262602,"errCode":""}
+PASS: 18 executor checks (F08 single ERR_INTERNAL, F09 timeout and late result isolation).
+Node execution of pure ETS logic only. ArkTS runtime, system Skill entry and device behavior remain unverified.

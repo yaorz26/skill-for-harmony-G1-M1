@@ -10,7 +10,7 @@
 | --- | --- | --- | --- | --- |
 | A | 姚睿哲 / `yaorz26` | 鸿蒙工程、UI/Agent 入口、最后装配 | `AppScope/`、构建配置、`entryability/`、`pages/`、`agentextension/`、`module.json5`；装配阶段修改 `AgentService.ets` | 构建/入口证据、装配好的 Demo |
 | B | 李朝阳 / `Tomori-Saki` | 路由与能力目录 | `Contracts.ets`、`TraceReporter.ets`、`router/`、`registry/`、`docs/interfaces.md` | 路由模块、固定输入输出、独立测试记录 |
-| C | 待填 | Skill 执行与系统调用适配 | `entry/skills/`、`runtime/`、`adapters/`、`service/` | 两个样例、执行器、调用可行性/适配与独立测试记录 |
+| C | 李竞宇 / `lijingyuu` | Skill 执行与系统调用适配 | `entry/skills/`、`runtime/`、`adapters/`、`service/` | 两个样例、执行器、调用可行性/适配与独立测试记录 |
 | D | 待填 | 验收工具、证据整理与设备排期 | `tools/`、`.github/workflows/`、验收用例、模板、记录索引、设备排期；汇总流程图/运行指南 | 可独立执行的验收步骤、设备报告、最终交付索引 |
 
 `AgentService.ets` 由 A 在装配阶段维护，B/C 不同时修改它。D 独立维护检查脚本与 CI；仓库设置变更由管理员执行。各人把本人日志放进独立记录目录，不等待 D 代写。

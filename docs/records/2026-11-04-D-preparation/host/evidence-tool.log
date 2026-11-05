@@ -1,0 +1,12 @@
+✔ records success, failure, timeout and spawn errors without stopping later checks (481.1404ms)
+✔ refuses overwriting records and unsafe or duplicate check names before executing (3.1207ms)
+✔ source fingerprint detects edits, additions and tracked-file deletion (605.2719ms)
+﹣ timeout ends a child that ignores SIGTERM (0.3772ms) # SKIP
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 1235.3655

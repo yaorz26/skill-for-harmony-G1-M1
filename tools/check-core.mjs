@@ -132,5 +132,64 @@ assert.equal(externalFailure.errCode, 'ERR_INTERNAL');
 assert.equal(externalFailure.executionPath, 'test-external');
 checks += 4;
 
+// D 的日志/关联验收：纯逻辑测试记录，不替代设备 Hilog。
+const events = [];
+const originalInfo = console.info;
+console.info = (line) => {
+  if (typeof line === 'string' && line.startsWith('[G1M1] ')) events.push(JSON.parse(line.slice(7)));
+};
+try {
+  await agent.handle({ requestId: 'd-success', text: '回显 trace' });
+  assert.deepEqual(events.filter(e => e.requestId === 'd-success').map(e => e.stage),
+    ['request_received', 'intent_matched', 'skill_started', 'skill_finished', 'response_returned']);
+  assert.ok(events.every(e => Number.isFinite(e.timestampMs) && e.executionPath === 'in-app'));
+  checks++;
+  let invocations = 0;
+  const countedAgent = new AgentService({ executionPath: 'test-counted', invoke: async value => {
+    invocations++;
+    return AppSkillService.execute(value, 'test-counted');
+  } });
+  await countedAgent.handle({ requestId: 'd-unknown', text: '查天气' });
+  await countedAgent.handle({ requestId: 'd-invalid', text: '' });
+  assert.equal(invocations, 0, 'Rejected requests must not invoke the business adapter.');
+  assert.deepEqual(events.filter(e => e.requestId === 'd-unknown').map(e => e.stage),
+    ['request_received', 'intent_matched', 'response_returned']);
+  assert.deepEqual(events.filter(e => e.requestId === 'd-invalid').map(e => e.stage),
+    ['request_received', 'response_returned']);
+  checks += 2;
+  let releaseFirst;
+  const gate = new Promise(resolve => { releaseFirst = resolve; });
+  const concurrent = new AgentService({ executionPath: 'test-concurrent', invoke: async value => {
+    if (value.requestId === 'd-first') await gate;
+    return AppSkillService.execute(value, 'test-concurrent');
+  } });
+  const first = concurrent.handle({ requestId: 'd-first', text: '回显 first' });
+  const second = await concurrent.handle({ requestId: 'd-second', text: '回显 second' });
+  releaseFirst();
+  const firstResult = await first;
+  assert.equal(firstResult.requestId, 'd-first');
+  assert.equal(firstResult.data.text, 'first');
+  assert.equal(second.requestId, 'd-second');
+  assert.equal(second.data.text, 'second');
+  for (const id of ['d-first', 'd-second']) {
+    assert.equal(events.filter(e => e.requestId === id && e.stage === 'response_returned').length, 1);
+  }
+  checks++;
+  let releaseLate;
+  let attempts = 0;
+  const lateResult = new Promise(resolve => { releaseLate = resolve; });
+  const lateExecutor = new SkillExecutor({ executionPath: 'test-late', invoke: () => { attempts++; return lateResult; } }, 5);
+  const lateCall = { ...call, requestId: 'd-late' };
+  const failed = await lateExecutor.execute(lateCall, registry);
+  assert.equal(failed.errCode, 'ERR_TIMEOUT');
+  releaseLate(AppSkillService.execute(lateCall, 'test-late'));
+  await new Promise(resolve => setImmediate(resolve));
+  const finishes = events.filter(e => e.requestId === 'd-late' && e.stage === 'skill_finished');
+  assert.equal(attempts, 1, 'No automatic retry.');
+  assert.equal(finishes.length, 1, 'Late completion must not emit another completion event.');
+  assert.equal(finishes[0].errCode, 'ERR_TIMEOUT');
+  checks++;
+} finally { console.info = originalInfo; }
+
 console.log(`PASS: ${checks} core checks (routing, parameters, Unicode length, errors and late completion).`);
 console.log('Node execution of pure ETS logic only. ArkTS compilation and HarmonyOS runtime remain unverified.');

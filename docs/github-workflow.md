@@ -21,7 +21,7 @@
 | 合并方式 | 截图中仅保留 Squash | 同上 |
 | Rulesets | 公开 API 返回空列表 | 本仓库使用 classic branch protection，不代表保护失效 |
 
-当前 `structure` 工作流执行文件/契约结构检查与 Node 纯逻辑检查。它没有鸿蒙 SDK，不能替代 DevEco 构建、安装或真机调度验证。
+D 分支的 `structure` 工作流执行文件/契约结构检查、Node 纯逻辑检查、A/C 独立 Node 检查和证据工具自测，并上传主机日志；远端结果以实际 Actions 为准。它没有鸿蒙 SDK，不能替代 DevEco 构建、安装或真机调度验证。
 
 ## 保护范围与限制
 

@@ -11,5 +11,6 @@
 | 2026-11-04 | 唐欣卓（D）/ pourf | 工具自测、基线检查与独立构建 | [D 验收准备](2026-11-04-D-preparation/report.md) | 28 项纯逻辑检查、证据工具自测及未签名构建通过；待 A 固定版本和设备终验 |
 | 2026-11-05 | C 李竞宇 | 构建、F08/F09、调用 API 调研 | [C 运行时记录](2026-11-05-C-runtime/build-record.md) | 未签名 HAP 构建、23+18 项检查通过；公共 API 26 无应用发起 Skill 接口，A02 阻断；无设备 |
 | 2026-11-05 | 唐欣卓（D）/ pourf | 接收 A/C 交付后的主机复核 | [D 合并复核](2026-11-05-D-upstream-review/report.md) | 结构、28 项共享核心、A 32 项、C 18 项与证据工具自测通过；设备路径仍未测 |
+| 2026-11-06 | C 李竞宇 | API 26 模拟器运行时验证 | [C 模拟器记录](2026-11-06-C-emulator/run-report.md) | 未签名 HAP 模拟器安装；F02–F07/F10 应用内路径通过（13 个输入变体，含 512/513 真 emoji 边界；模拟器非真机）；S01/S02 待真机 |
 
 原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已包含 DevEco/Hvigor 未签名构建证据；尚无设备安装、应用运行、扩展组件、系统 Skill 或真机端到端的成功证据。

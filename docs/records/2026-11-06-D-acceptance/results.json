@@ -1,0 +1,115 @@
+{
+  "F03": {
+    "requestId": "ui-1793956547946-2",
+    "skillId": "g1-echo",
+    "status": "success",
+    "data": {
+      "text": "你好，鸿蒙"
+    },
+    "errCode": "",
+    "errMsg": "",
+    "executionPath": "in-app"
+  },
+  "F04": {
+    "requestId": "ui-1793956554223-3",
+    "skillId": "g1-text-length",
+    "status": "success",
+    "data": {
+      "text": "你好ABC",
+      "length": 5,
+      "unit": "utf16-code-unit"
+    },
+    "errCode": "",
+    "errMsg": "",
+    "executionPath": "in-app"
+  },
+  "F05": {
+    "requestId": "ui-1793956416591-1",
+    "skillId": "g1-text-length",
+    "status": "success",
+    "data": {
+      "text": "😀",
+      "length": 2,
+      "unit": "utf16-code-unit"
+    },
+    "errCode": "",
+    "errMsg": "",
+    "executionPath": "in-app"
+  },
+  "F06": {
+    "requestId": "ui-1793956560667-4",
+    "skillId": "",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_NO_SKILL",
+    "errMsg": "支持：回显 文本；长度 文本",
+    "executionPath": "in-app"
+  },
+  "F08-F09": {
+    "executionPath": "self-check",
+    "f08ErrCode": "ERR_INTERNAL",
+    "f08Invocations": 1,
+    "f09ErrCode": "ERR_TIMEOUT",
+    "f09Invocations": 1,
+    "f09LateCompleted": 1,
+    "f09ErrCodeAfterLate": "ERR_TIMEOUT",
+    "controlStatus": "success",
+    "allPassed": true,
+    "items": [
+      {
+        "name": "F08 errCode=ERR_INTERNAL",
+        "expected": "ERR_INTERNAL",
+        "actual": "ERR_INTERNAL",
+        "passed": true
+      },
+      {
+        "name": "F08 调用恰好一次",
+        "expected": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "name": "F08 保留替身executionPath",
+        "expected": "self-check-fault",
+        "actual": "self-check-fault",
+        "passed": true
+      },
+      {
+        "name": "F09 errCode=ERR_TIMEOUT",
+        "expected": "ERR_TIMEOUT",
+        "actual": "ERR_TIMEOUT",
+        "passed": true
+      },
+      {
+        "name": "F09 提前返回(<150ms)",
+        "expected": "<150",
+        "actual": "60",
+        "passed": true
+      },
+      {
+        "name": "F09 迟到结果不改写返回值",
+        "expected": "ERR_TIMEOUT",
+        "actual": "ERR_TIMEOUT",
+        "passed": true
+      },
+      {
+        "name": "F09 迟到后不重试",
+        "expected": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "name": "F09 底层照常完成(不宣称取消)",
+        "expected": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "name": "对照组 success",
+        "expected": "success",
+        "actual": "success",
+        "passed": true
+      }
+    ]
+  }
+}

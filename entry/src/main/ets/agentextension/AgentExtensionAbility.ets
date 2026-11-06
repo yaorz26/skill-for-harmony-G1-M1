@@ -10,7 +10,14 @@ class HostResponseSender implements AgentResponseSender {
   }
 
   sendData(data: string): void {
-    this.proxy.sendData(data);
+    try {
+      this.proxy.sendData(data);
+    } catch (error) {
+      if (error instanceof Error) {
+        throw error;
+      }
+      throw new Error('Agent host response failed');
+    }
   }
 }
 

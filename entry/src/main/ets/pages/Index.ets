@@ -1,5 +1,6 @@
 import { AgentService } from '../agent/AgentService';
 import { AgentRequest } from '../agent/Contracts';
+import { ExecutorSelfCheck } from '../runtime/ExecutorSelfCheck';
 
 @Entry
 @Component
@@ -37,6 +38,22 @@ struct Index {
     }
   }
 
+  private async selfCheck(): Promise<void> {
+    if (this.running) {
+      return;
+    }
+    this.running = true;
+    this.requestId = 'executor-self-check';
+    try {
+      const summary = await ExecutorSelfCheck.run();
+      this.output = JSON.stringify(summary, null, 2);
+    } catch (e) {
+      this.output = '自检异常，请查看运行日志';
+    } finally {
+      this.running = false;
+    }
+  }
+
   build() {
     Scroll() {
       Column({ space: 16 }) {
@@ -56,6 +73,9 @@ struct Index {
         Button(this.running ? '执行中' : '运行')
           .enabled(!this.running)
           .onClick(() => { this.run(); })
+        Button('执行器自检 F08/F09')
+          .enabled(!this.running)
+          .onClick(() => { this.selfCheck(); })
         Text(this.supported).fontSize(14)
         if (this.requestId.length > 0) {
           Text(`请求：${this.requestId}`).fontSize(12).copyOption(CopyOptions.InApp)

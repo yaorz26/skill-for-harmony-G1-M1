@@ -1,0 +1,14 @@
+target: emulator 127.0.0.1:5555
+source: ab9691fda02a87c40cc162b166128b1a4d37aa46
+command: hdc list targets
+result:
+127.0.0.1:5555
+command: hdc -t 127.0.0.1:5555 shell param get const.ohos.apiversion
+26
+command: hdc -t 127.0.0.1:5555 shell param get const.ohos.fullname
+OpenHarmony-7.0.0.105
+command: hdc -t 127.0.0.1:5555 app install <fixed HAP>
+[Info]App install path:<fixed HAP> msg:install bundle successfully.
+AppMod finish
+command: hdc -t 127.0.0.1:5555 shell aa start -a EntryAbility -b com.g1m1.skillagent
+start ability successfully.

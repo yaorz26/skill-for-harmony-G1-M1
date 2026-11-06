@@ -1,0 +1,6 @@
+> hvigor [32mFinished :entry:default@CompileArkTS... after 38 s 372 ms [39m
+> hvigor [32mFinished :entry:default@PackageHap... after 1 s 211 ms [39m
+> hvigor WARN: No signingConfig found for product default
+> hvigor [32mFinished :entry:assembleHap... after 1 ms [39m
+> hvigor [32mBUILD SUCCESSFUL in 1 min 41 s 622 ms [39m
+34 tasks in total: 34 executed, 0 up-to-date

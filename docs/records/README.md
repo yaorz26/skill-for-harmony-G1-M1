@@ -13,5 +13,6 @@
 | 2026-11-05 | 唐欣卓（D）/ pourf | 接收 A/C 交付后的主机复核 | [D 合并复核](2026-11-05-D-upstream-review/report.md) | 结构、28 项共享核心、A 32 项、C 18 项与证据工具自测通过；设备路径仍未测 |
 | 2026-11-06 | C 李竞宇 | API 26 模拟器运行时验证 | [C 模拟器记录](2026-11-06-C-emulator/run-report.md) | 未签名 HAP 模拟器安装；F02–F07/F10 应用内路径通过（13 个输入变体，含 512/513 真 emoji 边界；模拟器非真机）；S01/S02 待真机 |
 | 2026-11-06 | C 李竞宇 | F08/F09 鸿蒙运行时自检 | [C 自检记录](2026-11-06-C-selfcheck/run-report.md) | 演示页自检入口注入测试替身，9/9 项通过（F08 一次 ERR_INTERNAL、F09 超时+迟到隔离）；与 Node 18 项结论一致 |
+| 2026-11-06 | 唐欣卓（D）/ pourf | A 集成版独立构建与模拟器验收 | [D 固定版本报告](2026-11-06-D-acceptance/report.md) | `ab9691f` 未签名 HAP 构建、模拟器安装/页面运行，F03–F06 与 F08/F09 通过；F07/F10 本版未复测，系统路径未测 |
 
-原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已包含 DevEco/Hvigor 未签名构建证据；尚无设备安装、应用运行、扩展组件、系统 Skill 或真机端到端的成功证据。
+原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已有 DevEco/Hvigor 未签名构建及 API 26 **模拟器**安装、应用内运行、自检证据；尚无真机签名安装、扩展组件真实回调、系统 Skill 或真机端到端的成功证据。

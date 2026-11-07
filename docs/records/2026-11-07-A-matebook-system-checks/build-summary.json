@@ -1,0 +1,12 @@
+{
+  "testedSourceCommit": "00cc4f0f9754df0eebfb23c9a7bc063dc775bcfc",
+  "signedBuild": "BUILD SUCCESSFUL in 9 s 529 ms; 33 tasks",
+  "hapSha256": "2AD7E5F79A152E53051892D148D942EA5E3F2CE30532A13633589EC9B1C800A5",
+  "hapBytes": 162906,
+  "installOutputFromToolTranscript": "install bundle successfully. / AppMod finish",
+  "startOutputFromToolTranscript": "start ability successfully.",
+  "sourceResourceFilesCompared": 25,
+  "sourceDifferences": [],
+  "signatureMaterial": "local only, excluded",
+  "installedBytesReadBack": false
+}

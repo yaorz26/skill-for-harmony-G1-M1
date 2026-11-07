@@ -1,0 +1,228 @@
+[
+  {
+    "case": "F03",
+    "input": "回显 你好，鸿蒙",
+    "inputUtf16Units": 8,
+    "inputSha256": "d23b98066c6b205ea34484c371aa4a9fe404e1f947e2d60d4ae49b03c08d0b58",
+    "result": {
+      "requestId": "ui-1794047626253-1",
+      "skillId": "g1-echo",
+      "status": "success",
+      "data": {
+        "text": "你好，鸿蒙"
+      },
+      "errCode": "",
+      "errMsg": "",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F04",
+    "input": "长度 你好ABC",
+    "inputUtf16Units": 8,
+    "inputSha256": "b3f8846b080956673a08b07e62f910d26a42c480dc0852c4f840e45f0c1bd059",
+    "result": {
+      "requestId": "ui-1794047638768-2",
+      "skillId": "g1-text-length",
+      "status": "success",
+      "data": {
+        "text": "你好ABC",
+        "length": 5,
+        "unit": "utf16-code-unit"
+      },
+      "errCode": "",
+      "errMsg": "",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F05",
+    "input": "长度 😀",
+    "inputUtf16Units": 5,
+    "inputSha256": "0631d408483361ca5149b033c2451c8b74409f5ad1b90deb0cd077f3b9412f60",
+    "result": {
+      "requestId": "ui-1794047651517-3",
+      "skillId": "g1-text-length",
+      "status": "success",
+      "data": {
+        "text": "😀",
+        "length": 2,
+        "unit": "utf16-code-unit"
+      },
+      "errCode": "",
+      "errMsg": "",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F06",
+    "input": "查天气",
+    "inputUtf16Units": 3,
+    "inputSha256": "80bac9307a14a512b828cd8d9623394145b777c1fff9429e8b0ac893fce83a2d",
+    "result": {
+      "requestId": "ui-1794047664018-4",
+      "skillId": "",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_NO_SKILL",
+      "errMsg": "支持：回显 文本；长度 文本",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-missing",
+    "input": "回显",
+    "inputUtf16Units": 2,
+    "inputSha256": "fa362c70d9555ade16d5af3f819e09a0dafa1be51a3a56653478675f7f1bd104",
+    "result": {
+      "requestId": "ui-1794047676710-5",
+      "skillId": "g1-echo",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_INVALID_PARAMS",
+      "errMsg": "文本长度应为 1–1024 个 UTF-16 码元",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-empty",
+    "input": "",
+    "inputUtf16Units": 0,
+    "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "result": {
+      "requestId": "ui-1794047688183-6",
+      "skillId": "",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_INVALID_PARAMS",
+      "errMsg": "requestId 和指令不能为空，指令最长 1100 个 UTF-16 码元",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-spaces",
+    "input": "     ",
+    "inputUtf16Units": 5,
+    "inputSha256": "7879981d4f226a8f0191d36730c07205d7a5ff1c780fca9b2f905f25264cf636",
+    "result": {
+      "requestId": "ui-1794047700007-7",
+      "skillId": "",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_INVALID_PARAMS",
+      "errMsg": "requestId 和指令不能为空，指令最长 1100 个 UTF-16 码元",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-arg1025",
+    "input": "回显 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "inputUtf16Units": 1028,
+    "inputSha256": "8d6e438a0a3c9876791b6d801c29bf6e9789b53b699980b17497a484c406141c",
+    "result": {
+      "requestId": "ui-1794047712727-8",
+      "skillId": "g1-echo",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_INVALID_PARAMS",
+      "errMsg": "文本长度应为 1–1024 个 UTF-16 码元",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-total1101",
+    "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "inputUtf16Units": 1101,
+    "inputSha256": "d31a7c0f7bc986fa34596f0c01cde1efdae48ecb9f78d5c620fcbe3253e24f3a",
+    "result": {
+      "requestId": "ui-1794047725865-9",
+      "skillId": "",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_INVALID_PARAMS",
+      "errMsg": "requestId 和指令不能为空，指令最长 1100 个 UTF-16 码元",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-emoji512",
+    "input": "长度 😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+    "inputUtf16Units": 1027,
+    "inputSha256": "4483dfb8588e04169acc7f1b54ed76bedae9dbdd2b84befa06999c605a8e8849",
+    "result": {
+      "requestId": "ui-1794047738857-10",
+      "skillId": "g1-text-length",
+      "status": "success",
+      "data": {
+        "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+        "length": 1024,
+        "unit": "utf16-code-unit"
+      },
+      "errCode": "",
+      "errMsg": "",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F07-emoji513",
+    "input": "长度 😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+    "inputUtf16Units": 1029,
+    "inputSha256": "de1477f09825457759aea53405437c230fc300a9cbec4e3c582c04d8d69a663a",
+    "result": {
+      "requestId": "ui-1794047751714-11",
+      "skillId": "g1-text-length",
+      "status": "failed",
+      "data": {},
+      "errCode": "ERR_INVALID_PARAMS",
+      "errMsg": "文本长度应为 1–1024 个 UTF-16 码元",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F10-first",
+    "input": "回显 first",
+    "inputUtf16Units": 8,
+    "inputSha256": "710e8f2d405b9032c47f231591970617d7776af1b486a5ecb013b245c68c3afb",
+    "result": {
+      "requestId": "ui-1794047764128-12",
+      "skillId": "g1-echo",
+      "status": "success",
+      "data": {
+        "text": "first"
+      },
+      "errCode": "",
+      "errMsg": "",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  },
+  {
+    "case": "F10-second",
+    "input": "回显 second",
+    "inputUtf16Units": 9,
+    "inputSha256": "00a2531789e93cb00c7254c5756294b4f35b567cd5fdf6b720420141262c74d3",
+    "result": {
+      "requestId": "ui-1794047777081-13",
+      "skillId": "g1-echo",
+      "status": "success",
+      "data": {
+        "text": "second"
+      },
+      "errCode": "",
+      "errMsg": "",
+      "executionPath": "in-app"
+    },
+    "passed": true
+  }
+]

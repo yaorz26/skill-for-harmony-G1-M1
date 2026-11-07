@@ -1,0 +1,148 @@
+{
+  "F07-noarg": {
+    "inputUtf16Length": 2,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958066820-1",
+    "skillId": "g1-echo",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_INVALID_PARAMS",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ]
+  },
+  "F07-empty": {
+    "inputUtf16Length": 0,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958192725-2",
+    "skillId": "",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_INVALID_PARAMS",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "response_returned"
+    ]
+  },
+  "F07-1025": {
+    "inputUtf16Length": 1028,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958406663-5",
+    "skillId": "g1-echo",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_INVALID_PARAMS",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ]
+  },
+  "F07-1101": {
+    "inputUtf16Length": 1101,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958462150-6",
+    "skillId": "",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_INVALID_PARAMS",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "response_returned"
+    ]
+  },
+  "F07-spaces": {
+    "inputUtf16Length": 5,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958518554-7",
+    "skillId": "",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_INVALID_PARAMS",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "response_returned"
+    ]
+  },
+  "F07-512": {
+    "inputUtf16Length": 1027,
+    "inputEmojiCount": 512,
+    "requestId": "ui-1793959229387-8",
+    "skillId": "g1-text-length",
+    "status": "success",
+    "data": {
+      "textEmojiCount": 512,
+      "length": 1024,
+      "unit": "utf16-code-unit"
+    },
+    "errCode": "",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ]
+  },
+  "F07-513": {
+    "inputUtf16Length": 1029,
+    "inputEmojiCount": 513,
+    "requestId": "ui-1793971711830-9",
+    "skillId": "g1-text-length",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_INVALID_PARAMS",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ]
+  },
+  "F10-first": {
+    "inputUtf16Length": 8,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958242826-3",
+    "skillId": "g1-echo",
+    "status": "success",
+    "data": {
+      "text": "first"
+    },
+    "errCode": "",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ]
+  },
+  "F10-second": {
+    "inputUtf16Length": 9,
+    "inputEmojiCount": 0,
+    "requestId": "ui-1793958293219-4",
+    "skillId": "g1-echo",
+    "status": "success",
+    "data": {
+      "text": "second"
+    },
+    "errCode": "",
+    "executionPath": "in-app",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ]
+  }
+}

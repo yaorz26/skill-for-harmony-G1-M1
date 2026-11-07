@@ -1,0 +1,86 @@
+{
+  "sourceCommit": "ab9691fda02a87c40cc162b166128b1a4d37aa46",
+  "signedHapSha256": "AE81F666F362D7176E8390296F749EF178C6D5C0DE59B18D99FED40006DF8B20",
+  "files": [
+    {
+      "path": "report.md",
+      "bytes": 3557,
+      "sha256": "c19e47bb481631b38f916e8c214c3379340562a72b8d1f34232dc1f19f04ba99"
+    },
+    {
+      "path": "results.json",
+      "bytes": 6653,
+      "sha256": "5012e5a15ec4b55f197cde7d3504f42a5021806754acc05bb0edd67bc9e7d57d"
+    },
+    {
+      "path": "selfcheck-summary.json",
+      "bytes": 1484,
+      "sha256": "098158345753a7093e12f5ac61bbbb5e848709cf06dc4b6f07305814f7f85735"
+    },
+    {
+      "path": "traces/F05.txt",
+      "bytes": 1130,
+      "sha256": "a205f7e744501a17f4e77534a767dc31490465c09f33a594e1f1ade2f8f842b7"
+    },
+    {
+      "path": "traces/F06.txt",
+      "bytes": 671,
+      "sha256": "a3c64fb2475a8ab90c94711188136026449401ac439840df45f6ccad17a2696f"
+    },
+    {
+      "path": "traces/F07-1025.txt",
+      "bytes": 679,
+      "sha256": "77e2424e0eace8df5477037f43dedf6a0c0e18874a37f22971f369fb1491ae58"
+    },
+    {
+      "path": "traces/F07-1101.txt",
+      "bytes": 451,
+      "sha256": "a4481cb743511875d23756601cff407e959ccd3ebfd033753336380f2d518280"
+    },
+    {
+      "path": "traces/F07-512.txt",
+      "bytes": 1130,
+      "sha256": "946c6e59edf030e3d73fa4d52a4808699d59139f946d2a42ca8aa7e8919c557a"
+    },
+    {
+      "path": "traces/F07-513.txt",
+      "bytes": 693,
+      "sha256": "88a08714dafd6f3de93564cd8117be30e3b5722a3b49f4d707daa9d4de18cecf"
+    },
+    {
+      "path": "traces/F07-empty.txt",
+      "bytes": 451,
+      "sha256": "9f647731934065e0e8999d45cc07621796b14bd3b882769af6171ef7e6867e12"
+    },
+    {
+      "path": "traces/F07-noarg.txt",
+      "bytes": 679,
+      "sha256": "9b99d7ab0df34add2978b077a267b535aae5d6d548e37221b16bdd55746a878a"
+    },
+    {
+      "path": "traces/F07-spaces.txt",
+      "bytes": 451,
+      "sha256": "e5437a84c6fd3beb709caa53749c4587d34210f2105d1de18e06f0da936ecbf1"
+    },
+    {
+      "path": "traces/F08-F09.txt",
+      "bytes": 1901,
+      "sha256": "e8f0da1c20c0ec90e20b47b1b4868d4e15fdefe15784188b0de77dad8aa86199"
+    },
+    {
+      "path": "traces/F10-first.txt",
+      "bytes": 1102,
+      "sha256": "8d7dfc425578c9fe4d2ad7590cccd9c28b498c7fd5a9500c21fd1175909c37c3"
+    },
+    {
+      "path": "traces/F10-second.txt",
+      "bytes": 1102,
+      "sha256": "53e108905b0f17eb5a3a2be4d9be5bc5467cba565299e195e90901e2651ff53d"
+    },
+    {
+      "path": "ui-captures.json",
+      "bytes": 12490,
+      "sha256": "b910964e946a2bea054f045654375d43d65654bfec2073f7003c9d6a99e04af0"
+    }
+  ]
+}

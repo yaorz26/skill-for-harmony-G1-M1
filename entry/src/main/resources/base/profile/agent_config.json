@@ -29,7 +29,7 @@
         "bundleName": "com.g1m1.skillagent",
         "moduleName": "entry",
         "abilityName": "AgentExtensionAbility",
-        "deviceTypes": ["phone", "tablet"]
+        "deviceTypes": ["phone", "tablet", "2in1"]
       }
     }
   ]

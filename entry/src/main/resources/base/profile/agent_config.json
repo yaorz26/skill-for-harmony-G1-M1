@@ -9,14 +9,14 @@
       "defaultOutputModes": ["application/json"],
       "skills": [
         {
-          "id": "g1-echo",
+          "id": "yaorz26-g1m1-echo-20261107",
           "name": "回显",
           "description": "原样返回输入文本。",
           "tags": ["回显", "echo"],
           "examples": ["回显 你好，鸿蒙"]
         },
         {
-          "id": "g1-text-length",
+          "id": "yaorz26-g1m1-text-length-20261107",
           "name": "文本长度",
           "description": "计算文本的 UTF-16 码元长度。",
           "tags": ["长度", "字数", "length"],

@@ -42,16 +42,16 @@
     ],
     "skillProfiles": [
       {
-        "name": "g1-echo",
+        "name": "yaorz26-g1m1-echo-20261107",
         "abilityName": "EntryAbility",
         "version": "1.0.0",
-        "srcEntries": ["../../skills/g1-echo/scripts/EchoSkill.ets"]
+        "srcEntries": ["../../skills/yaorz26-g1m1-echo-20261107/scripts/EchoSkill.ets"]
       },
       {
-        "name": "g1-text-length",
+        "name": "yaorz26-g1m1-text-length-20261107",
         "abilityName": "EntryAbility",
         "version": "1.0.0",
-        "srcEntries": ["../../skills/g1-text-length/scripts/TextLengthSkill.ets"]
+        "srcEntries": ["../../skills/yaorz26-g1m1-text-length-20261107/scripts/TextLengthSkill.ets"]
       }
     ]
   }

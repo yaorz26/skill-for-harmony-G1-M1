@@ -60,12 +60,12 @@ Get-FileHash -Algorithm SHA256 -LiteralPath '<A提供的HAP绝对路径>'
 
 ## 5. 系统、组件和端到端
 
-S01 与 S02 正常路径的小艺真机调用已有[复测记录](records/2026-11-07-D-system-skill/report.md)；S02 无效参数分支未取得系统入口证据。其他华为设备的复现步骤见[换设备手册](system-skill-device-runbook.md)。下表列出完整验收条件。
+S01 与 S02 本轮正常调用范围的小艺真机验收已有[复测记录](records/2026-11-07-D-system-skill/report.md)。原拟覆盖的 S02 无效参数分支未取得系统入口证据，按本轮决定不补测、不计入收口条件；不能写成该分支已通过。其他华为设备的复现步骤见[换设备手册](system-skill-device-runbook.md)。
 
 | ID | 前置材料与步骤 | 通过条件 / 证据 |
 | --- | --- | --- |
 | S01 | A/C 提供已注册的 HAP、平台导入与测试资格、受支持系统调用方；按其已验证入口分别发出回显/长度请求 | 系统侧匹配/调度记录指向 g1-echo 或 g1-text-length；仅展示 SKILL.md 不算发现成功 |
-| S02 | 以 S01 匹配结果真实触发两个入口；分别使用正常文本和官方测试入口允许的无效参数 | requestCode 对应 system_skill_entered、业务结果、system_result_reported 和系统最终回复；上报失败必须保留 system_report_failed/ERR_REPORT_FAILED，不标成功 |
+| S02 | 以 S01 匹配结果用正常文本真实触发两个入口；无效参数分支为本轮范围外的扩展测试 | requestCode 对应 system_skill_entered、业务结果、system_result_reported 和系统最终回复；上报失败必须保留 system_report_failed/ERR_REPORT_FAILED，不标成功 |
 | A01 | A 提供 AgentExtensionAbility、实际调用方、权限和连接步骤；按步骤连接并发送固定请求 | 真实连接/接收/断开回调与调用方证据；页面 aa start 不代替组件回调 |
 | A02 | C 提供主动调用 API/权限/目标可见性/适配器，A 完成注入和配置；从自建 Agent 发起固定请求 | 发起调用点、目标 Skill、真实执行、返回通道可关联；测试替身不能通过 |
 | A03 | A/B/C 明确外部入口的重复 requestId 策略；提交两个不同 ID 的并发请求，再提交重复 ID | 不串包；重复行为符合交接策略；未规定策略时记录阻断，不擅自要求幂等 |

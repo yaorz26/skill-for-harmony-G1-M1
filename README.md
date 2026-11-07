@@ -58,6 +58,6 @@ node tools/check-core.mjs
 
 [小艺平台复核](docs/records/2026-11-07-D-platform/report.md)已确认当前账号导入两个 Skill，创建含当前账号的真机测试组及关联应用 APP ID，并把两项 Skill 发布给该组。发布后的真机回复已有变化，但长度结果错误且没有系统脚本入口/上报证据，S01/S02 尚不能改判通过。
 
-后续在小艺“Skill真机测试中”入口重新执行并留存[系统 Skill 真机证据](docs/records/2026-11-07-D-system-skill/report.md)：`g1-echo`、`g1-text-length` 均有小艺调度、对应 ArkTS 入口、`system_skill_entered`、业务结果、`system_result_reported` 及最终回复。**S01 和 S02 的正常调用路径通过；S02 无效参数分支仍未取得系统入口证据。**此前段落反映初测时点；A02 自建 Agent 主动调用和 E01 完整目标路径仍未通过。
+后续在小艺“Skill真机测试中”入口重新执行并留存[系统 Skill 真机证据](docs/records/2026-11-07-D-system-skill/report.md)：`g1-echo`、`g1-text-length` 均有小艺调度、对应 ArkTS 入口、`system_skill_entered`、业务结果、`system_result_reported` 及最终回复。**S01、S02 按本轮正常调用范围已验证。**S02 无效参数分支没有取得系统入口证据，按本轮决定不补测、不计入收口条件；此前段落反映初测时点。A02 自建 Agent 主动调用和 E01 完整目标路径仍未通过。
 
 其他成员使用不同华为手机复测时，按[系统 Skill 换设备手册](docs/system-skill-device-runbook.md)核对设备版本、测试组、签名 HAP、快捷入口和同一请求的系统日志。

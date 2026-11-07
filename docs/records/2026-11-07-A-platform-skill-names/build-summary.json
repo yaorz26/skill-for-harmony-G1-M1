@@ -1,0 +1,19 @@
+{
+  "sourceCommit": "85c34c3eedd665113f8db75c2613394a23821df1",
+  "platformNames": [
+    "yaorz26-g1m1-echo-20261107",
+    "yaorz26-g1m1-text-length-20261107"
+  ],
+  "internalBusinessIds": [
+    "g1-echo",
+    "g1-text-length"
+  ],
+  "hapBytes": 162862,
+  "hapSha256": "23F79E98FC28A5544244A3C402608021F889DDCF0845363294600EA42BB811DD",
+  "signedBuild": "BUILD SUCCESSFUL in 7 s 109 ms",
+  "checks": "Structure passed; 28 core checks and 32 A checks passed; packaged registration, frontmatter and CLI names agree",
+  "comparedSourceFiles": 25,
+  "sourceDifferences": [],
+  "platformImportRetested": false,
+  "deviceRuntimeRetested": false
+}

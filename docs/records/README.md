@@ -22,5 +22,6 @@
 | 2026-11-07 | 唐欣卓（D）/ pourf | Pura 70 真机 F05–F10 补测 | [D 真机补测报告](2026-11-07-D-device-followup/report.md) | 同一签名 HAP 上 F05/F06、F07 七种边界、F08/F09 九项自检和 F10 两笔请求均按预期；结果、requestId 日志及哈希清单留证，系统路径未测 |
 | 2026-11-07 | 唐欣卓（D）/ pourf | Pura 70 小艺 Skill 发现尝试 | [D 小艺发现记录](2026-11-07-D-xiaoyi-discovery/report.md) | 小艺点名 `g1-echo` / `g1-text-length` 均回复未找到；S01 当前未通过、原因待核，S02 未触发 |
 | 2026-11-07 | 唐欣卓（D）/ pourf | 小艺平台导入、发布与真机复测 | [D 平台复核](2026-11-07-D-platform/report.md) | 两项 Skill 导入、APP ID、测试组、发布完成；小艺回显符合预期但长度结果错误，系统入口与上报未留证，S01/S02 未通过 |
+| 2026-11-07 | 唐欣卓（D）/ pourf | 小艺系统 Skill 真机验收 | [D 系统 Skill 复测](2026-11-07-D-system-skill/report.md) | 在“Skill真机测试中”入口，回显与长度的正常调用均有系统匹配/调度、对应 ArkTS 脚本入口、同 requestId 上报、业务结果与最终回复；S01 通过，S02 正常路径通过、无效参数分支未验证 |
 
-原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已有 DevEco/Hvigor 构建、API 26 **模拟器**运行，以及 Pura 70 调试签名、F02 安装/操作和 F03–F10 应用内/自检证据；尚无扩展组件真实回调、系统 Skill 或真机端到端的成功证据。
+原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已有 DevEco/Hvigor 构建、API 26 **模拟器**运行，以及 Pura 70 调试签名、F02 安装/操作、F03–F10 应用内/自检和 S01/S02 正常路径的小艺系统 Skill 真机证据；S02 无效参数分支未验证，尚无扩展组件真实回调、自建 Agent 主动系统 Skill 调用或 E01 完整目标路径的成功证据。

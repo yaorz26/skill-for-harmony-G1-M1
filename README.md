@@ -57,3 +57,7 @@ node tools/check-core.mjs
 上段保留了早期阶段的验证口径；后续固定源码 `ab9691f` 已完成 [DevEco IDE 同步](docs/records/2026-11-06-D-ide-sync/report.md)、调试签名构建及 [Pura 70 安装/操作与 F03/F04](docs/records/2026-11-06-D-signed-device/report.md)。F05–F10 的真机**应用内/自检**结果见[补测记录](docs/records/2026-11-07-D-device-followup/report.md)。[小艺真机尝试](docs/records/2026-11-07-D-xiaoyi-discovery/report.md)中，两个目标 Skill 均未被找到，S01 当前未通过、S02 未触发。真实外部 Agent 回调、主动系统 Skill 调用及完整端到端路径仍未验收；本机与 CI 的结构/逻辑检查不能代替这些路径。
 
 [小艺平台复核](docs/records/2026-11-07-D-platform/report.md)已确认当前账号导入两个 Skill，创建含当前账号的真机测试组及关联应用 APP ID，并把两项 Skill 发布给该组。发布后的真机回复已有变化，但长度结果错误且没有系统脚本入口/上报证据，S01/S02 尚不能改判通过。
+
+后续在小艺“Skill真机测试中”入口重新执行并留存[系统 Skill 真机证据](docs/records/2026-11-07-D-system-skill/report.md)：`g1-echo`、`g1-text-length` 均有小艺调度、对应 ArkTS 入口、`system_skill_entered`、业务结果、`system_result_reported` 及最终回复。**S01 和 S02 的正常调用路径通过；S02 无效参数分支仍未取得系统入口证据。**此前段落反映初测时点；A02 自建 Agent 主动调用和 E01 完整目标路径仍未通过。
+
+其他成员使用不同华为手机复测时，按[系统 Skill 换设备手册](docs/system-skill-device-runbook.md)核对设备版本、测试组、签名 HAP、快捷入口和同一请求的系统日志。

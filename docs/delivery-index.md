@@ -7,7 +7,7 @@
 | 材料 | 入口 | 用途 |
 | --- | --- | --- |
 | 本机检查与证据采集 | [工具说明](../tools/README.md) | 一次执行结构、逻辑、采集工具自测，保存版本/哈希/退出码/日志 |
-| 实际基线与工具验证 | [D 初始报告](records/2026-11-04-D-preparation/report.md)、[合并 A/C 后复核](records/2026-11-05-D-upstream-review/report.md)、[当前模拟器验收](records/2026-11-06-D-acceptance/report.md)、[F07/F10 补测](records/2026-11-06-D-followup/report.md)、[IDE 同步](records/2026-11-06-D-ide-sync/report.md)、[真机签名安装](records/2026-11-06-D-signed-device/report.md)、[真机 F05–F10](records/2026-11-07-D-device-followup/report.md) | 分别对应固定源码版本的实测结果、限制与复现方法；`ab9691f` 已覆盖 F01 同步与签名构建、F02–F10 真机应用内/自检路径 |
+| 实际基线与工具验证 | [D 初始报告](records/2026-11-04-D-preparation/report.md)、[合并 A/C 后复核](records/2026-11-05-D-upstream-review/report.md)、[当前模拟器验收](records/2026-11-06-D-acceptance/report.md)、[F07/F10 补测](records/2026-11-06-D-followup/report.md)、[IDE 同步](records/2026-11-06-D-ide-sync/report.md)、[真机签名安装](records/2026-11-06-D-signed-device/report.md)、[真机 F05–F10](records/2026-11-07-D-device-followup/report.md)、[小艺系统 Skill 真机](records/2026-11-07-D-system-skill/report.md) | 分别对应固定源码版本的实测结果、限制与复现方法；`ab9691f` 已覆盖 F01 同步与签名构建、F02–F10 真机应用内/自检以及 S01/S02 小艺系统正常路径 |
 | 逐项验收操作 | [执行手册](acceptance-runbook.md)、[验收表](acceptance.md) | 覆盖 F/S/A/E 所有用例，区分纯逻辑和设备结果 |
 | 构建与运行 | [运行指南](build-and-run.md) | 全英文工程路径、SDK、签名、运行与日志 |
 | 架构与阶段流程 | [流程图](architecture.md) | 当前路径、系统入口源码预期、目标路径及验收门槛 |
@@ -21,7 +21,7 @@
 
 | 尚未完成项 | 接手条件 | 提供方 | D 接到后的动作 |
 | --- | --- | --- | --- |
-| S01/S02 系统 Skill 发现/执行/上报 | [平台复核与发布后真机测试](records/2026-11-07-D-platform/report.md)已完成两项导入、APP ID、含当前账号的测试组及真机测试发布；回显回复符合预期，长度回复错误，仍无系统脚本入口/上报证据 | 平台方/负责 Skill 的同学协助定位小艺调度与脚本执行；若发现工程问题，再由 A/C 修复 | 补系统匹配、入口和结果关联证据并重测；当前 S01/S02 均未通过 |
+| S02 无效参数分支 | [小艺真机复测](records/2026-11-07-D-system-skill/report.md)已证明两项正常路径，但 513 个 emoji 的错误参数请求未进入目标脚本；需平台提供可向脚本传入无效参数的正式测试入口 | 平台方/负责测试入口的同学 | 取得 `ERR_INVALID_PARAMS` 的脚本入口、上报及最终回复证据；此前不标完整 S02 通过 |
 | A01 扩展组件 | A 的源码、注册及本地替身自测已交付；仍需设备、受支持调用方和认证条件 | A | 验证真实生命周期与请求回调 |
 | A02 自建 Agent 调用 | C 的公共 API 26 调研未找到应用发起 Skill 的接口，真实适配器未交付 | A/C 或平台方 | 有可验证接口及装配后再校验真实调用与返回；当前标阻断 |
 | A03 外部并发/重复 | A 已定义本地桥接策略；仍需真实外部调用方、设备与固定版本 | A/B/C | 验证真实回调与并发/重复行为 |
@@ -29,7 +29,7 @@
 | 真机排期落实 | Pura 70 的 API 26、HDC 连接和本机调试签名安装已确认；系统调用方材料和实际实验时段仍待确认 | 组员/实验组 | 更新真实预约与交接，不把建议时段当已预约 |
 | GitHub 检查/PR | [D 的 PR #13](https://github.com/yaorz26/skill-for-harmony-G1-M1/pull/13)已合入 `main`，该轮两项检查通过 | D/仓库管理员 | 本轮已收口；后续新改动须单独检查，不能沿用 PR #13 的结果 |
 
-F01 IDE/签名构建、F02 真机安装/操作和 F03–F10 真机应用内/自检已留证；S01/S02 的平台发布前置条件已补齐，但发布后真机回复尚不能证明系统匹配，长度结果错误，系统路径未通过。其他真实系统/外部路径仍未测或阻断。D 的应用内结果不代表项目真实系统调用目标完成。[C 原始证据包的行尾哈希问题](records/2026-11-06-D-acceptance/manifest-issue.md)已由 C 补充 Git LF 检出形态的清单：[模拟器](records/2026-11-06-C-emulator/manifest-lf.txt)、[自检](records/2026-11-06-C-selfcheck/manifest-lf.txt)及[F05 补测](records/2026-11-06-C-f05-align/manifest-lf.txt)；D 已复核三份清单共 34 项哈希匹配。原始 CRLF 清单继续保留作实验时文件哈希。
+F01 IDE/签名构建、F02 真机安装/操作、F03–F10 真机应用内/自检以及[S01/S02 小艺系统 Skill 正常路径](records/2026-11-07-D-system-skill/report.md)已留证；S01 通过，S02 无效参数分支待验证。A02 自建 Agent 主动调用、A01/A03 外部真实回调与 E01 完整目标路径仍未测或阻断；小艺调度成功不代替这些验收。[C 原始证据包的行尾哈希问题](records/2026-11-06-D-acceptance/manifest-issue.md)已由 C 补充 Git LF 检出形态的清单：[模拟器](records/2026-11-06-C-emulator/manifest-lf.txt)、[自检](records/2026-11-06-C-selfcheck/manifest-lf.txt)及[F05 补测](records/2026-11-06-C-f05-align/manifest-lf.txt)；D 已复核三份清单共 34 项哈希匹配。原始 CRLF 清单继续保留作实验时文件哈希。
 
 ## 给任务二 C3 的交接目录
 

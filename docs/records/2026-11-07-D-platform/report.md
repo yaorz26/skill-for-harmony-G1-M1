@@ -25,4 +25,6 @@
 
 **S01/S02：**平台导入、测试组和真机测试发布已完成，发布后的回复与此前不同；但缺少明确的系统匹配证据，S01 仍未验收通过。长度用例返回错误且无目标脚本/上报证据，S02 未通过。A02 公共调用接口阻断不受此操作影响。
 
+后续在小艺主对话确认“Skill真机测试中”入口，并使用新输入取得系统调度、脚本执行和上报日志；S01/S02 的最新判定见[专项复测](../2026-11-07-D-system-skill/report.md)。以上为本轮初测的历史结论。
+
 操作入口：[Skill 列表](https://developer.huawei.com/consumer/cn/hag/hagindex.html#/agentHome/workSpace/skillList)、[真机测试管理](https://developer.huawei.com/consumer/cn/hag/hagindex.html#/console-web/pub-management/userList)。平台操作所见为当前账号状态，不能推断其他团队账号或手机侧资格。

@@ -45,6 +45,8 @@ Windows 已安装完整 DevEco 时，也可使用 [build-hap.ps1](../tools/build
 
 ## 4. 系统应用 Skill 验证（独立步骤）
 
+换一部华为手机复现 S01/S02 时，按[系统 Skill 真机复测手册](system-skill-device-runbook.md)逐项检查设备、账号、签名、测试组、快捷入口和日志；本机成功报告见[专项记录](records/2026-11-07-D-system-skill/report.md)。
+
 1. A/C 先确认当前工程两份 `skillProfiles` 注册能构建，Skill 名称/目录/声明/入口方法一致。
 2. 根据官方当前支持的流程完成 HAP 导入和真机测试，记录支持的调用方、设备、账号条件与实际输入。[导入 Skill](https://developer.huawei.com/consumer/cn/doc/service/import-skill-0000002592931542)、[真机测试](https://developer.huawei.com/consumer/cn/doc/service/skill-real-machine-testing-0000002592771628)
 3. 保存系统选择目标 Skill 的证据、`system_skill_entered`、业务结果、`system_result_reported` 和最终返回。

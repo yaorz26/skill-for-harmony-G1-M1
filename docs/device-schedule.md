@@ -7,7 +7,7 @@ D 与任务二实验组协调同一设备排期。下表区分已执行的真机
 | 2026-11-06～07（已执行） | D | Pura 70 / API 26 | F01–F10 构建、安装及应用内/自检验收 | 调试签名 HAP、HDC 连接 | [D 记录索引](records/README.md) | 已执行；不代表系统 Skill 通过 |
 | 2026-11-07（已执行） | D | Pura 70 / API 26 | S01 小艺发现尝试 | 已安装 Demo；平台测试资格未核实 | [小艺记录](records/2026-11-07-D-xiaoyi-discovery/report.md) | 两个 Skill 未被找到；S02 未触发 |
 | 2026-11-07（已执行） | D | Pura 70 / API 26 | S01/S02 发布后复测 | [平台复核](records/2026-11-07-D-platform/report.md)完成导入、APP ID、测试组及发布 | [平台记录](records/2026-11-07-D-platform/report.md) | 回显符合预期、长度结果错误；系统匹配/入口/上报未留证 |
-| 待安排 | 平台方 + D | Pura 70 / API 26 | S01/S02 系统路径排障及复测 | 核对小艺调度与脚本执行，取得可关联日志 | D | 未预约 |
+| 2026-11-07（已执行） | D | Pura 70 / API 26 | S01/S02 小艺系统路径复测 | 小艺“Skill真机测试中”快捷入口已出现，选择后发送两项正常请求及一项无效参数尝试 | [系统 Skill 记录](records/2026-11-07-D-system-skill/report.md) | 两项正常请求均有调度、脚本入口、上报、业务结果及最终回复；S01 通过，S02 无效参数分支未取得系统证据 |
 | 待安排 | A + D | Pura 70 / API 26 | A01/A03 外部组件入口 | 受支持调用方、连接及认证条件 | D | 未预约 |
 | 待安排 | A/C + D | Pura 70 / API 26 | A02/E01 联调、补测、录屏 | 先确认受支持的主动调用接口并装配固定版本 | 实验组 | A02 接口阻断，未预约 |
 
@@ -20,10 +20,10 @@ D 与任务二实验组协调同一设备排期。下表区分已执行的真机
 | 资源 | 已知事实 | 可承担的工作 | 状态 |
 | --- | --- | --- | --- |
 | 唐欣卓的 Windows 开发电脑 | DevEco 26 已安装，Node/Hvigor 可使用 | 本机检查、英文副本构建、整理证据 | 可用 |
-| 唐欣卓的 HUAWEI Pura 70 | 持有人确认已从原 HarmonyOS 4.2.0 升级；2026-11-06 [USB/HDC 预检](records/2026-11-06-D-usb-probe/report.md)读取 API 26、OpenHarmony 7.0.0.111，USB 状态 Connected；[调试签名安装与操作](records/2026-11-06-D-signed-device/report.md)成功；2026-11-07 [F05–F10 真机补测](records/2026-11-07-D-device-followup/report.md)与[小艺发现尝试](records/2026-11-07-D-xiaoyi-discovery/report.md)已执行 | 应用内/自检真机路径已逐项留证；系统发现需平台条件核实 | F02 真机安装/操作、F03–F10 真机应用内/自检已留证；S01 当前未发现，S02 阻断 |
+| 唐欣卓的 HUAWEI Pura 70 | 持有人确认已从原 HarmonyOS 4.2.0 升级；2026-11-06 [USB/HDC 预检](records/2026-11-06-D-usb-probe/report.md)读取 API 26、OpenHarmony 7.0.0.111，USB 状态 Connected；[调试签名安装与操作](records/2026-11-06-D-signed-device/report.md)成功；2026-11-07 [F05–F10 真机补测](records/2026-11-07-D-device-followup/report.md)与[小艺系统 Skill 复测](records/2026-11-07-D-system-skill/report.md)已执行 | 应用内/自检及小艺系统 Skill 正常路径已留证 | F02、F03–F10、S01 通过；S02 正常路径通过、无效参数分支未验证；A02 等外部路径另行验收 |
 | API 26 模拟器 | 本机 `Mate 90 Pro PHONE_api26`，API 26、OpenHarmony 7.0.0.105；[D 的 `ab9691f` 运行报告](records/2026-11-06-D-acceptance/report.md)已保存 | A 集成版的应用内与自检预检；不能替代系统 Skill 真机验收 | 已运行；不是预约真机 |
-| 系统 Skill 真机 | Pura 70 已达到 API 26，HDC 连接且调试签名 HAP 可安装；[平台复核](records/2026-11-07-D-platform/report.md)完成导入、APP ID、测试组及发布；小艺发布后回显符合预期、长度回复错误，未见目标脚本入口/上报 | S01/S02/A01–A03/E01 | 设备与平台发布条件具备；系统执行路径未通过 |
+| 系统 Skill 真机 | Pura 70 达到 API 26；[平台复核](records/2026-11-07-D-platform/report.md)完成导入、APP ID、测试组及发布；[专项复测](records/2026-11-07-D-system-skill/report.md)在小艺快捷入口取得正常调用与结果关联日志 | S01/S02；A01–A03/E01 需各自调用方 | S01 通过；S02 正常路径通过、无效参数分支未验证；自建 Agent 与外部组件路径未通过 |
 
-后续系统与外部组件复测时段尚未确认。平台资格、调用方及接口条件明确后，再填写真实预约时段、用例与下一接收人；不把已完成的临时真机实验写成未来预约。无需把原始序列号写入共享表。
+后续自建 Agent 与外部组件复测时段尚未确认。调用方及接口条件明确后，再填写真实预约时段、用例与下一接收人；不把已完成的临时真机实验写成未来预约。无需把原始序列号写入共享表。
 
 预约前发给持有人的材料：目标 API 26、具体用例、预计时长、签名 HAP 是否就绪、需要的系统调用方/账号资格、日志采集方式。D 收到确认后补记录；没有确认就保持“未预约”。

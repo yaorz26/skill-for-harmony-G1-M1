@@ -1,0 +1,22 @@
+{
+  "bundleName": "com.g1m1.skillagent",
+  "registeredModules": [
+    {
+      "name": "entry",
+      "moduleName": "entry",
+      "deviceTypes": [
+        "phone",
+        "tablet",
+        "2in1"
+      ],
+      "mainElementName": "EntryAbility",
+      "mainAbility": "EntryAbility",
+      "extensionAbilities": [
+        {
+          "name": "AgentExtensionAbility",
+          "type": 37
+        }
+      ]
+    }
+  ]
+}

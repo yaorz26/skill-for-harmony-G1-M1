@@ -1,0 +1,20 @@
+{
+  "case": "F04",
+  "bundleName": "com.g1m1.skillagent",
+  "input": [
+    "长度 你好ABC"
+  ],
+  "result": {
+    "requestId": "ui-1794045075216-2",
+    "skillId": "g1-text-length",
+    "status": "success",
+    "data": {
+      "text": "你好ABC",
+      "length": 5,
+      "unit": "utf16-code-unit"
+    },
+    "errCode": "",
+    "errMsg": "",
+    "executionPath": "in-app"
+  }
+}

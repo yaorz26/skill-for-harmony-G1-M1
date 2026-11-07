@@ -1,0 +1,18 @@
+{
+  "case": "F03",
+  "bundleName": "com.g1m1.skillagent",
+  "input": [
+    "回显 你好，鸿蒙"
+  ],
+  "result": {
+    "requestId": "ui-1794045067761-1",
+    "skillId": "g1-echo",
+    "status": "success",
+    "data": {
+      "text": "你好，鸿蒙"
+    },
+    "errCode": "",
+    "errMsg": "",
+    "executionPath": "in-app"
+  }
+}

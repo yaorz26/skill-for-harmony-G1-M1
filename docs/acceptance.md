@@ -16,8 +16,8 @@ D 先独立准备验收步骤，收到 A 装配后的固定版本再组织整体
 | F08 | 注入抛错 SkillInvoker | ERR_INTERNAL，只有一次返回 | C/D | [D 在 `ab9691f` API 26 模拟器](records/2026-11-06-D-acceptance/report.md)及[Pura 70 真机](records/2026-11-07-D-device-followup/report.md)通过自检替身验证；非正式业务或系统调用 |
 | F09 | 注入超过 timeout 的异步适配器；迟到返回 | ERR_TIMEOUT；迟到结果不再次回包 | C/D | [D 在 `ab9691f` API 26 模拟器](records/2026-11-06-D-acceptance/report.md)及[Pura 70 真机](records/2026-11-07-D-device-followup/report.md)通过自检替身验证；非正式业务或系统调用 |
 | F10 | 连续运行两次并核对 requestId | 不同请求不串结果，链路可关联 | B/D | [D 在 `ab9691f` API 26 模拟器](records/2026-11-06-D-followup/report.md)及[Pura 70 真机](records/2026-11-07-D-device-followup/report.md)顺序执行 `回显 first` / `回显 second`，不同 ID、结果与各自日志对应；应用内路径通过 |
-| S01 | 系统发现/匹配两个目标 Skill | 匹配证据指向正确名称 | A/C/D | [Pura 70 小艺发现尝试](records/2026-11-07-D-xiaoyi-discovery/report.md)：点名两个 Skill 均回复“没找到”；当前未通过，平台导入/测试资格/发布状态待核实，原因未定 |
-| S02 | 系统执行入口并返回 | system_skill_entered、业务结果、上报及最终回复证据完整 | C/D | [同轮测试](records/2026-11-07-D-xiaoyi-discovery/report.md)未产生 S01 匹配，脚本入口及上报未触发；阻断待复测 |
+| S01 | 系统发现/匹配两个目标 Skill | 匹配证据指向正确名称 | A/C/D | [平台复核与发布后复测](records/2026-11-07-D-platform/report.md)已完成两项导入、测试组和发布；小艺回复变化，但缺少明确系统匹配/调度证据，未通过 |
+| S02 | 系统执行入口并返回 | system_skill_entered、业务结果、上报及最终回复证据完整 | C/D | [发布后复测](records/2026-11-07-D-platform/report.md)的回显文本符合预期，长度用例错误（应为 7、回复 6），无目标脚本入口及上报证据；未通过 |
 | A01 | 受支持调用方连接 AgentExtensionAbility | 真实组件回调、触发方和连接信息 | A/D | [A 组件已编译并做本地替身自测](records/2026-11-04-A-integration.md)；真实调用方/认证/设备回调未测 |
 | A02 | 自建 Agent 发起真实 Skill 调用 | 真实调用 API、目标、权限、执行与返回可关联 | A/C/D | [C 的 API 26 调研](records/2026-11-05-C-runtime/api-research.md)记录公共发起接口缺失；真实适配器未交付，阻断 |
 | A03 | 外部入口两次并发请求、重复 requestId | 无串包；重复请求策略明确 | A/B/C/D | [A 本地桥接替身检查](records/2026-11-04-A-integration.md)通过；真实外部入口未测 |

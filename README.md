@@ -51,3 +51,9 @@ node tools/check-core.mjs
 结构检查及纯逻辑检查均不会编译 ArkTS、生成 HAP 或调用设备。当前实测进展只以[记录目录](docs/records/README.md)中的证据为准。
 
 当前验证：共享结构检查、原有 23 项核心检查、A 交付目录内独立的 32 项入口/装配自测，以及含 Agent 组件的 DevEco/Hvigor 未签名 HAP 构建通过；安装、设备运行与系统调用未测。A 自测未并入 D 的共享 CI。最新证据及 B/D 交接建议见 [A 装配记录](docs/records/2026-11-04-A-integration.md)，早期独立审阅见[脚手架审阅](docs/reviews/2026-11-03-scaffold-review.md)。
+
+### 2026-11-07 验收进展补充
+
+上段保留了早期阶段的验证口径；后续固定源码 `ab9691f` 已完成 [DevEco IDE 同步](docs/records/2026-11-06-D-ide-sync/report.md)、调试签名构建及 [Pura 70 安装/操作与 F03/F04](docs/records/2026-11-06-D-signed-device/report.md)。F05–F10 的真机**应用内/自检**结果见[补测记录](docs/records/2026-11-07-D-device-followup/report.md)。[小艺真机尝试](docs/records/2026-11-07-D-xiaoyi-discovery/report.md)中，两个目标 Skill 均未被找到，S01 当前未通过、S02 未触发。真实外部 Agent 回调、主动系统 Skill 调用及完整端到端路径仍未验收；本机与 CI 的结构/逻辑检查不能代替这些路径。
+
+[小艺平台复核](docs/records/2026-11-07-D-platform/report.md)已确认当前账号导入两个 Skill，创建含当前账号的真机测试组及关联应用 APP ID，并把两项 Skill 发布给该组。发布后的真机回复已有变化，但长度结果错误且没有系统脚本入口/上报证据，S01/S02 尚不能改判通过。

@@ -1,0 +1,26 @@
+{
+  "device": "HUAWEI Pura 70 / API 26",
+  "sourceCommit": "ab9691fda02a87c40cc162b166128b1a4d37aa46",
+  "hapSha256": "AE81F666F362D7176E8390296F749EF178C6D5C0DE59B18D99FED40006DF8B20",
+  "path": "in-app",
+  "results": [
+    {
+      "case": "F03",
+      "input": "回显 你好，鸿蒙",
+      "requestId": "ui-1793978270126-5",
+      "skillId": "g1-echo",
+      "status": "success",
+      "data": { "text": "你好，鸿蒙" },
+      "errCode": ""
+    },
+    {
+      "case": "F04",
+      "input": "长度 你好ABC",
+      "requestId": "ui-1793978374742-7",
+      "skillId": "g1-text-length",
+      "status": "success",
+      "data": { "text": "你好ABC", "length": 5, "unit": "utf16-code-unit" },
+      "errCode": ""
+    }
+  ]
+}

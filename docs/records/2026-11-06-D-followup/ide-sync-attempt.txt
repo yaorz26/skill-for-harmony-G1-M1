@@ -1,0 +1,6 @@
+checkedAt: 2026-11-06 21:29:54 +08:00
+app: DevEco Studio 26.0.0.851
+launch attempts: devecostudio64.exe and launcher.exe through Computer Use; neither exposed a targetable IDE window
+running DevEco process: 0
+latest idea.log modified: 2026-11-04 14:48:06
+IDE project sync: unverified

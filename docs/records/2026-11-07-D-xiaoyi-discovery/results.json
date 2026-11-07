@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-07",
+  "device": "HUAWEI Pura 70 (ADY-AL00)",
+  "apiVersion": 26,
+  "systemVersion": "OpenHarmony 7.0.0.111",
+  "sourceCommitOfPreviouslyInstalledHap": "ab9691fda02a87c40cc162b166128b1a4d37aa46",
+  "hapReadBackThisRun": false,
+  "caller": "com.huawei.hmos.vassistant",
+  "method": "XiaoYi text conversation; uitest input and dumpLayout observation",
+  "cases": [
+    {
+      "input": "回显 你好，鸿蒙",
+      "visibleReply": "在呢，周末在家休息吗？",
+      "skillExecutionProven": false
+    },
+    {
+      "input": "请使用 g1-text-length 计算 你好ABC 的长度",
+      "visibleReply": "我没找到叫 g1-text-length 的工具。直接算的话，\"你好 ABC\"一共 5 个字符（2 个汉字 +3 个字母）。",
+      "skillExecutionProven": false
+    },
+    {
+      "input": "请使用 g1-echo 原样回显 你好，鸿蒙",
+      "visibleReply": "我没找到叫 g1-echo 的工具，不过要回显的话——你好，鸿蒙 😊",
+      "skillExecutionProven": false
+    }
+  ],
+  "postRunLogQueries": [
+    { "regex": "system_skill", "matchingLines": 0 },
+    { "regex": "G1M1", "matchingLines": 0 }
+  ],
+  "S01": "attempted; XiaoYi did not discover either named Skill; cause unconfirmed",
+  "S02": "blocked by S01; script entry and result reporting not exercised"
+}

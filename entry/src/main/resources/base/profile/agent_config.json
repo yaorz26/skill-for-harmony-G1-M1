@@ -26,7 +26,7 @@
       "iconUrl": "https://raw.githubusercontent.com/yaorz26/skill-for-harmony-G1-M1/main/AppScope/resources/base/media/app_icon.svg",
       "category": "productivity",
       "appInfo": {
-        "bundleName": "com.g1m1.skillagent",
+        "bundleName": "com.yaorz26.g1m1.skillagent",
         "moduleName": "entry",
         "abilityName": "AgentExtensionAbility",
         "deviceTypes": ["phone", "tablet", "2in1"]

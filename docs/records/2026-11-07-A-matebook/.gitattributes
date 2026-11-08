@@ -1,0 +1,3 @@
+# Preserve terminal padding in original capture logs and their recorded hashes.
+*.log whitespace=-blank-at-eol
+signed-build-summary.txt whitespace=-blank-at-eol

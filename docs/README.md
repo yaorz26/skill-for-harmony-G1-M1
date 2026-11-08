@@ -9,6 +9,7 @@
 | [构建与运行](build-and-run.md) | DevEco 工程导入、构建、签名和演示 | A/D |
 | [验收用例](acceptance.md) | 正常、失败、系统调用及组件验证 | D |
 | [D 验收执行手册](acceptance-runbook.md) | 固定版本、逐项操作、证据采集与失败回交 | D |
+| [系统 Skill 换设备复测手册](system-skill-device-runbook.md) | 不同华为手机的账号、签名、发布、调试入口、日志与判定步骤 | D |
 | [验收工具](../tools/README.md) | 本机检查、清单与日志生成 | D |
 | [D 交付索引](delivery-index.md) | 准备材料、实测记录与剩余依赖 | D |
 | [固定版本交接模板](templates/acceptance-handoff.md) | A 向 D 交付固定版本和运行前提 | A/D |

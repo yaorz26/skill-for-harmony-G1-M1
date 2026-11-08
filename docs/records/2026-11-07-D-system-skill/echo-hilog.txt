@@ -1,0 +1,9 @@
+11-07 21:07:24.505  3274  3274 I A00F00/com.huawei.hmos.vassistant/HwVA_CliActionGroup: execCli2 payload={"skillName":"g1-echo","api":"ExecCli","toolCallId":"chatcmpl-tool-0-532223562-1794056843557","command":"ohos-arkTSScript --skillName 'g1-echo' --scriptPath 'scripts/EchoSkill.ets' --functionName 'echo' --args '{\"arg1\":\"T8P2-鸿蒙-47\"}'","timeoutMs":0,"archType":""}
+11-07 21:07:24.511 10666 10670 I C01353/aimgr/ServiceRouter: [cli_tool_manager_service.cpp1015]Dispatch to skill path, toolName=ohos-arkTSScript eventId=ohos-arkTSScript5
+11-07 21:07:24.513  1474  1474 I C01336/foundation/AMS: [skill_execute_manager.cpp95]check skill permission, skill:g1-echo
+11-07 21:07:24.529  5198  5198 I C01332/com.g1m1.skillagent/UIAbility: [JUA2658]func found via scriptPath match, srcEntry:skills/g1-echo/scripts/EchoSkill.ets
+11-07 21:07:24.530  5198  5198 I C01332/com.g1m1.skillagent/UIAbility: [JUA2754]skillArg key:arg1 value:T8P2-鸿蒙-47
+11-07 21:07:24.530  5198  5198 I A03D00/com.g1m1.skillagent/JSAPP: [G1M1] {"requestId":"7","stage":"system_skill_entered","skillId":"g1-echo","executionPath":"system-skill","timestampMs":1794056844530,"errCode":""}
+11-07 21:07:24.534  5198  5198 I A03D00/com.g1m1.skillagent/JSAPP: [G1M1] {"requestId":"7","stage":"system_result_reported","skillId":"g1-echo","executionPath":"system-skill","timestampMs":1794056844533,"errCode":""}
+11-07 21:07:24.535  3274  3274 I A00F00/com.huawei.hmos.vassistant/HwVA_CliActionGroup:                stdOut: {"data":{"text":"T8P2-鸿蒙-47"},"errCode":"","errMsg":"","executionPath":"system-skill","requestId":"7","skillId":"g1-echo","status":"success","type":"result"}, stdErr: undefined
+11-07 21:07:24.536  3274  3274 I A00F00/com.huawei.hmos.vassistant/HwVA_CliActionGroup: replyCliResult payload={"data":"{\"data\":{\"text\":\"T8P2-鸿蒙-47\"},\"errCode\":\"\",\"errMsg\":\"\",\"executionPath\":\"system-skill\",\"requestId\":\"7\",\"skillId\":\"g1-echo\",\"status\":\"success\",\"type\":\"result\"}"}

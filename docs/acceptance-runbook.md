@@ -58,7 +58,9 @@ Get-FileHash -Algorithm SHA256 -LiteralPath '<A提供的HAP绝对路径>'
 
 正常日志顺序为 request_received → intent_matched → skill_started → skill_finished → response_returned；未命中为 request_received → intent_matched(ERR_NO_SKILL) → response_returned。每个请求恰有一条最终返回。多个请求日志可以交错，但 requestId、skillId、路径和结果必须对应。
 
-## 5. 系统、组件和端到端（等待对应交接）
+## 5. 系统、组件和端到端
+
+S01 与 S02 正常路径的小艺真机调用已有[复测记录](records/2026-11-07-D-system-skill/report.md)；S02 无效参数分支未取得系统入口证据。其他华为设备的复现步骤见[换设备手册](system-skill-device-runbook.md)。下表列出完整验收条件。
 
 | ID | 前置材料与步骤 | 通过条件 / 证据 |
 | --- | --- | --- |

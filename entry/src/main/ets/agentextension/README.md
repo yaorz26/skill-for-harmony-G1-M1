@@ -20,6 +20,8 @@
 
 当前 `exported: false`，没有把未认证组件开放给其他应用。`onAuth` 只记录 `agent_auth_not_configured`，不回显握手、不调用 `authorize()` 假装认证成功。SDK 声明没有为这些回调标注权限名，但这不能推出任何应用都能连接；Want 中的 bundleName/abilityName 是目标信息，不能据此认证调用方。受支持连接 API、调用方身份/权限及握手协议目前尚未核验，不用普通 `connectServiceExtensionAbility` 或 `hdc aa start` 冒充 Agent 连接。
 
+2026-11-08 补充核对：官方已发布 `agentManager.connectAgentExtensionAbility(want, agentId, callback)` 的**系统接口**文档，需要 `ohos.permission.CONNECT_AGENT`，列有 201（无权限）及 202（非系统应用）等错误。客户端以 `AgentProxy.sendData` 发送、`AgentExtensionConnectCallback.onData` 接收；认证载荷的具体协议仍需与真实调用方约定。本机公共 SDK 26.0.0.105 未发布这些客户端声明，在线 MateBook 的 Demo 是普通应用，尚未取得具备资格的外部调用方。上段“连接 API 尚未核验”由本次接口文档核对补充，实际 IPC、认证及回调仍未验证。来源、设备读回与 A03 固定用例见 [A 接入边界复核](../../../../../docs/records/2026-11-08-A-call-boundaries/report.md)。
+
 ## 真机后续步骤
 
 1. 配置本地调试签名，先安装、启动页面并保存 `page_loaded` 和应用内样例结果。

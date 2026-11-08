@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-08T14:57:38.219696+08:00",
+  "kind": "read-only-device-query",
+  "apiVersion": "26",
+  "softwareVersion": "MNT-W72C 7.0.0.111(SP12C00E103R12P2)",
+  "bundleName": "com.yaorz26.g1m1.skillagent",
+  "applicationInfo": {
+    "versionName": "1.0.0",
+    "versionCode": 1000000,
+    "apiTargetVersion": 260000026,
+    "apiCompatibleVersion": 260000026,
+    "appPrivilegeLevel": "normal",
+    "isSystemApp": false,
+    "permissions": []
+  },
+  "agentConnectionAttempted": false,
+  "systemSkillInvocationAttempted": false
+}

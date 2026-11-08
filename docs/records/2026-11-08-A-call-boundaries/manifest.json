@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "file": "d-evidence-review.json",
+      "bytes": 2525,
+      "sha256": "70479a2da5fbe0c05a2f27958b756d4a63432bd82c8a757af42d69594afe47c4"
+    },
+    {
+      "file": "device-readback.json",
+      "bytes": 542,
+      "sha256": "4b35319793cb8051e5eddcbe20e0a5628ca4bacff4280cdbc5a11ae1f4ab975e"
+    },
+    {
+      "file": "entry-check.log",
+      "bytes": 35516,
+      "sha256": "4df3fdb7c52cbc69a29776bc96a4936cac6b263f8fea7929d540cb8f47beb5d8"
+    },
+    {
+      "file": "host-check-summary.json",
+      "bytes": 530,
+      "sha256": "05f592230a7adbc427ce41374963df578a7ac7fde4a5f224bcf072207c04eb23"
+    },
+    {
+      "file": "official-sources.json",
+      "bytes": 908,
+      "sha256": "d16c4b3554441d632fce365811965baee37bf2b3ca4073087925394f66d3d4e8"
+    },
+    {
+      "file": "pc-comparison.json",
+      "bytes": 1527,
+      "sha256": "45e81eb9871b1467fb79b13b619662ad7759f8e3d9951c468619f1b51206aa85"
+    },
+    {
+      "file": "report.md",
+      "bytes": 8014,
+      "sha256": "c6481e3d82220f961d727ae62c89015aeecb6f1006bc47b4ecaa76b661e7b128"
+    },
+    {
+      "file": "sdk-audit.json",
+      "bytes": 2327,
+      "sha256": "0fd000fbe53d733c2336298225c4fbe9c38ee25f0f36d00c584cb34b42d66e66"
+    },
+    {
+      "file": "verify-d-evidence.mjs",
+      "bytes": 4375,
+      "sha256": "c1466738e106a1f29650022d5d30da941ec7fae2bb11f6d9d10b3f878c5657c8"
+    }
+  ]
+}

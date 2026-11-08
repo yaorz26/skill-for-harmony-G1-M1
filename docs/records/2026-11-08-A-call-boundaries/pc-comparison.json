@@ -1,0 +1,55 @@
+{
+  "kind": "review-of-existing-PC-records",
+  "sourceFile": "docs/records/2026-11-08-A-platform-config-client/device-probes.json",
+  "sourceFileSha256": "eb513583ba5e6041a9415ca849b32b7c5068b325bb0126a73fd80b2164c28f87",
+  "pcSkillNames": [
+    "yaorz26-g1m1-echo-20261107",
+    "yaorz26-g1m1-text-length-20261107"
+  ],
+  "device": {
+    "model": "MNTXM-24B",
+    "deviceName": "HUAWEI MateBook 14",
+    "systemVersion": "7.0.0.111 (SP12C00E103R12P2patch03)",
+    "apiVersion": "26.0.0"
+  },
+  "clientUpdate": {
+    "from": "11.7.7.473",
+    "to": "11.7.9.300",
+    "versionCode": 110709300,
+    "source": "Huawei AppGallery application detail page",
+    "installedVersionVerifiedBy": "bm dump applicationInfo.versionName/versionCode"
+  },
+  "readiness": {
+    "marker": "Skill真机测试中",
+    "observed": false,
+    "localAiToggleEnabled": false
+  },
+  "probes": [
+    {
+      "id": "api26-length-reply",
+      "expected": 7,
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    },
+    {
+      "id": "updated-echo-reply",
+      "expected": "G1M1-REAL-1108-A2",
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    },
+    {
+      "id": "updated-length-reply",
+      "expected": 7,
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    },
+    {
+      "id": "normal-length-reply",
+      "expected": 7,
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    }
+  ],
+  "isControlledPhonePCComparison": false,
+  "PCUnsupportedConfirmed": false
+}

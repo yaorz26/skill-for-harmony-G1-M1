@@ -2,6 +2,8 @@
 
 负责人：唐欣卓 / `pourf`。依据 [接口 v0](interfaces.md)、[验收清单](acceptance.md)和[当前架构](architecture.md)。本手册是可执行步骤，结果以每次独立报告为准。
 
+2026-11-08 本轮按框架及已有证据交付，不要求重复手机测试；S02 只接收正常调用范围，错误分支未验证；A01/A02/A03/E01 和 PC 小艺限制保留。以下完整测试步骤供复现或未来恢复使用，最终范围见[交付索引](delivery-index.md)。
+
 ## 1. 开始条件和判定口径
 
 本机基线检查现在即可执行。正式整体验收须先收到 A 的固定 commit、对应 HAP SHA-256、签名/SDK/设备要求、B/C 交付说明、调用方及操作步骤；按[交接模板](templates/acceptance-handoff.md)逐项核对。缺少其中某个路径的材料，将该路径记为“阻断”，其他路径照常测试。
@@ -33,7 +35,7 @@ Get-FileHash -Algorithm SHA256 -LiteralPath '<A提供的HAP绝对路径>'
 3. 明确设备是真机还是模拟器，核对系统/API 满足工程最低版本。使用 DevEco 自带 HDC 的完整路径执行 `hdc list targets -v`；只选当前被测设备，不把离线模拟器当成真机。
 4. 设备需由持有人开启 USB 调试并允许电脑连接。HDC 不可见时，记录当前现象、设备系统版本和驱动状态；不要更改 SDK 基线或签名来掩盖不兼容。
 5. 真机安装前由 A 提供可安装且匹配设备的签名 HAP。执行 `hdc -t <target> install <HAP>`，记录完整返回；失败就停止依赖安装的用例，交 A 排查。
-6. 安装成功后执行 `hdc -t <target> shell aa start -a EntryAbility -b com.g1m1.skillagent`；核对实际页面，保存启动返回与截图。
+6. 安装成功后执行 `hdc -t <target> shell aa start -a EntryAbility -b <本轮HAP的应用包名>`；当前 A 版本为 `com.yaorz26.g1m1.skillagent`，D 的 `ab9691f` 历史基线为 `com.g1m1.skillagent`。按[版本表](system-skill-device-runbook.md#1-先记录这一轮使用的版本)核对签名、平台名称与脚本路径；保存启动返回及实际页面。
 7. 在另一个终端执行 `hdc -t <target> hilog` 并保存原始日志，实验结束用 Ctrl+C 停止；从中摘出 `[G1M1]` 关联记录。不要清空设备全局日志。提交前脱敏序列号、私人输入和账号数据。
 
 启动 `EntryAbility` 是 F02 的页面启动证据；后续 `in-app` 业务并不因此成为一次新的 Ability 启动。若目标路径实际启动其他 Ability，另记调用 API、目标及 onCreate/onForeground/onBackground 等真实生命周期证据；没有启动就写“不适用”。
@@ -54,18 +56,18 @@ Get-FileHash -Algorithm SHA256 -LiteralPath '<A提供的HAP绝对路径>'
 | F09 | C 测试入口：执行超过 timeout，随后返回；再测试迟到拒绝 | ERR_TIMEOUT，一次回包，无自动重试；迟到结果不改写已返回结果；不宣称底层已取消 | timeout 值、调用次数、迟到前后日志、结果 |
 | F10 | 先后运行 `回显 first`、`回显 second` | requestId 不同，各自文本正确，日志不串包 | 两份结果与关联日志 |
 
-边界输入可在 Node 中用 `'😀'.repeat(512)` / `'😀'.repeat(513)` 精确生成。不得手工估计 emoji 数量。F08/F09 若未收到 C 的鸿蒙运行时测试入口，设备栏标阻断；本机 `check-core.mjs` 的通过独立记录。
+边界输入可在 Node 中用 `'😀'.repeat(512)` / `'😀'.repeat(513)` 精确生成。不得手工估计 emoji 数量。当前演示页已有 C 交付的“执行器自检”按钮，F08/F09 使用其中的抛错/慢调用替身及正常对照，保存 `allPassed` 和 9 项断言；本机 `check-core.mjs` 的通过独立记录，不当作设备结果。
 
 正常日志顺序为 request_received → intent_matched → skill_started → skill_finished → response_returned；未命中为 request_received → intent_matched(ERR_NO_SKILL) → response_returned。每个请求恰有一条最终返回。多个请求日志可以交错，但 requestId、skillId、路径和结果必须对应。
 
 ## 5. 系统、组件和端到端
 
-S01 与 S02 正常路径的小艺真机调用已有[复测记录](records/2026-11-07-D-system-skill/report.md)；S02 无效参数分支未取得系统入口证据。其他华为设备的复现步骤见[换设备手册](system-skill-device-runbook.md)。下表列出完整验收条件。
+S01 与 S02 本轮正常调用范围已有[D 手机复测记录](records/2026-11-07-D-system-skill/report.md)。S02 无效参数分支未取得系统入口证据，原因未定位，按本轮范围不追加补测、不改判通过。其他设备的复现步骤见[换设备手册](system-skill-device-runbook.md)。A/E 项列为未来完整目标的验收条件，当前保留未验证/阻断，不作为本周框架交付前置。
 
 | ID | 前置材料与步骤 | 通过条件 / 证据 |
 | --- | --- | --- |
-| S01 | A/C 提供已注册的 HAP、平台导入与测试资格、受支持系统调用方；按其已验证入口分别发出回显/长度请求 | 系统侧匹配/调度记录指向 g1-echo 或 g1-text-length；仅展示 SKILL.md 不算发现成功 |
-| S02 | 以 S01 匹配结果真实触发两个入口；分别使用正常文本和官方测试入口允许的无效参数 | requestCode 对应 system_skill_entered、业务结果、system_result_reported 和系统最终回复；上报失败必须保留 system_report_failed/ERR_REPORT_FAILED，不标成功 |
+| S01 | A/C 提供已注册的 HAP、平台导入与测试资格、受支持系统调用方；按其已验证入口分别发出回显/长度请求 | 系统匹配/调度指向本轮 HAP 的两项平台注册名，按版本表核对；仅展示 SKILL.md 不算发现成功 |
+| S02 | 以 S01 匹配结果用正常文本真实触发两个入口；无效参数分支列为未来扩展测试 | requestCode 对应 system_skill_entered、业务结果、system_result_reported、调用方收到结果及最终回复；上报失败保留 system_report_failed/ERR_REPORT_FAILED，不标成功 |
 | A01 | A 提供 AgentExtensionAbility、实际调用方、权限和连接步骤；按步骤连接并发送固定请求 | 真实连接/接收/断开回调与调用方证据；页面 aa start 不代替组件回调 |
 | A02 | C 提供主动调用 API/权限/目标可见性/适配器，A 完成注入和配置；从自建 Agent 发起固定请求 | 发起调用点、目标 Skill、真实执行、返回通道可关联；测试替身不能通过 |
 | A03 | A/B/C 明确外部入口的重复 requestId 策略；提交两个不同 ID 的并发请求，再提交重复 ID | 不串包；重复行为符合交接策略；未规定策略时记录阻断，不擅自要求幂等 |

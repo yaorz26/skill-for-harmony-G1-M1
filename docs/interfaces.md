@@ -63,12 +63,15 @@
 | `ERR_TIMEOUT` | 执行等待超过默认 3000 ms | 一次返回；不自动重试 |
 | `ERR_INTERNAL` | 路由或适配器执行抛错 | 返回统一错误 |
 | `ERR_REPORT_FAILED` | 系统结果上报失败 | 仅记录日志；不能宣称用户已收到结果 |
+| `ERR_NOT_CONNECTED` | 组件收到未被接受或已关闭连接的数据 | 拒绝请求，不执行业务 |
+| `ERR_CONNECTION_LIMIT` | 组件连接数达到 8 个 | 仅记录拒绝日志，不接受新连接 |
+| `ERR_SELF_CHECK_FAILED` | 自检至少一项断言失败 | 写入自检结束日志，保留逐项结果 |
 
 ## 3. 适配器与超时
 
 `SkillInvoker` 包含 `executionPath: string` 与 `invoke(call): Promise<SkillResult>`，是后续接真实调用的边界。通过 `new AgentService(invoker)` 注入适配器；前置日志、失败和超时使用该适配器声明的路径，返回值也应保持一致。当前默认仅 `InAppSkillInvoker`，不能用测试路径当作系统调用证据。框架超时只结束异步等待，无法中断同步阻塞代码，也不保证取消底层操作；真实适配器要处理取消、结果关联和迟到响应，不能迟到后再次给用户回包。
 
-当前不自动重试、不保留会话，也不保证相同 `requestId` 的重复请求幂等。演示页禁用运行中的按钮；后续外部入口要验证重复请求与并发隔离。系统调用适配器须补返回校验及调用方鉴权，不能接受任意脚本路径。
+当前不自动重试、不保留对话会话。演示页禁用运行中的按钮。组件桥接按连接保存已接受的 `requestId`：同一连接内重复 ID 不再次执行或回包，只记 `agent_duplicate_ignored`；不同连接分别维护状态，断开重连后可重新使用 ID。这是源码及本地替身检查覆盖的策略，尚无真实外部并发/重复请求的设备证据，也不提供重复请求结果重放。系统调用适配器须补返回校验及调用方鉴权，不能接受任意脚本路径。
 
 ## 3.1 路由与目录装配契约（由 B 交付 A）
 
@@ -84,11 +87,18 @@ B 模块对现有 `AgentService` 保持 **100% 向后兼容**（无需改动 `Ag
 
 ## 4. 日志节点
 
-统一前缀 `[G1M1]`，字段 `requestId/stage/skillId/executionPath/timestampMs/errCode`。
+日志统一使用 `[G1M1]` 前缀。[TraceReporter](../entry/src/main/ets/agent/TraceReporter.ets)输出 `requestId/stage/skillId/executionPath/timestampMs/errCode` 六个字段；页面及组件部分生命周期日志直接输出 JSON，仅包含 `stage` 和对应元数据，不能假设每一行都有六个字段。
 
-- 应用内：`request_received → intent_matched → skill_started → skill_finished → response_returned`。未命中时 `intent_matched` 的 `errCode` 为 `ERR_NO_SKILL`、`skillId` 为空，随后直接 `response_returned`。
-- 初检或缺参失败可在执行前结束，不要求出现 `skill_started`。
-- 系统脚本：`system_skill_entered → system_result_reported` 或 `system_report_failed`。
-- 组件/真实调用接入后另补 `agent_connected`、`agent_data_received`、`system_call_started`、`system_call_returned`；当前没有这些事件。
+| 路径 | 已有节点 | 含义与验证范围 |
+| --- | --- | --- |
+| 应用内 `in-app` | `request_received → intent_matched → skill_started → skill_finished → response_returned` | A 的 MateBook、D 的 Pura 70 均有运行记录；未命中时 `intent_matched` 携带 `ERR_NO_SKILL`，随后直接返回；初检/缺参失败也可在业务执行前结束 |
+| 系统脚本 `system-skill` | `system_skill_entered → system_result_reported`，或 `system_report_failed` | D 的手机正常调用已有入口、上报及小艺收到结果的证据；`system_report_failed` 使用 `ERR_REPORT_FAILED`，不能把失败上报写成成功 |
+| 执行器自检 `self-check` | `self_check_started → self_check_finished` | 同一自检 ID 包含抛错、超时及正常对照；结束日志错误码为空表示断言全过，否则为 `ERR_SELF_CHECK_FAILED`。内部执行日志使用 `self-check-fault` / `self-check-slow`；不能按一个普通业务请求解读自检的全部事件 |
+| 组件生命周期 | `agent_extension_created`、`agent_connected`、`agent_disconnected`、`agent_extension_destroyed` | 源码已实现，前三项直接输出组件元数据，销毁通过 TraceReporter 输出；没有真实外部连接/回调的设备通过证据 |
+| 组件请求 `agent-extension` | `agent_data_received`、`agent_request_rejected`、`agent_duplicate_ignored` | 已接受的请求进入桥接；无效/超限/未连接请求拒绝；同连接重复 ID 不执行或重放。逻辑有本地替身检查，真实 IPC 未验证 |
+| 组件回包 `agent-extension` | `agent_response_sent`、`agent_response_dropped`、`agent_response_send_failed` | 分别表示 sendData 调用未抛错、连接关闭后丢弃迟到结果、发送失败；`agent_response_sent` 不等于对端已经收到 |
+| 组件认证 `agent-extension` | `agent_auth_not_configured` | onAuth 只记“未配置认证”；没有调用 authorize，不代表认证成功 |
 
-`status: success` 只代表该路径的业务结果。`executionPath: in-app` 不能证明系统 Skill 执行；`system_result_reported` 也不能单独证明整个 Agent 入口链路已经完成。
+`page_loaded` 只证明页面加载。自检的运行时断言已有[MateBook 记录](records/2026-11-07-A-account-bundle-device/report.md)及[D 手机记录](records/2026-11-07-D-device-followup/report.md)；A 新包名该轮自检仅保存 UI 断言，没有另存自检日志，不扩大证据范围。组件节点见[组件源码](../entry/src/main/ets/agentextension/AgentExtensionAbility.ets)与[请求桥接](../entry/src/main/ets/agentextension/AgentRequestBridge.ets)，其真实回调仍按 A01/A03 登记未验证。
+
+`system_call_started` / `system_call_returned` 当前**没有实现**，仅是未来真实系统适配器可能增加的节点，不属于已交付日志。`status: success` 只代表该路径的业务结果；`in-app` 不证明系统 Skill 执行，`system_result_reported` 也不单独证明调用方收到结果或完整 Agent 链路完成。平台注册名与内部 `skillId` 的对应见[版本表](system-skill-device-runbook.md#1-先记录这一轮使用的版本)。

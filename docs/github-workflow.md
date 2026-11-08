@@ -6,20 +6,23 @@
 
 合并前检查接口兼容性、实测范围和未测项。审批人数暂不设为强制条件；不安排交叉审阅。CODEOWNERS 用于建议审阅人，不等于服务器端的批准门槛。
 
-## 已核验状态（2026-11-03）
+## 已核验状态（2026-11-08）
+
+本轮使用已授权的 GitHub API 读取仓库、`main` 保护和 Rulesets 的实际保存值；没有修改权限。
 
 | 项目 | 状态 | 依据 |
 | --- | --- | --- |
-| 默认分支 | `main` | GitHub 公开 API |
-| main 分支保护 | 已开启，`protected: true` | GitHub 公开 API |
-| 必需检查 | `structure`，来源 GitHub Actions（app ID 15368） | GitHub 公开 API |
-| 检查适用范围 | `everyone`，包括管理员 | GitHub 公开 API；此字段仅表示检查执行范围 |
-| 必须提交 PR | 已在用户提供的配置截图中勾选 | 详细保护 API 需登录，尚未逐项读取保存值 |
-| 分支保持最新、解决讨论、禁止绕过 | 已在配置截图中勾选 | 同上 |
-| Require approvals | 截图中未勾选 | 同上 |
-| 仓库 auto-merge | 截图中已开启 | 公开仓库 API 不暴露该字段 |
-| 合并方式 | 截图中仅保留 Squash | 同上 |
-| Rulesets | 公开 API 返回空列表 | 本仓库使用 classic branch protection，不代表保护失效 |
+| 默认分支 | `main` | 仓库 API 的 `default_branch` |
+| main 分支保护 | 已开启，`protected: true` | 分支 API；核查时 main 为 `34899ad` |
+| 必需检查 | `structure`，来源 GitHub Actions（app ID 15368） | 保护 API 的 `required_status_checks.checks` |
+| 必须提交 PR | 已启用 PR 保护 | `required_pull_request_reviews` 配置存在 |
+| 分支保持最新 | 已启用 | `required_status_checks.strict: true` |
+| 解决讨论 | 已启用 | `required_conversation_resolution.enabled: true` |
+| 管理员适用、强推与删除 | 管理员也受保护；禁止强推和删除 | `enforce_admins: true`，`allow_force_pushes/allow_deletions: false` |
+| 强制他人批准 | 不要求，批准数为 0；不强制 Code Owners | `required_approving_review_count: 0`，`require_code_owner_reviews: false` |
+| 仓库 auto-merge | 已开启 | 已授权仓库 API 的 `allow_auto_merge: true` |
+| 合并方式 | 仅保留 Squash | `allow_squash_merge: true`，merge/rebase 均为 false |
+| Rulesets | API 返回空列表 | 本仓库使用 classic branch protection，不代表保护失效 |
 
 D 分支的 `structure` 工作流执行文件/契约结构检查、Node 纯逻辑检查、A/C 独立 Node 检查和证据工具自测，并上传主机日志；远端结果以实际 Actions 为准。它没有鸿蒙 SDK，不能替代 DevEco 构建、安装或真机调度验证。
 

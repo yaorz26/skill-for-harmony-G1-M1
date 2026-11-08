@@ -2,10 +2,11 @@
 
 ## 1. 基线与前置条件
 
-- 项目：Stage、ArkTS，目标/兼容版本均配置为 `26.0.0`，设备类型为 phone/tablet。
-- 工程已通过本地 DevEco 26.0.0.865 / SDK 26.0.0.105 / Hvigor 6.26.9 构建，生成未签名 HAP；记录见[构建与审阅验证](records/2026-11-03-review.md)。签名、安装与真机调用仍待验证。
-- 最新 [A 装配构建](records/2026-11-04-A-integration.md)包含已注册的 Agent 组件/AgentCard 与 B 路由交付，共享 23 项检查及 A 目录内 32 项独立自测通过；不改动 D 的共享检查器/CI。组件非导出、认证未配置，没有设备成功记录。
-- 使用 DevEco Studio 26.0.0 及相应 HarmonyOS SDK。由 A 首次构建时记录完整版本、Build 号、Hvigor/ohpm 版本、宿主系统和实际设备信息。
+- 项目：Stage、ArkTS，目标/兼容版本均为 `26.0.0`，设备类型为 phone/tablet/2in1。当前包名 `com.yaorz26.g1m1.skillagent`，两项平台注册名和历史版本区别见[版本表](system-skill-device-runbook.md#1-先记录这一轮使用的版本)。
+- 当前应用源码沿用 `c7d23d7`；DevEco 26.0.0.865 / SDK 26.0.0.105 / Hvigor 6.26.9 的[本轮未签名构建](records/2026-11-08-A-closeout/build-summary.json)通过。此前同应用源码已完成[新包名签名、MateBook 安装与运行](records/2026-11-07-A-account-bundle-device/report.md)。签名工程和私钥保留本机。
+- [本轮主机检查](records/2026-11-08-A-closeout/host/summary.md)覆盖结构、共享核心 28 项、A 入口 32 项、C 执行器 18 项及证据工具。组件仍非导出、认证未配置，真实组件回调和自建 Agent 主动系统调用未验证或受阻。
+- D 的[手机系统 Skill 正常调用](records/2026-11-07-D-system-skill/report.md)通过，绑定历史源码 `ab9691f` 及原包名；A 新包名和 PC 小艺不能沿用该通过结论。最终材料入口见[交付索引](delivery-index.md)。
+- 使用 DevEco Studio 26.0.0 及相应 HarmonyOS SDK，复现时分别记录本人完整工具版本、Build 号、宿主系统和实际设备信息。
 - 无业务网络调用、云密钥或额外业务权限。设备部署签名由每人本地配置。
 
 Skill 从 API 26.0.0 开始提供；ArkTS 入口方式仅支持 Stage。以[官方指南](https://developer.huawei.com/consumer/cn/doc/doccenter-capabilities/arkts-skill-development-guide)及实际目标 SDK 为准。
@@ -40,12 +41,13 @@ Windows 已安装完整 DevEco 时，也可使用 [build-hap.ps1](../tools/build
 3. 输入 `长度 你好ABC`，检查 `data.length: 5`、`unit: utf16-code-unit`。
 4. 输入 `查天气` 和 `回显`，分别检查 `ERR_NO_SKILL`、`ERR_INVALID_PARAMS`。
 5. 在日志窗口按 `[G1M1]` 过滤，保存同一 `requestId` 的链路。以上预期均需实测后才能标通过。
+6. 点击“执行器自检”，核对 9 项断言及 `allPassed: true`。该步骤用测试替身验证抛错、超时与迟到结果，不调用正式系统 Skill，也不修改正式业务。
 
 页面提供回显、长度和未命中快捷样例，请求 ID 可复制；日志 `page_loaded` 仅证明页面加载，不能代替组件连接。组件请求格式、调用方/认证阻断和设备补测步骤见 [AgentExtensionAbility](../entry/src/main/ets/agentextension/README.md)。
 
 ## 4. 系统应用 Skill 验证（独立步骤）
 
-换一部华为手机复现 S01/S02 时，按[系统 Skill 真机复测手册](system-skill-device-runbook.md)逐项检查设备、账号、签名、测试组、快捷入口和日志；本机成功报告见[专项记录](records/2026-11-07-D-system-skill/report.md)。
+本轮不要求追加手机实验或打通 PC 小艺。后续换设备复现 S01/S02 时，按[系统 Skill 真机复测手册](system-skill-device-runbook.md)选定新旧版本后检查账号、签名、测试组、快捷入口和日志；D 历史手机基线的成功报告见[专项记录](records/2026-11-07-D-system-skill/report.md)。
 
 1. A/C 先确认当前工程两份 `skillProfiles` 注册能构建，Skill 名称/目录/声明/入口方法一致。
 2. 根据官方当前支持的流程完成 HAP 导入和真机测试，记录支持的调用方、设备、账号条件与实际输入。[导入 Skill](https://developer.huawei.com/consumer/cn/doc/service/import-skill-0000002592931542)、[真机测试](https://developer.huawei.com/consumer/cn/doc/service/skill-real-machine-testing-0000002592771628)

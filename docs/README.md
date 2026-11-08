@@ -1,6 +1,6 @@
 # 文档索引
 
-本轮最终状态与各成员剩余文档工作见 [A 收尾与交接](records/2026-11-08-A-closeout/report.md)：框架及已有真机证据按确认范围交付，A01/A02/A03/E01 保留未验证或阻断，不追加手机实验。
+最终入口见[框架交付索引](delivery-index.md)和[交付审查](reviews/2026-11-08-final-delivery-review.md)。A 的工程与证据、B 的日志说明、C 的原因更正、D 的验收/流程/索引已统一收尾；框架及已有真机证据按确认范围交付，A01/A02/A03/E01 保留未验证或阻断，不追加手机实验。
 
 | 文档 | 用途 | 维护人 |
 | --- | --- | --- |
@@ -13,13 +13,14 @@
 | [D 验收执行手册](acceptance-runbook.md) | 固定版本、逐项操作、证据采集与失败回交 | D |
 | [系统 Skill 换设备复测手册](system-skill-device-runbook.md) | 不同华为手机的账号、签名、发布、调试入口、日志与判定步骤 | D |
 | [验收工具](../tools/README.md) | 本机检查、清单与日志生成 | D |
-| [D 交付索引](delivery-index.md) | 准备材料、实测记录与剩余依赖 | D |
+| [最终交付索引](delivery-index.md) | 四项交付入口、固定版本、实测范围及阻断条件 | D 汇总；本次 A 统一修订 |
+| [最终交付审查](reviews/2026-11-08-final-delivery-review.md) | B/C/D 文档收尾、证据核查及检查结果 | 本次交付记录 |
 | [固定版本交接模板](templates/acceptance-handoff.md) | A 向 D 交付固定版本和运行前提 | A/D |
 | [验收问题模板](templates/acceptance-issue.md) | 首个失败节点、分派与复测证据 | D |
 | [真机排期](device-schedule.md) | 与实验组共享设备，预约与交接 | D |
 | [记录目录](records/README.md) | 实际构建、调用和阻断证据 | 全员 |
 | [A 工程入口与装配](records/2026-11-04-A-integration.md) | 接收 B 交付、组件注册、桥接与当前真机阻断 | A |
-| [A 本轮收尾与最终交接](records/2026-11-08-A-closeout/report.md) | 固定版本、构建和运行证据、手机成果接收、阻断归档及 B/C/D 文档收尾清单 | A |
+| [A 本轮收尾与最终交接](records/2026-11-08-A-closeout/report.md) | 固定版本、构建和运行证据、手机成果接收、阻断归档及文档收尾结果 | A |
 | [A 组件接入资格调查](records/2026-11-08-A-call-boundaries/report.md) | 系统连接接口、调用资格和 A03 待执行步骤，未冒充真实回调成功 | A |
 | [MateBook 测试与小艺调用排查汇总](reports/2026-11-08-A-test-summary.md) | 汇总连接、签名、13 笔应用内输入、9 项自检、平台发布及系统调用尝试 | A |
 | [D 手机成功与 PC 小艺对照核查](reports/2026-11-08-D-phone-PC-comparison/report.md) | 接收手机真实调用证据，核对 PC 设备配置与测试入口，说明交付要求和剩余边界 | A |

@@ -2,6 +2,8 @@
 
 每次构建或实验建立独立目录，如 `2026-11-06-C-skill-01/`，放 `report.md`、经检查可共享的原始日志、截图或录屏链接。不要覆盖失败记录。
 
+最终框架材料入口见[交付索引](../delivery-index.md)，本次统一文档收尾和审查见[交付审查](../reviews/2026-11-08-final-delivery-review.md)。下表按历史轮次记录当时结果，早期失败不会覆盖后续成功，手机与 PC 的版本也分别保留。
+
 | 日期 | 执行者 | 类型 | 记录 | 达到阶段 |
 | --- | --- | --- | --- | --- |
 | 2026-11-03 | 框架初始化 | 结构与纯逻辑检查 | [初始化验证](2026-11-03-bootstrap.md) | 结构通过、17 项 Node 纯逻辑检查通过，未做鸿蒙构建/运行 |
@@ -23,6 +25,13 @@
 | 2026-11-07 | 唐欣卓（D）/ pourf | Pura 70 小艺 Skill 发现尝试 | [D 小艺发现记录](2026-11-07-D-xiaoyi-discovery/report.md) | 小艺点名 `g1-echo` / `g1-text-length` 均回复未找到；S01 当前未通过、原因待核，S02 未触发 |
 | 2026-11-07 | 唐欣卓（D）/ pourf | 小艺平台导入、发布与真机复测 | [D 平台复核](2026-11-07-D-platform/report.md) | 两项 Skill 导入、APP ID、测试组、发布完成；小艺回显符合预期但长度结果错误，系统入口与上报未留证，S01/S02 未通过 |
 | 2026-11-07 | 唐欣卓（D）/ pourf | 小艺系统 Skill 真机验收 | [D 系统 Skill 复测](2026-11-07-D-system-skill/report.md) | 在“Skill真机测试中”入口，回显与长度的正常调用均有系统匹配/调度、对应 ArkTS 脚本入口、同 requestId 上报、业务结果与最终回复；S01 通过，S02 正常路径通过、无效参数分支未验证 |
-| 2026-11-07 | C 李竞宇 | S02/A02/A03 收口说明 | [C 收口说明](2026-11-07-C-closeout-notes.md) | S02 错误分支业务侧等价证据与平台限制分析；A02 补 execCli2 真机数据点（公共 SDK 零匹配，维持阻断）；A03 重复 ID 策略执行器视角确认 |
+| 2026-11-07，11-08 更正 | C 李竞宇；本次 A 修订文档 | S02/A02/A03 收口说明 | [C 收口说明](2026-11-07-C-closeout-notes.md) | 共享业务层校验已有证据；系统无效参数分支原因未定位，不认定平台限制；A02 维持阻断，A03 策略确认 |
+| 2026-11-07 | A 姚睿哲 | MateBook 适配、签名安装与冒烟 | [初次真机记录](2026-11-07-A-matebook/report.md) | 2in1 适配、签名安装、页面运行和自检通过；原包名历史基线 |
+| 2026-11-07 | A 姚睿哲 | 平台名称/应用包名调整 | [Skill 名称](2026-11-07-A-platform-skill-names/report.md)、[应用包名](2026-11-07-A-app-bundle/report.md) | 注册命名空间调整与构建，脚本仅移动目录，内部业务 ID 不变 |
+| 2026-11-07 | A 姚睿哲 | 当前新包名 MateBook 复测 | [签名安装与运行](2026-11-07-A-account-bundle-device/report.md) | `c7d23d7` 签名安装，13 笔应用内输入、48 条关联事件、9 项自检通过；不是系统调用成功 |
+| 2026-11-07 | A 姚睿哲 | PC 发布后系统尝试 | [系统入口复测](2026-11-07-A-published-system-probes/report.md) | 已发布后仍无目标执行证据，测试就绪入口未观测到 |
+| 2026-11-08 | A 姚睿哲 | 平台配置与小艺客户端排查 | [初次读回](2026-11-08-A-platform-readback/report.md)、[配置与客户端](2026-11-08-A-platform-config-client/report.md) | API 26 重新发布、HAP 注册及客户端更新已核对；当前入口拒绝 pc 参数，PC 小艺仍未就绪，原因未定位 |
+| 2026-11-08 | A 姚睿哲 | 组件接口资格与 D 证据接收 | [接入调查](2026-11-08-A-call-boundaries/report.md)、[手机/PC 对照](../reports/2026-11-08-D-phone-PC-comparison/report.md) | 接收 D 手机 S01/S02 正常证据；系统连接接口有资格限制，A01/A03 真实 IPC 未验证，A02 阻断 |
+| 2026-11-08 | A 姚睿哲 | 整合构建、主机检查与最终交接 | [A 收尾](2026-11-08-A-closeout/report.md)、[构建摘要](2026-11-08-A-closeout/build-summary.json) | 五组主机检查和当前应用版本未签名构建通过；B/C/D 文档小项已在同一 PR 收尾，没有新增设备实验 |
 
-原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已有 DevEco/Hvigor 构建、API 26 **模拟器**运行，以及 Pura 70 调试签名、F02 安装/操作、F03–F10 应用内/自检和 S01/S02 正常路径的小艺系统 Skill 真机证据；S02 无效参数分支未验证，尚无扩展组件真实回调、自建 Agent 主动系统 Skill 调用或 E01 完整目标路径的成功证据。
+原始参考方案见 [comparison-plan](../reference/harmonyos-skill-runtime-comparison-plan.md)。已有 DevEco/Hvigor 构建、API 26 模拟器、Pura 70 与 MateBook 应用内/自检，以及 D 手机 S01/S02 正常路径的真实证据。本轮框架四项材料已齐备；S02 错误分支未验证且不追加补测，PC 小艺及 A01/A02/A03/E01 保留未完成/阻断，未虚报成功。

@@ -21,5 +21,6 @@
     "artifactSha256": "15669ab6ee397844f56deac2fa4482be67954339518634129a659c3f1c6444bd"
   },
   "deviceRerunPerformed": false,
-  "privateSigningMaterialsCommitted": false
+  "privateSigningMaterialsCommitted": false,
+  "archivedLogNormalization": "LF, trailing terminal padding removed; original local output preserved outside repository"
 }

@@ -4,14 +4,14 @@
   "files": [
     {
       "file": "assemble-hap.log",
-      "bytes": 2136,
-      "sha256": "ce33ff26c9a68920cff33d6704624a549c3e51622e42dd0ca0a76beff4628e4a",
+      "bytes": 2086,
+      "sha256": "95499dd25b52316e623a7c632c083d76ff3413bf2f8d547bda1f473e5596d23d",
       "hashMode": "text-LF"
     },
     {
       "file": "build-summary.json",
-      "bytes": 990,
-      "sha256": "52c15eb8d8e3c2605193416f7084e2be13e1d8240565c59b15777bee9faf4a76",
+      "bytes": 1113,
+      "sha256": "9ee2a899c77268fab9431345e52183240a63619b7dc4addbad903f3f4b697295",
       "hashMode": "text-LF"
     },
     {

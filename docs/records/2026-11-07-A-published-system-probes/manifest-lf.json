@@ -1,0 +1,36 @@
+{
+  "scope": "Git LF archive verification; original capture-time manifest.json retained where present",
+  "textNormalization": "CRLF to LF, binary unchanged",
+  "files": [
+    {
+      "file": "logging-control.json",
+      "bytes": 1391,
+      "sha256": "2137b63b2e70d1088d980b833c6a4ddb9e6703e57526e311095037da0134858e",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "quick-actions.png",
+      "bytes": 167910,
+      "sha256": "f18ddce6bfbab6ba1fea9a845fd76e6b95c532fd3a5018967ccb114a731eb832",
+      "hashMode": "binary"
+    },
+    {
+      "file": "readiness.json",
+      "bytes": 1333,
+      "sha256": "063e0405aea8d96339c425de748a622b7e0843977222177edda4075a97e85c19",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "report.md",
+      "bytes": 6607,
+      "sha256": "ddde111662e258dc794a99eed5e9714700cf327e47ca946fa66e33809111cd6b",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "system-probes.json",
+      "bytes": 3952,
+      "sha256": "7aa52e29495f24a655881ce4bf3b6d9b395f19321f9c3925b633007a0eff9f55",
+      "hashMode": "text-LF"
+    }
+  ]
+}

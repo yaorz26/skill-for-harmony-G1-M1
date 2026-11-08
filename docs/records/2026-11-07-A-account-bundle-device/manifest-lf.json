@@ -1,0 +1,54 @@
+{
+  "scope": "Git LF archive verification; original capture-time manifest.json retained where present",
+  "textNormalization": "CRLF to LF, binary unchanged",
+  "files": [
+    {
+      "file": "build-summary.json",
+      "bytes": 1301,
+      "sha256": "5ef51297eca47cc4df6436e7a4aea9c14d914069c5b7bebf22fab9eeb590f7ff",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "installed-registration.json",
+      "bytes": 574,
+      "sha256": "6fe3f2f3bbd7ea3386cbaffd3b98f1d3fc72cf830db0c68d611413e18c12c004",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "packaged-registration.json",
+      "bytes": 2161,
+      "sha256": "62ed7e44aa6375c567544376e3097655cde839bbfa80adb8542b8ec42613c4ab",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "report.md",
+      "bytes": 4856,
+      "sha256": "066404a1af9a4ef038f35cf017c8325c1e8cb8e0ba1a16f25b92cb3c59bcd670",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "runtime-trace.jsonl",
+      "bytes": 7717,
+      "sha256": "d3b3eed42eff95babbd7a30ce18196bee48823a63459493157d8fd99f652bfeb",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "selfcheck.json",
+      "bytes": 1484,
+      "sha256": "66093fc4667e309df15481dc6d00ac1e9cbc409322834c7b4f5b9ddc0e0aff0a",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "trace-checks.json",
+      "bytes": 3017,
+      "sha256": "fc74a748e2c246d3b0c03cc83b13c72c0d436d6045b2aad63e14d2cb00dfb301",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "ui-results.json",
+      "bytes": 14368,
+      "sha256": "a2e852028de16652d01323efc3418880bc970e103eb5b06fd51a013a201e6e61",
+      "hashMode": "text-LF"
+    }
+  ]
+}

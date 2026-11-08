@@ -2,6 +2,8 @@
 
 核查日期：2026 年 11 月 8 日。核查人：成员 A。范围为本仓库任务一，对照四人分工、主线源码、实测记录、本地与远端分支及 GitHub 当前状态。本文登记剩余事项，不代改其他成员负责的实现或验收文档。
 
+本报告保留收尾前的核查时点。用户随后已确认按现有成果与状态收尾，A 已将相关分支、报告和检查结果整合到收尾 PR；最新交付结论、版本及 B/C/D 文档清单以 [A 最终交接](../records/2026-11-08-A-closeout/report.md)为准。下文“没有打开的 PR”等表述仅对应原核查时刻。
+
 ## 核查基线与总体判断
 
 本轮 `git fetch origin` 成功，远端 `main` 为 `34899adbda8270463566632ecd7e066391d9bb07`。GitHub API 同时确认该提交、main 已保护，必需检查 `structure` 适用于 everyone；当前没有打开的 PR。该主线提交的 [Structure checks](https://github.com/yaorz26/skill-for-harmony-G1-M1/actions/runs/42388538657) 已成功。

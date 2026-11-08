@@ -1,0 +1,66 @@
+{
+  "scope": "Git LF archive verification; original capture-time manifest.json retained where present",
+  "textNormalization": "CRLF to LF, binary unchanged",
+  "files": [
+    {
+      "file": "assemble-hap.log",
+      "bytes": 2136,
+      "sha256": "ce33ff26c9a68920cff33d6704624a549c3e51622e42dd0ca0a76beff4628e4a",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "build-summary.json",
+      "bytes": 990,
+      "sha256": "52c15eb8d8e3c2605193416f7084e2be13e1d8240565c59b15777bee9faf4a76",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/a-entry.log",
+      "bytes": 35699,
+      "sha256": "1c70a029e1718cf5d11523f64b8a690e81ec17d4402546e39396e8df9c298cff",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/c-executor.log",
+      "bytes": 1281,
+      "sha256": "a37b2c4dbd15acd290dde53328c9817fc085d4aefbd635dbb576c9ac20dc9f1b",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/core.log",
+      "bytes": 10744,
+      "sha256": "e38aa575c51ac4558ae3652525996d3f86f5eb74786118743b026d652ef3114b",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/evidence-tool.log",
+      "bytes": 457,
+      "sha256": "5cbc89447beb9e9b9cc9a1d95cf043950bbddf3b5adb5b8289267814a029b436",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/manifest.json",
+      "bytes": 9763,
+      "sha256": "2467e3305368cf04997a4e9f404b6ea572b19e8d99ccd88a869061b2527c73d9",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/structure.log",
+      "bytes": 180,
+      "sha256": "0582ef0be048685979ec3611066eafadeacf4426b7f176280635e61cc0716d3b",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "host/summary.md",
+      "bytes": 609,
+      "sha256": "f83c4c232c5341ae8deb3346ad8642ab2200869991b5ea757b8019d6cbbb9eba",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "report.md",
+      "bytes": 8903,
+      "sha256": "7849f9432208d8fef89c1fd877e6704cd68a67d9e477391d1663440a76f367fc",
+      "hashMode": "text-LF"
+    }
+  ]
+}

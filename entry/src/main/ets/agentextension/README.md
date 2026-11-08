@@ -1,5 +1,7 @@
 # AgentExtensionAbility 入口（成员 A）
 
+11-08 本轮已按框架及阻断说明收尾，最新状态见 [A 最终交接](../../../../../docs/records/2026-11-08-A-closeout/report.md)。下文的“本次没有设备”是初次装配的历史范围；后续已有 MateBook 应用内真机记录，真实组件连接仍未通过。
+
 已实现并注册 `AgentExtensionAbility.ets`，使用本机 API 26 SDK 中的 `AgentExtensionAbility`、`common.AgentHostProxy`，不是 UIAbility 或普通 Service 替身。组件从 API 24 提供，系统能力为 `SystemCapability.Ability.AgentRuntime.Core`，限 Stage 模型。当前 API 26 工程已通过 ArkTS/Hvigor 编译。
 
 ## 接线

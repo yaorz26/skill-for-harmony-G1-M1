@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-11-08T15:37:40+08:00",
+  "testedIntegrationCommit": "d82fb10dd8cf7eb1e14daf1be6b38e52c34e5135",
+  "applicationSourceRevision": "c7d23d7f8c669bee56b59db3b246f26e19c4e142",
+  "bundleName": "com.yaorz26.g1m1.skillagent",
+  "applicationFilesComparedToRevision": 26,
+  "applicationDifferences": [],
+  "comparisonMode": "UTF-8 text line endings normalized to LF; excludes explanatory README.md",
+  "build": {
+    "command": "tools/build-hap.ps1 -DevEcoRoot <local DevEco installation>",
+    "devEco": "26.0.0.865",
+    "sdk": "26.0.0.105 / API 26",
+    "hvigor": "6.26.9",
+    "exitCode": 0,
+    "result": "BUILD SUCCESSFUL",
+    "durationMs": 6610,
+    "tasks": 33,
+    "signed": false,
+    "artifact": "entry/build/default/outputs/default/entry-default-unsigned.hap",
+    "artifactBytes": 125051,
+    "artifactSha256": "15669ab6ee397844f56deac2fa4482be67954339518634129a659c3f1c6444bd"
+  },
+  "deviceRerunPerformed": false,
+  "privateSigningMaterialsCommitted": false
+}

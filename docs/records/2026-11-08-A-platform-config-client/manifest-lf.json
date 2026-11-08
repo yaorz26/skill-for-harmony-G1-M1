@@ -1,0 +1,48 @@
+{
+  "scope": "Git LF archive verification; original capture-time manifest.json retained where present",
+  "textNormalization": "CRLF to LF, binary unchanged",
+  "files": [
+    {
+      "file": "device-probes.json",
+      "bytes": 3841,
+      "sha256": "82ff23b28d5c71ae83439f1604e4c42447da247d6ca65cde7e0539b3d17b3b7a",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "hap-registration.json",
+      "bytes": 1003,
+      "sha256": "260705ca6d191bd042fad92c7faf16bb82a7bceee76c8c0d74c302d220002bb6",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "no-beta-activity.png",
+      "bytes": 56372,
+      "sha256": "7082031865f14883670bd103a82584f4b879ef51023e89428bf40ce0623be52c",
+      "hashMode": "binary"
+    },
+    {
+      "file": "platform-actions.json",
+      "bytes": 1701,
+      "sha256": "b064d5b2bf27c257811070df72d6350180882f35e9f3beff6e59b43fc1b083a4",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "platform-readback.json",
+      "bytes": 1569,
+      "sha256": "f9f06c359ff7add4f2a9e441d66fff8f954c32bb470b3246e26bc0cd20c2e8be",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "report.md",
+      "bytes": 6532,
+      "sha256": "1f94f3a46eefebf4e389b77fab449ce308da18f0d0dd264fc3fd9e2dd12e9e8e",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "support-question.md",
+      "bytes": 1569,
+      "sha256": "c13f7d81ee59e2a097c47e12f62d433af8f39977e94e63513c00f529f76c89c7",
+      "hashMode": "text-LF"
+    }
+  ]
+}

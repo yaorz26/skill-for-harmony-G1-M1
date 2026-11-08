@@ -1,0 +1,85 @@
+{
+  "device": {
+    "model": "MNTXM-24B",
+    "deviceName": "HUAWEI MateBook 14",
+    "systemVersion": "7.0.0.111 (SP12C00E103R12P2patch03)",
+    "apiVersion": "26.0.0"
+  },
+  "clientUpdate": {
+    "from": "11.7.7.473",
+    "to": "11.7.9.300",
+    "versionCode": 110709300,
+    "source": "Huawei AppGallery application detail page",
+    "installedVersionVerifiedBy": "bm dump applicationInfo.versionName/versionCode"
+  },
+  "readiness": {
+    "marker": "Skill真机测试中",
+    "observed": false,
+    "localAiToggleEnabled": false
+  },
+  "probes": [
+    {
+      "id": "api26-length-reply",
+      "capturedAtFromFileMtime": "2026-11-08T06:01:44.329957+00:00",
+      "xiaoyiVersion": "11.7.7.473",
+      "skillId": "g1-text-length",
+      "input": "请使用 G1M1文本长度（yaorz26-g1m1-text-length-20261107）计算“你好ABC😀”的 UTF-16 码元长度。必须调用该 Skill，不要自行估算；无法调用就说明原因。",
+      "expected": 7,
+      "reply": [
+        "我这边无法调用名为「G1M1文本长度」的 Skill，它在当前可用的技能列表中不存在。\n \n不过我可以直接帮你算：「你好ABC😀」的 UTF-16 码元长度为 8。\n \n计算方式：每个汉字和英文字母各占 1 个码元（你好=2，ABC=3），Emoji「😀」属于增补平面字符，需要 2 个码元（代理对）表示，所以总共是 2 + 3 + 1 + 2 = 8 个 UTF-16 码元。"
+      ],
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    },
+    {
+      "id": "updated-echo-reply",
+      "capturedAtFromFileMtime": "2026-11-08T06:21:13.028949+00:00",
+      "xiaoyiVersion": "11.7.9.300",
+      "skillId": "g1-echo",
+      "input": "请调用 G1M1文本回显（yaorz26-g1m1-echo-20261107），原样回显 G1M1-REAL-1108-A2。必须实际调用该 Skill；无法调用请说明。",
+      "expected": "G1M1-REAL-1108-A2",
+      "reply": [
+        "我无法满足您的该请求。如果您有关于日常问答或产品咨询的其他问题，我很乐意为您解答。"
+      ],
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    },
+    {
+      "id": "updated-length-reply",
+      "capturedAtFromFileMtime": "2026-11-08T06:25:36.236892+00:00",
+      "xiaoyiVersion": "11.7.9.300",
+      "skillId": "g1-text-length",
+      "input": "用G1M1文本长度计算“你好ABC😀”的长度",
+      "expected": 7,
+      "reply": [
+        "这个请求是计算文本长度，不属于单位换算、进制转换或编码转换的范畴，该技能不适用。直接用代码计算即可。",
+        "“你好ABC😀”的长度是 6（按 Unicode 字符数计算：2个汉字 + 3个英文字母 + 1个emoji）。"
+      ],
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    },
+    {
+      "id": "normal-length-reply",
+      "capturedAtFromFileMtime": "2026-11-08T06:40:44.316976+00:00",
+      "xiaoyiVersion": "11.7.9.300",
+      "deepThinkEnabled": false,
+      "skillId": "g1-text-length",
+      "input": "使用G1M1文本长度计算“你好ABC😀”的UTF-16码元长度",
+      "expected": 7,
+      "reply": [
+        "该技能不适用于UTF-16码元长度计算场景，这是字符编码计算问题，需要用代码计算。",
+        "“你好ABC😀”的UTF-16码元长度是 7。\n \n其中“你好ABC”5个字符各占1个码元，emoji 😀 超出基本多语言平面，由2个码元（代理对）表示，合计 5 + 2 = 7。"
+      ],
+      "g1m1EventsInCapturedHilog": 0,
+      "realCallVerified": false
+    }
+  ],
+  "systemUpdateCheck": {
+    "betaConsentHandledBy": "user",
+    "betaActivityResult": "暂无升级活动",
+    "normalUpdateAvailable": true,
+    "normalUpdateDisplayedVersion": "7.0.0.111 SP12",
+    "normalUpdateDownloadSize": "579.60 MB",
+    "systemUpdateInstalledThisRun": false
+  }
+}

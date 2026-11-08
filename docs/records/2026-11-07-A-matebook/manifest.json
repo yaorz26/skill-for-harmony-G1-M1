@@ -1,0 +1,90 @@
+{
+  "format": "Git LF checkout; SHA-256 of file bytes",
+  "files": [
+    {
+      "path": "a-entry.log",
+      "bytes": 35699,
+      "sha256": "50aaaa5c8303c9d24b6afd9a365cac6f8e094c5aab40f3c4cf1c462e14ecba06"
+    },
+    {
+      "path": "assemble-hap.log",
+      "bytes": 2222,
+      "sha256": "92a9cb9edde4794697f05a75cb8dcdd85406b4d0fc73c58af141ad0be71c5e5d"
+    },
+    {
+      "path": "environment.txt",
+      "bytes": 280,
+      "sha256": "a35b8f997decfe96dd7b6eb8eb0e3c87f3bd024059c64577315d78349237f685"
+    },
+    {
+      "path": "F03.json",
+      "bytes": 335,
+      "sha256": "984c023bbd1de15e1e33388b9498cf201340098783a7db9c9d0e3ac1ad8caa50"
+    },
+    {
+      "path": "F04.json",
+      "bytes": 382,
+      "sha256": "b91e5b17965266618f2d776b339010ee44c5c0775add769e227e5c2fb6623e5c"
+    },
+    {
+      "path": "F06.json",
+      "bytes": 327,
+      "sha256": "4f1617f5f7f5fc743a7c0bd678b75536fdbd64f7f17436ed1aa6bec1dcf414b0"
+    },
+    {
+      "path": "F08-F09.json",
+      "bytes": 1726,
+      "sha256": "ab7b7255a0bbe2fdc9c0f71ca59278870a864dc96c6f570a601246f1a9d84570"
+    },
+    {
+      "path": "install-signed.log",
+      "bytes": 176,
+      "sha256": "e6ae3a227c584f0c1fe2a4b46fd3b2a374206bd52778c2ef116071828b55cef6"
+    },
+    {
+      "path": "install-unsigned.log",
+      "bytes": 216,
+      "sha256": "548499c86347d8a6d220c7848b490176702e1f5c38a4aed2ad04ce0c986e5bf0"
+    },
+    {
+      "path": "installed-module.json",
+      "bytes": 418,
+      "sha256": "e5820ba30253f8f50fb1e7af0645cffadc45749bd57cbcbb41485575dd157f63"
+    },
+    {
+      "path": "report.md",
+      "bytes": 5631,
+      "sha256": "2f59145f59d09cd42925cc16c26354b03a0624a7f5854dec2a0b081c64a4809e"
+    },
+    {
+      "path": "runtime-trace.jsonl",
+      "bytes": 3468,
+      "sha256": "42125f02b054083b856fc996d1eb9ab78f86838ba03ce683afaf0f0e79791363"
+    },
+    {
+      "path": "selfcheck-window.png",
+      "bytes": 133068,
+      "sha256": "8eee6e576dd106dcff249a96ca695378282608e47c2f57ef10f7d8731bdfea41"
+    },
+    {
+      "path": "signed-build-summary.txt",
+      "bytes": 149,
+      "sha256": "f8393ab45693c6919a80977bc12df165c16ceaee0b64699e4b67540beb56adfb"
+    },
+    {
+      "path": "source-parity.json",
+      "bytes": 279,
+      "sha256": "b64578dccecd6ad4f4c91e25a553cd1dde2a2e70b0f4b325ea9555b305cb96cd"
+    },
+    {
+      "path": "start-entry.log",
+      "bytes": 28,
+      "sha256": "4765cf6e38f61be3ce9fa13fdcf53077b79f3da39c947a2123d1facd6c0e3962"
+    },
+    {
+      "path": "ui-results.json",
+      "bytes": 157,
+      "sha256": "abd55eb542c8bae4bc6634c8fcc3294f80742f44aec46f2b631e43919db6cd9f"
+    }
+  ]
+}

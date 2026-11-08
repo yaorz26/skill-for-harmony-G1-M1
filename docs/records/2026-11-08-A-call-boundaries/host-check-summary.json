@@ -1,0 +1,13 @@
+{
+  "kind": "host-only-regression",
+  "coreChecks": 28,
+  "entryAssemblyChecks": 32,
+  "passed": true,
+  "outputSummary": [
+    "PASS: 28 core checks (routing, parameters, Unicode length, errors and late completion).",
+    "PASS: 32 A entry/assembly checks in addition to the unchanged 23 shared core checks.",
+    "Local ETS logic and platform-base stub only. No device callbacks, IPC, authentication or system Skill execution verified."
+  ],
+  "legacySummaryContainsStaleSharedCount": true,
+  "actualDeviceIPCVerified": false
+}

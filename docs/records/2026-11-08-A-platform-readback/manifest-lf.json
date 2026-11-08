@@ -1,0 +1,24 @@
+{
+  "scope": "Git LF archive verification; original capture-time manifest.json retained where present",
+  "textNormalization": "CRLF to LF, binary unchanged",
+  "files": [
+    {
+      "file": "echo-file-tree.png",
+      "bytes": 9351,
+      "sha256": "c85bce208f98c3b08daab3560c3bcea657065ccd235959ad56f8765332b3728f",
+      "hashMode": "binary"
+    },
+    {
+      "file": "platform-readback.json",
+      "bytes": 4842,
+      "sha256": "e2a243924b306f723454573df8058ee2454b5da0b6e472e4b0f8b0f03a92ad3a",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "report.md",
+      "bytes": 5101,
+      "sha256": "bf91ab6a69d2eb0656a0f2272f6b918269b1b4aa816816848c0c8b0eaf438585",
+      "hashMode": "text-LF"
+    }
+  ]
+}

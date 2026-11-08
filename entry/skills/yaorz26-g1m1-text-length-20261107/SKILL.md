@@ -1,5 +1,5 @@
 ---
-name: g1-text-length
+name: yaorz26-g1m1-text-length-20261107
 description: 返回指定文本的 UTF-16 码元长度，用于测试应用 Skill 的计算和结果回传；响应“长度 你好ABC”等明确请求。
 ---
 
@@ -12,8 +12,10 @@ description: 返回指定文本的 UTF-16 码元长度，用于测试应用 Skil
 ## 场景1：计算长度（measure）
 
 ```text
-exec-cli(command: ohos-arkTSScript --skillName 'g1-text-length' --scriptPath 'scripts/TextLengthSkill.ets' --functionName 'measure' --args '{"arg1":"你好ABC"}')
+exec-cli(command: ohos-arkTSScript --skillName 'yaorz26-g1m1-text-length-20261107' --scriptPath 'scripts/TextLengthSkill.ets' --functionName 'measure' --args '{"arg1":"你好ABC"}')
 ```
+
+平台注册名为 `yaorz26-g1m1-text-length-20261107`；下方业务结果中的 `skillId: g1-text-length` 是应用内部能力标识。
 
 执行参数：`arg1 → argv[0]`。文本长度 1–1024 个 UTF-16 码元，不能全为空白。
 

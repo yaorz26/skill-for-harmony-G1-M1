@@ -1,0 +1,38 @@
+{
+  "applicationBundle": "com.yaorz26.g1m1.skillagent",
+  "sourceCommit": "c7d23d7f8c669bee56b59db3b246f26e19c4e142",
+  "hapSha256": "8BEAB624AE116B9E81A5733C3F43B92EFBFFE62F3FD88E3E55E05A423877615D",
+  "systemSoftwareVersion": "MNT-W72C 7.0.0.111(SP12C00E103R12P2)",
+  "openHarmonyVersion": "OpenHarmony-7.0.0.109",
+  "apiVersion": 26,
+  "xiaoyiVersionName": "11.7.7.473",
+  "xiaoyiVersionCode": 110707473,
+  "visibleShortcutLabels": [
+    "小艺搜索",
+    "开始新慧记",
+    "小艺翻译",
+    "小艺Work",
+    "帮我写作",
+    "PPT生成",
+    "窗口协同"
+  ],
+  "requiredMarker": "Skill真机测试中",
+  "markerFoundInObservedChatLayout": false,
+  "applicationServiceControl": {
+    "displayLabel": "Skill Agent Demo",
+    "allowXiaoyiControl": true,
+    "bundleIdentityForThisUIItemVerified": false
+  },
+  "platformState": {
+    "source": "user confirmation in this conversation, not platform API readback",
+    "twoSkillsPublishedTo": "小艺主对话",
+    "testGroupContainsCurrentDeviceAccount": true,
+    "namespaceBundle": "com.yaorz26.g1m1.skillagent",
+    "displayNames": [
+      "G1M1文本回显",
+      "G1M1文本长度"
+    ],
+    "availableOn": null
+  },
+  "readinessConclusion": "Required readiness marker not observed; reason unresolved. This is not proof that PC is universally unsupported."
+}

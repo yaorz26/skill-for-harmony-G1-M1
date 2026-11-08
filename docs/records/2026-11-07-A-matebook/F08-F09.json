@@ -1,0 +1,74 @@
+{
+  "case": "F08-F09",
+  "bundleName": "com.g1m1.skillagent",
+  "input": [
+    "查天气"
+  ],
+  "result": {
+    "executionPath": "self-check",
+    "f08ErrCode": "ERR_INTERNAL",
+    "f08Invocations": 1,
+    "f09ErrCode": "ERR_TIMEOUT",
+    "f09Invocations": 1,
+    "f09LateCompleted": 1,
+    "f09ErrCodeAfterLate": "ERR_TIMEOUT",
+    "controlStatus": "success",
+    "allPassed": true,
+    "items": [
+      {
+        "name": "F08 errCode=ERR_INTERNAL",
+        "expected": "ERR_INTERNAL",
+        "actual": "ERR_INTERNAL",
+        "passed": true
+      },
+      {
+        "name": "F08 调用恰好一次",
+        "expected": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "name": "F08 保留替身executionPath",
+        "expected": "self-check-fault",
+        "actual": "self-check-fault",
+        "passed": true
+      },
+      {
+        "name": "F09 errCode=ERR_TIMEOUT",
+        "expected": "ERR_TIMEOUT",
+        "actual": "ERR_TIMEOUT",
+        "passed": true
+      },
+      {
+        "name": "F09 提前返回(<150ms)",
+        "expected": "<150",
+        "actual": "50",
+        "passed": true
+      },
+      {
+        "name": "F09 迟到结果不改写返回值",
+        "expected": "ERR_TIMEOUT",
+        "actual": "ERR_TIMEOUT",
+        "passed": true
+      },
+      {
+        "name": "F09 迟到后不重试",
+        "expected": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "name": "F09 底层照常完成(不宣称取消)",
+        "expected": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "name": "对照组 success",
+        "expected": "success",
+        "actual": "success",
+        "passed": true
+      }
+    ]
+  }
+}

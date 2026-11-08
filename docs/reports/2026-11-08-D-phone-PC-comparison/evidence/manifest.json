@@ -1,0 +1,89 @@
+{
+  "createdAt": "2026-11-08T15:15:52+08:00",
+  "scope": "Member A read-only comparison; D phone records archived from fixed Git objects; PC UI and APP ID readback are new observations, not new successful calls.",
+  "hashPolicy": "Text hashes normalize CRLF to LF; JPEG hashes use raw bytes. Source Git object identifiers remain authoritative.",
+  "files": [
+    {
+      "file": "D-echo-expanded.jpeg",
+      "sha256": "2d1eb8891c2b2c3c180ec5883840b70f002e07855ff6866aa184e6bf6cf5bbce",
+      "hashMode": "binary",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/records/2026-11-07-D-system-skill/echo-expanded.jpeg",
+      "sourceGitBlob": "460d6c6c3efa434118513243c9ecd8014912112d"
+    },
+    {
+      "file": "D-echo-hilog.txt",
+      "sha256": "d848c30736c728546c18fda5795fb9274b3d5a582db86f342893a40611fd9f54",
+      "hashMode": "text-LF",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/records/2026-11-07-D-system-skill/echo-hilog.txt",
+      "sourceGitBlob": "ac1ffd62e054a715bec6a5317fb0ee40226060ae"
+    },
+    {
+      "file": "D-length-expanded.jpeg",
+      "sha256": "209674b9006d6ec876179b3bc1421aeb4d12df39c26852199e562d7fff722029",
+      "hashMode": "binary",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/records/2026-11-07-D-system-skill/length-expanded.jpeg",
+      "sourceGitBlob": "7e663e597e67025ad3624d0d4b6156e418945add"
+    },
+    {
+      "file": "D-length-hilog.txt",
+      "sha256": "e60fe4ff3e9cee43c8765cbf02fa6fe85592ffda06a60d0ffae13edf53261a24",
+      "hashMode": "text-LF",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/records/2026-11-07-D-system-skill/length-hilog.txt",
+      "sourceGitBlob": "b823cc1443a71beee6f5fafedf5c97a1491fcd7b"
+    },
+    {
+      "file": "D-phone-rerun-guide.txt",
+      "sha256": "cef31eefe5932346fbc97b2145315fc2a2a7802b45b9acadd511c0ea8f463e3f",
+      "hashMode": "text-LF",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/system-skill-device-runbook.md",
+      "sourceGitBlob": "06c72b26a3ff16342a8b580231b73f544face76a"
+    },
+    {
+      "file": "D-platform-report.txt",
+      "sha256": "8ed27c53fca1440f10ec2d9c2165a4e16f6108fa6adf120aaea6adb938f58f8a",
+      "hashMode": "text-LF",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/records/2026-11-07-D-platform/report.md",
+      "sourceGitBlob": "a57ed0397b14e3685db0635828ed1137319787c2"
+    },
+    {
+      "file": "D-system-report.txt",
+      "sha256": "a40c85e291c77ee522709846dc0c7cc1f222d275d62146f1b48aea091dd13c15",
+      "hashMode": "text-LF",
+      "sourceCommit": "c7cc9d17f8aafbb0bd9b84aed3deba886b76e597",
+      "sourcePath": "docs/records/2026-11-07-D-system-skill/report.md",
+      "sourceGitBlob": "cf98c51a85648d140ebbc1daed6304b748f4118c"
+    },
+    {
+      "file": "main-acceptance.txt",
+      "sha256": "7ba7e8985c067e62b498d58bf0687f98d60a31c59ff1a1912a5ea1cfbd088314",
+      "hashMode": "text-LF",
+      "sourceCommit": "34899adbda8270463566632ecd7e066391d9bb07",
+      "sourcePath": "docs/acceptance.md",
+      "sourceGitBlob": "82e2e05e5c36bd30ff341c8b1efb6d84400e4308"
+    },
+    {
+      "file": "main-delivery-index.txt",
+      "sha256": "e99bf18df041a600e8e0bedd092db515ae8a7f4261cc5eefb5cd010e190d57c1",
+      "hashMode": "text-LF",
+      "sourceCommit": "34899adbda8270463566632ecd7e066391d9bb07",
+      "sourcePath": "docs/delivery-index.md",
+      "sourceGitBlob": "5055a4eba4ac463edb2662cd3df176c196bd0caa"
+    },
+    {
+      "file": "PC-readback.json",
+      "sha256": "13dfe5f0094e45fcbf930e928e504d409152d706153c702f698a52982920e7bc",
+      "hashMode": "text-LF"
+    },
+    {
+      "file": "platform-readiness.json",
+      "sha256": "4b5ee3b17e5a8c82ac1148eebe5425f5895765f74239b9065ff01e12ba1e3730",
+      "hashMode": "text-LF"
+    }
+  ]
+}

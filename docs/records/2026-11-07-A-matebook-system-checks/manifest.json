@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "file": "build-summary.json",
+      "bytes": 534,
+      "sha256": "57ccca5f6beec662d44b2523fbd64b749d9787e1da3415d135b071a0d702a30b"
+    },
+    {
+      "file": "packaged-registration.json",
+      "bytes": 1992,
+      "sha256": "ef249b00e72e8583827dae24c11f5bfac4d17d1d582915a8096d8fa2fcd94673"
+    },
+    {
+      "file": "report.md",
+      "bytes": 7512,
+      "sha256": "52209d74db65b0b205000293f8388ac0b4bfd9bb29cb914e60da5a1d9d410f3b"
+    },
+    {
+      "file": "runtime-trace.jsonl",
+      "bytes": 7717,
+      "sha256": "d6b653f7ba7feb40a3fca10aaa1db5eadb31e2d48d8a24a79310f5df85b5c942"
+    },
+    {
+      "file": "selfcheck.json",
+      "bytes": 1484,
+      "sha256": "00abd8694a1e36d35876d6b301245e82918933230990d0285390a840aad811b3"
+    },
+    {
+      "file": "system-probes.json",
+      "bytes": 1197,
+      "sha256": "3e55092f7c2b0b83e276d3026a193f9013a7dd41029a4b4aa494747052d2fa78"
+    },
+    {
+      "file": "trace-checks.json",
+      "bytes": 3017,
+      "sha256": "3cc40849ba1532d877d6e9e38a7fbab15cf201fdc5e6d0784c1591cb895e81d0"
+    },
+    {
+      "file": "ui-results.json",
+      "bytes": 14368,
+      "sha256": "5554ccdfe6cfa8ca8eeea7601a8e865a6f99288f7d5ef88aaeec2659c054c3cf"
+    }
+  ]
+}

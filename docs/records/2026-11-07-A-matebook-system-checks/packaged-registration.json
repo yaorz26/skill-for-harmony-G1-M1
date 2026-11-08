@@ -1,0 +1,80 @@
+{
+  "moduleDeviceTypes": [
+    "phone",
+    "tablet",
+    "2in1"
+  ],
+  "agentCard": {
+    "agentCards": [
+      {
+        "skills": [
+          {
+            "examples": [
+              "回显 你好，鸿蒙"
+            ],
+            "name": "回显",
+            "description": "原样返回输入文本。",
+            "id": "g1-echo",
+            "tags": [
+              "回显",
+              "echo"
+            ]
+          },
+          {
+            "examples": [
+              "长度 你好ABC"
+            ],
+            "name": "文本长度",
+            "description": "计算文本的 UTF-16 码元长度。",
+            "id": "g1-text-length",
+            "tags": [
+              "长度",
+              "字数",
+              "length"
+            ]
+          }
+        ],
+        "agentId": "g1m1-skill-agent",
+        "defaultOutputModes": [
+          "application/json"
+        ],
+        "appInfo": {
+          "deviceTypes": [
+            "phone",
+            "tablet",
+            "2in1"
+          ],
+          "abilityName": "AgentExtensionAbility",
+          "moduleName": "entry",
+          "bundleName": "com.g1m1.skillagent"
+        },
+        "name": "Skill Agent Demo",
+        "description": "通过明确指令路由到应用内的回显和文本长度能力。",
+        "iconUrl": "https://raw.githubusercontent.com/yaorz26/skill-for-harmony-G1-M1/main/AppScope/resources/base/media/app_icon.svg",
+        "category": "productivity",
+        "version": "1.0.0",
+        "defaultInputModes": [
+          "application/json"
+        ]
+      }
+    ]
+  },
+  "skillProfiles": [
+    {
+      "abilityName": "EntryAbility",
+      "name": "g1-echo",
+      "srcEntries": [
+        "skills/g1-echo/scripts/EchoSkill.ets"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "abilityName": "EntryAbility",
+      "name": "g1-text-length",
+      "srcEntries": [
+        "skills/g1-text-length/scripts/TextLengthSkill.ets"
+      ],
+      "version": "1.0.0"
+    }
+  ]
+}

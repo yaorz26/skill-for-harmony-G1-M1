@@ -1,0 +1,13 @@
+{
+  "observedDate": "2026-11-08",
+  "source": "Authenticated Skill editor, 真机测试 → 小艺主对话 → 步骤二",
+  "requirements": [
+    "HarmonyOS 7",
+    "小艺 11.7.x 或更高版本",
+    "发布后主对话快捷方式出现 Skill真机测试中，代表环境就绪"
+  ],
+  "testValidityDays": 15,
+  "publicGuide": "https://developer.huawei.com/consumer/cn/doc/doccenter-celia/skill-real-machine-testing-0000002592771628",
+  "publicGuideUpdatedAt": "2026-11-03 14:21",
+  "limit": "Public guide does not explicitly establish this MateBook model/build eligibility."
+}

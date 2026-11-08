@@ -1,0 +1,61 @@
+{
+  "kind": "public-SDK-declaration-review",
+  "sdkPackage": {
+    "apiVersion": "26",
+    "displayName": "Ets",
+    "meta": {
+      "metaVersion": "3.0.2"
+    },
+    "path": "ets",
+    "platformVersion": "26.0.0",
+    "releaseType": "Release",
+    "version": "26.0.0.105"
+  },
+  "declarationFilesScanned": 945,
+  "symbolOccurrences": {
+    "connectAgentExtensionAbility": [],
+    "disconnectAgentExtensionAbility": [],
+    "execCli2": [],
+    "executeSkill": [],
+    "invokeSkill": [],
+    "startSkill": [],
+    "callSkill": [],
+    "executeArkTSScript": []
+  },
+  "relatedDeclarations": [
+    {
+      "file": "openharmony/ets/api/@ohos.app.ability.scriptManager.d.ts",
+      "sha256": "f47ca2cd06d5120ee4d07f2892868b2fdecd393a9dc4ef5f568bc3ac90f78cc6",
+      "functionDeclarations": [
+        "    function completeArkTSScriptInApp(context: Context, requestCode: string, result: ExecuteResult): Promise<void>;"
+      ],
+      "resultReportingPresent": true
+    },
+    {
+      "file": "openharmony/ets/api/@ohos.bundle.skillManager.d.ts",
+      "sha256": "db0bc329a1bb7ecb6cbca240dc26484a9231b8051eda2bd24941a34891cf1b1d",
+      "functionDeclarations": [
+        "    function getSkillInfoForSelf(moduleName: string, skillName: string, flags: number): Promise<SkillInfo>;",
+        "    function getSkillInfosForSelf(flags: number): Promise<Array<SkillInfo>>;",
+        "    function getSkillInfo(bundleName: string, moduleName: string, skillName: string, flags: number, userId?: number): Promise<SkillInfo>;",
+        "    function getSkillInfos(bundleName: string, flags: number, userId?: number): Promise<Array<SkillInfo>>;",
+        "    function getAllSkillInfos(flags: number, userId?: number): Promise<Array<SkillInfo>>;"
+      ],
+      "resultReportingPresent": false
+    },
+    {
+      "file": "openharmony/ets/api/application/AgentHostProxy.d.ts",
+      "sha256": "24201e56fe5bd0cf69cd396545a1419fb8afe47e0aab66a9dd5000d3b7641542",
+      "functionDeclarations": [],
+      "resultReportingPresent": false
+    },
+    {
+      "file": "hms/ets/api/@hms.ai.AgentFramework.d.ets",
+      "sha256": "443bbbbb009627e2b8002dd983ae593d05fbb68766b13347dc4a50cdadb2ef4b",
+      "functionDeclarations": [],
+      "resultReportingPresent": false
+    }
+  ],
+  "permissionStringExists": true,
+  "runtimeInvocationPerformed": false
+}

@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "file": "device-probes.json",
+      "bytes": 3926,
+      "sha256": "EB513583BA5E6041A9415CA849B32B7C5068B325BB0126A73FD80B2164C28F87"
+    },
+    {
+      "file": "hap-registration.json",
+      "bytes": 1043,
+      "sha256": "B51E3E40F2E23E728FE25B517450FA8B8A1E6562509B3C8751FB49F763400102"
+    },
+    {
+      "file": "no-beta-activity.png",
+      "bytes": 56372,
+      "sha256": "7082031865F14883670BD103A82584F4B879EF51023E89428BF40CE0623BE52C"
+    },
+    {
+      "file": "platform-actions.json",
+      "bytes": 1777,
+      "sha256": "030DDA138552728685D012C99665E3A471473C04E7E228638B63BE5B81DA3995"
+    },
+    {
+      "file": "platform-readback.json",
+      "bytes": 1569,
+      "sha256": "F9F06C359FF7ADD4F2A9E441D66FFF8F954C32BB470B3246E26BC0CD20C2E8BE"
+    },
+    {
+      "file": "report.md",
+      "bytes": 6532,
+      "sha256": "1F94F3A46EEFEBF4E389B77FAB449CE308DA18F0D0DD264FC3FD9E2DD12E9E8E"
+    },
+    {
+      "file": "support-question.md",
+      "bytes": 1569,
+      "sha256": "C13F7D81EE59E2A097C47E12F62D433AF8F39977E94E63513C00F529F76C89C7"
+    }
+  ]
+}

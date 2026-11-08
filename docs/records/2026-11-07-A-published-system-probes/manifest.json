@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "file": "logging-control.json",
+      "bytes": 1448,
+      "sha256": "10EE926F2A18DCA8869D66544042A8F64DEEDA809290B37B6E4532DF2E79E360"
+    },
+    {
+      "file": "quick-actions.png",
+      "bytes": 167910,
+      "sha256": "F18DDCE6BFBAB6BA1FEA9A845FD76E6B95C532FD3A5018967CCB114A731EB832"
+    },
+    {
+      "file": "readiness.json",
+      "bytes": 1371,
+      "sha256": "F99DC79936EAF19D26DD86914521DD145FF7F31C86A1C2A61F95AA2DE160BB33"
+    },
+    {
+      "file": "report.md",
+      "bytes": 6607,
+      "sha256": "DDDE111662E258DC794A99EED5E9714700CF327E47CA946FA66E33809111CD6B"
+    },
+    {
+      "file": "system-probes.json",
+      "bytes": 4036,
+      "sha256": "EA25CAAAC5BBC1AD5F95D1D084BCD977657563BE436CAB797B9345F6E8DB6F82"
+    }
+  ]
+}

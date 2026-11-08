@@ -1,0 +1,84 @@
+[
+  {
+    "case": "published-echo",
+    "query": "请调用我发布测试的 Skill yaorz26-g1m1-echo-20261107，将参数 arg1 设置为 G1M1-SYSTEM-ECHO-1107，并返回这个 Skill 的实际执行结果。",
+    "visibleReplyParagraphs": [
+      "我无法满足您的该请求。如果您有关于日常问答或产品咨询的其他问题，我很乐意为您解答。"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "natural-echo",
+    "query": "请原样回显这段文本：G1M1-SYSTEM-ECHO-1107",
+    "visibleReplyParagraphs": [
+      "G1M1-SYSTEM-ECHO-1107"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "natural-length",
+    "query": "请计算这段文本的长度：你好ABC",
+    "visibleReplyParagraphs": [
+      "你好ABC 的长度是 5，由 2 个汉字和 3 个英文字母组成。"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "mapped-echo",
+    "query": "请使用G1M1文本回显，回显这段文本：G1M1-SYSTEM-ECHO-1107",
+    "visibleReplyParagraphs": [
+      "G1M1-SYSTEM-ECHO-1107"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "mapped-length",
+    "query": "请使用G1M1文本长度，计算文本：你好ABC😀",
+    "visibleReplyParagraphs": [
+      "这个请求是计算文本长度（G1M1文本长度），不属于conversion-tools技能支持的范围。让我用代码来计算。",
+      "文本 \"你好ABC😀\" 的 G1M1 长度为 6。\n \n其中 G1（ASCII 字符）为 3（A、B、C），M1（非 ASCII 字符）为 3（你、好、😀）。"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "restart-mapped-length",
+    "query": "请使用“G1M1文本长度”计算“你好ABC😀”的UTF-16码元长度。",
+    "visibleReplyParagraphs": [
+      "该技能不适用于UTF-16码元长度计算，这是字符编码计算而非单位换算。直接用代码计算。",
+      "“你好ABC😀”的UTF-16码元长度为 7。\n \n其中“你好”各占1个码元，“ABC”各占1个码元，😀（超出基本多语言平面的emoji）需要代理对表示，占2个码元，合计 2+3+2=7。"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "restart-registered-echo",
+    "query": "请使用应用技能 yaorz26-g1m1-echo-20261107 回显 G1M1-AFTER-PUBLISH-1107",
+    "visibleReplyParagraphs": [
+      "没找到可用的回显技能，这次操作没能执行成功。"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  },
+  {
+    "case": "published-agent",
+    "query": "请调用本机的 Skill Agent Demo 智能体 g1m1-skill-agent，执行：回显 G1M1-AGENT-1107",
+    "visibleReplyParagraphs": [
+      "我无法满足您的该请求。如果您有关于日常问答或产品咨询的其他问题，我很乐意为您解答。"
+    ],
+    "observedApplicationStages": [],
+    "systemInvocationVerified": false,
+    "note": "Reply text alone and absence of buffered logs cannot establish the underlying cause."
+  }
+]

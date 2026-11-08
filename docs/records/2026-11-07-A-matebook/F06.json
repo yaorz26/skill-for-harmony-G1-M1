@@ -1,0 +1,16 @@
+{
+  "case": "F06",
+  "bundleName": "com.g1m1.skillagent",
+  "input": [
+    "查天气"
+  ],
+  "result": {
+    "requestId": "ui-1794045082589-3",
+    "skillId": "",
+    "status": "failed",
+    "data": {},
+    "errCode": "ERR_NO_SKILL",
+    "errMsg": "支持：回显 文本；长度 文本",
+    "executionPath": "in-app"
+  }
+}

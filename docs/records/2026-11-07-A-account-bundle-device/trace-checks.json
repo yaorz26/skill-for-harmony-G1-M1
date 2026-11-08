@@ -1,0 +1,154 @@
+[
+  {
+    "case": "F03",
+    "requestId": "ui-1794055961850-1",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F04",
+    "requestId": "ui-1794055973602-2",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F05",
+    "requestId": "ui-1794055985265-3",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F06",
+    "requestId": "ui-1794055997001-4",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-missing",
+    "requestId": "ui-1794056009109-5",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-empty",
+    "requestId": "ui-1794056019484-6",
+    "stages": [
+      "request_received",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-spaces",
+    "requestId": "ui-1794056030566-7",
+    "stages": [
+      "request_received",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-arg1025",
+    "requestId": "ui-1794056042698-8",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-total1101",
+    "requestId": "ui-1794056054550-9",
+    "stages": [
+      "request_received",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-emoji512",
+    "requestId": "ui-1794056066402-10",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F07-emoji513",
+    "requestId": "ui-1794056078431-11",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F10-first",
+    "requestId": "ui-1794056090967-12",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  },
+  {
+    "case": "F10-second",
+    "requestId": "ui-1794056103235-13",
+    "stages": [
+      "request_received",
+      "intent_matched",
+      "skill_started",
+      "skill_finished",
+      "response_returned"
+    ],
+    "oneResponse": true,
+    "passed": true
+  }
+]

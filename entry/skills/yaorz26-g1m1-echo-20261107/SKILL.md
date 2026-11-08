@@ -1,5 +1,5 @@
 ---
-name: g1-echo
+name: yaorz26-g1m1-echo-20261107
 description: 原样返回用户指定的非空文本，用于测试应用 Skill 的参数传递、执行和返回；响应“回显这段文本”等明确请求。
 ---
 
@@ -12,8 +12,10 @@ description: 原样返回用户指定的非空文本，用于测试应用 Skill 
 ## 场景1：回显（echo）
 
 ```text
-exec-cli(command: ohos-arkTSScript --skillName 'g1-echo' --scriptPath 'scripts/EchoSkill.ets' --functionName 'echo' --args '{"arg1":"你好，鸿蒙"}')
+exec-cli(command: ohos-arkTSScript --skillName 'yaorz26-g1m1-echo-20261107' --scriptPath 'scripts/EchoSkill.ets' --functionName 'echo' --args '{"arg1":"你好，鸿蒙"}')
 ```
+
+平台注册名为 `yaorz26-g1m1-echo-20261107`；下方业务结果中的 `skillId: g1-echo` 是应用内部能力标识。
 
 执行参数：`arg1 → argv[0]`。文本长度 1–1024 个 UTF-16 码元，不能全为空白。
 

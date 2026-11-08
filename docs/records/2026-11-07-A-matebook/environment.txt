@@ -1,0 +1,7 @@
+Device: HUAWEI MateBook 14 (MNTXM-24B), user-provided model
+Transport: HDC TCP over shared phone hotspot
+Local DevEco: 26.0.0.865; SDK: 26.0.0.105
+const.ohos.apiversion=26
+const.ohos.fullname=OpenHarmony-7.0.0.109
+const.product.devicetype=2in1
+const.product.cpu.abilist=arm64-v8a

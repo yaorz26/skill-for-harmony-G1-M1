@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "scope": "host-only-baseline",
+  "startedAt": "2026-11-08T07:33:57.724Z",
+  "finishedAt": "2026-11-08T07:33:59.610Z",
+  "node": "v24.20.0",
+  "platform": "win32",
+  "architecture": "x64",
+  "source": {
+    "commit": "d82fb10dd8cf7eb1e14daf1be6b38e52c34e5135",
+    "branch": "codex/member-a-closeout",
+    "workingTreeStatus": "",
+    "sourceFiles": [
+      {
+        "path": ".github/CODEOWNERS",
+        "sha256": "4c4464fb23dc8bd6d86ec8f10b95e0b754505ccd2a1d95b5ca9410cea15788e1"
+      },
+      {
+        "path": ".github/pull_request_template.md",
+        "sha256": "c4e37ccec3df32ca9fbc85b41365545e97702b11a8da333452aa4dc8292f546c"
+      },
+      {
+        "path": ".github/workflows/structure.yml",
+        "sha256": "a95504549e4d78ec2f9b8959cd4dce7f699a32cd17b802445b05266bf142ef06"
+      },
+      {
+        "path": "AppScope/app.json5",
+        "sha256": "80a62e0d06067bff67757253d035dc3fceecadb81810d2bbfd05e049718c49b4"
+      },
+      {
+        "path": "AppScope/resources/base/element/string.json",
+        "sha256": "6ff1c86162857f4c5805310d26b87e8a70203f98a121c7db4f5f7ed0dca64192"
+      },
+      {
+        "path": "AppScope/resources/base/media/app_icon.svg",
+        "sha256": "865e6194eb883fada153674eaddf1d45a0606a1aed742d279d8fc1c431e086fd"
+      },
+      {
+        "path": "build-profile.json5",
+        "sha256": "2db85900d88820215977a98dc47ee6f8197f090cc95bc410ffe9f7689b32a90f"
+      },
+      {
+        "path": "docs/records/2026-11-04-A-integration/check-entry.mjs",
+        "sha256": "5a7b8f6e245d2be7c973cc24b7330693321c9602e29f74cb413ad840ab7af6cc"
+      },
+      {
+        "path": "docs/records/2026-11-05-C-runtime/check-executor.mjs",
+        "sha256": "8666ca4d6289209ecffae58e0afc8f5fd33c31ea26fbe219f9b244b408ce22fe"
+      },
+      {
+        "path": "entry/build-profile.json5",
+        "sha256": "ab6a89261d46045602e8387d49dd8a9bbca8390247c95116eb5ba84cdac7601b"
+      },
+      {
+        "path": "entry/hvigorfile.ts",
+        "sha256": "96b0c1c4c9492360b6d72fd457625aafe460c9a616f74a159c3f5da524d1d3ba"
+      },
+      {
+        "path": "entry/oh-package.json5",
+        "sha256": "bf4f0457fff134f8f9a858ce0c84e624bdd94c99c495015520dc3772daad7679"
+      },
+      {
+        "path": "entry/skills/yaorz26-g1m1-echo-20261107/SKILL.md",
+        "sha256": "395560bef04b7a7c0236b0784128c6b560257b610f8b1a279b0927cc1f7580c2"
+      },
+      {
+        "path": "entry/skills/yaorz26-g1m1-echo-20261107/scripts/EchoSkill.ets",
+        "sha256": "52f4c6eb81ce602e47861612f58d7ce0dc90ecac9cd09b30f331bdd6994fc8f3"
+      },
+      {
+        "path": "entry/skills/yaorz26-g1m1-text-length-20261107/SKILL.md",
+        "sha256": "e375695d3f8ea185a0f1e38964b2ae6e64919fffb8b8724e06144d6f3e90a0a4"
+      },
+      {
+        "path": "entry/skills/yaorz26-g1m1-text-length-20261107/scripts/TextLengthSkill.ets",
+        "sha256": "eb36a42f9fe0ea83bb55f835045ccd60cfcc2aee441049e33e73b64dfc7ce937"
+      },
+      {
+        "path": "entry/src/main/ets/adapters/InAppSkillInvoker.ets",
+        "sha256": "369ea105c6261673511016d00d29363a5c08a65ea1e4d41565e13cdb488f5eec"
+      },
+      {
+        "path": "entry/src/main/ets/adapters/README.md",
+        "sha256": "dd9bbbdfc645e24163a8bca5fd499aae0fd855e6748849557b946d673c9a00e4"
+      },
+      {
+        "path": "entry/src/main/ets/agent/AgentService.ets",
+        "sha256": "d54fac6639c97841830981fd3847555bbfbbf7e688e5c918b9f34f6a55a696e0"
+      },
+      {
+        "path": "entry/src/main/ets/agent/Contracts.ets",
+        "sha256": "56114196a24793337b62bba9ec65d1e3c70743336251ce30f4a58acf39a7d08f"
+      },
+      {
+        "path": "entry/src/main/ets/agent/TraceReporter.ets",
+        "sha256": "548bf5dd5240477bc1de084dea4a916070d9ce3b6c25e202db1e581a75ad6979"
+      },
+      {
+        "path": "entry/src/main/ets/agentextension/AgentExtensionAbility.ets",
+        "sha256": "f6652b0c8cb5c34bf2807dbcc4d9673998000d77fbe0ea41587ed9431a5af4fc"
+      },
+      {
+        "path": "entry/src/main/ets/agentextension/AgentRequestBridge.ets",
+        "sha256": "f1edb1583eef9416f37c4417f49a49a3b1477b1d8705a760e39a72632b4f3d62"
+      },
+      {
+        "path": "entry/src/main/ets/agentextension/README.md",
+        "sha256": "c020cb15c45d0b677e2d6b52d6a9c85aed8a593293c923f0145f752e99cbb0c1"
+      },
+      {
+        "path": "entry/src/main/ets/entryability/EntryAbility.ets",
+        "sha256": "5bced0ae3140d16856fe9e73f795c777694d8696de79313d8e27f3cf8e6b4be7"
+      },
+      {
+        "path": "entry/src/main/ets/pages/Index.ets",
+        "sha256": "7f4b1905946da5abdff5b3527b3cefb5fc1d84654c9b5fb1f80885f39cc48b1e"
+      },
+      {
+        "path": "entry/src/main/ets/registry/SkillRegistry.ets",
+        "sha256": "a800062c04dd16544cab8f501e354699e51e44fa2b68f7423b2d1a0001e54612"
+      },
+      {
+        "path": "entry/src/main/ets/router/IntentRouter.ets",
+        "sha256": "4bfb6d62d6110e964f5c2a71b9e3583c3e880ec18f7ab8f999f2af6bab12e40c"
+      },
+      {
+        "path": "entry/src/main/ets/runtime/ExecutorSelfCheck.ets",
+        "sha256": "dd30647db8137dd080e822b07d900080770b0a985a3f06b8ec26d8e798c02d8c"
+      },
+      {
+        "path": "entry/src/main/ets/runtime/SkillExecutor.ets",
+        "sha256": "1bbc8b32ca6e442f83c13b7574adb9224fbb5eda8287f5554c726689ac38f0fb"
+      },
+      {
+        "path": "entry/src/main/ets/runtime/SystemSkillReporter.ets",
+        "sha256": "c443d80f7a3420f20cb26f75d4bdd7a57ce79e1dbbcddee22ef9a94ebfa89f3b"
+      },
+      {
+        "path": "entry/src/main/ets/service/AppSkillService.ets",
+        "sha256": "7ea12f1f0813340eaddb46b32a7aa8adf57e475e77517b4ba59a7be144b21183"
+      },
+      {
+        "path": "entry/src/main/module.json5",
+        "sha256": "839230d8f4316cfd345ee4318ab44e712d554719e36870c9d4602c48aaa26fb7"
+      },
+      {
+        "path": "entry/src/main/resources/base/element/color.json",
+        "sha256": "3d3152c4b035532c0e41ab436b8d8b19b37d93b175278abdde6ddc4bd9eb1ec5"
+      },
+      {
+        "path": "entry/src/main/resources/base/element/string.json",
+        "sha256": "feef00bb271a0bcd53099010a3c5cc3fa6e9dcd09d371f9bb138cd263d89cb78"
+      },
+      {
+        "path": "entry/src/main/resources/base/profile/agent_config.json",
+        "sha256": "e7051de98e114d88b1e517ed2014eae2aeaeeb25d4d61ca4f817dc6cefb25083"
+      },
+      {
+        "path": "entry/src/main/resources/base/profile/main_pages.json",
+        "sha256": "5308f930c5518fda4f244086266274cf6e1f09c8a3c1200830cfef22bbd7ae74"
+      },
+      {
+        "path": "hvigor/hvigor-config.json5",
+        "sha256": "7ceee45e457e60c4f3c414a8b5166ea56801cd0cefc786a4cc1f4a337b3b7620"
+      },
+      {
+        "path": "hvigorfile.ts",
+        "sha256": "561d3af07f6c82dbb7bb20bc1b6f719d0d83d0ca6b0131657b8fab55e255b7b4"
+      },
+      {
+        "path": "oh-package.json5",
+        "sha256": "92c51cf90f1fb02fe062e37f7d8e55de8f81ae8d5d22f8e052b314f25f25655b"
+      },
+      {
+        "path": "tools/README.md",
+        "sha256": "016305f313c33db0c833f528ce143a0b36f942499d15e5fd8e480a825f253729"
+      },
+      {
+        "path": "tools/build-hap.ps1",
+        "sha256": "d4245056fbf7eaec20279101b69f912c324529268fd5f7db32122212a3e3a896"
+      },
+      {
+        "path": "tools/check-core.mjs",
+        "sha256": "43bee41e71686e1937aa525e3eab16b37a94da01c746a53cc1588519f801510e"
+      },
+      {
+        "path": "tools/check-evidence.test.mjs",
+        "sha256": "0c6cf54f81044440cef81833b5f30b5724de906877ff3f8bd7c19dbc76727105"
+      },
+      {
+        "path": "tools/check-structure.mjs",
+        "sha256": "412f06a6cbeabac14ff8881093e37d00047369255e84250cde41c001fa087134"
+      },
+      {
+        "path": "tools/lib/evidence.mjs",
+        "sha256": "66f2e41c02739f02a2609e311460a3a4e752c72e8cee09736cd8b1b9dc31805c"
+      },
+      {
+        "path": "tools/lib/source-snapshot.mjs",
+        "sha256": "ac1d9e7bba9f5d3f7dd7490f43af05a48c70cf790152c6c791090624f438a3f4"
+      },
+      {
+        "path": "tools/run-acceptance.mjs",
+        "sha256": "f01288e21dc02b5f8a511c160df5c77bf64e158e044dfc03757c61bac792ecab"
+      }
+    ],
+    "fingerprint": "940d9efa6b7d6feaf5a8b25e8fe33db5b84d284dcf06a11748479a18e9d96ffc"
+  },
+  "sourceStable": true,
+  "sourceVerificationError": "",
+  "results": [
+    {
+      "name": "structure",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "durationMs": 141,
+      "logFile": "structure.log",
+      "sha256": "0582ef0be048685979ec3611066eafadeacf4426b7f176280635e61cc0716d3b"
+    },
+    {
+      "name": "core",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "durationMs": 181,
+      "logFile": "core.log",
+      "sha256": "e38aa575c51ac4558ae3652525996d3f86f5eb74786118743b026d652ef3114b"
+    },
+    {
+      "name": "a-entry",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "durationMs": 201,
+      "logFile": "a-entry.log",
+      "sha256": "1c70a029e1718cf5d11523f64b8a690e81ec17d4402546e39396e8df9c298cff"
+    },
+    {
+      "name": "c-executor",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "durationMs": 212,
+      "logFile": "c-executor.log",
+      "sha256": "a37b2c4dbd15acd290dde53328c9817fc085d4aefbd635dbb576c9ac20dc9f1b"
+    },
+    {
+      "name": "evidence-tool",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "durationMs": 1021,
+      "logFile": "evidence-tool.log",
+      "sha256": "5cbc89447beb9e9b9cc9a1d95cf043950bbddf3b5adb5b8289267814a029b436"
+    }
+  ],
+  "status": "passed",
+  "unverified": [
+    "ArkTS compilation",
+    "IDE sync",
+    "installation",
+    "device runtime",
+    "system Skill",
+    "AgentExtensionAbility",
+    "end-to-end acceptance"
+  ]
+}

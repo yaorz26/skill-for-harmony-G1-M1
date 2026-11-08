@@ -1,0 +1,142 @@
+{
+  "observedAtUTC": "2026-11-08T05:39:10Z",
+  "method": "Read-only Edge page inspection and selected fields from responses made by those pages. Original responses, cookies, signed download URLs, team identifiers and personal account identifiers are excluded.",
+  "skills": [
+    {
+      "platformSkillId": "332320823da94bf1a3b9425d88f03d8d",
+      "skillName": "yaorz26-g1m1-echo-20261107",
+      "bundleName": "com.yaorz26.g1m1.skillagent",
+      "availableOn": [
+        "cloud"
+      ],
+      "hasTestRelease": true,
+      "status": "Draft",
+      "createTime": "2026-11-07 21:03:12",
+      "modifyTime": "2026-11-07 21:04:51",
+      "displayName": "G1M1文本回显",
+      "minAPIVersion": "",
+      "targetAPIVersion": "",
+      "initialFileNames": [
+        "yaorz26-g1m1-echo-20261107.zip"
+      ],
+      "editorFiles": [
+        "yaorz26-g1m1-echo-20261107/SKILL.md"
+      ],
+      "sourceEndpoint": "agentSkill/querydetail; agentCommon/skillGenerate/queryFileList"
+    },
+    {
+      "platformSkillId": "dd010c1a3d8f41caab7cfc9d0a14f15a",
+      "skillName": "yaorz26-g1m1-text-length-20261107",
+      "bundleName": "com.yaorz26.g1m1.skillagent",
+      "availableOn": [
+        "cloud"
+      ],
+      "hasTestRelease": true,
+      "status": "Draft",
+      "createTime": "2026-11-07 21:03:12",
+      "modifyTime": "2026-11-07 21:04:29",
+      "displayName": "G1M1文本长度",
+      "minAPIVersion": "",
+      "targetAPIVersion": "",
+      "initialFileNames": [
+        "yaorz26-g1m1-text-length-20261107.zip"
+      ],
+      "editorFiles": [
+        "yaorz26-g1m1-text-length-20261107/SKILL.md"
+      ],
+      "sourceEndpoint": "agentSkill/querydetail; agentCommon/skillGenerate/queryFileList"
+    },
+    {
+      "platformSkillId": "915ec21a6d4b49aca8f3ad189afd179b",
+      "skillName": "yaorz26-g1m1-echo-20261107",
+      "bundleName": "com.g1m1.skillagent",
+      "availableOn": [
+        "cloud"
+      ],
+      "hasTestRelease": false,
+      "status": "Draft",
+      "createTime": "2026-11-07 20:02:07",
+      "modifyTime": "2026-11-07 20:03:01",
+      "displayName": null,
+      "minAPIVersion": null,
+      "targetAPIVersion": null,
+      "initialFileNames": [
+        "yaorz26-g1m1-echo-20261107.zip"
+      ],
+      "editorFiles": [
+        "yaorz26-g1m1-echo-20261107/SKILL.md"
+      ],
+      "sourceEndpoint": "agentSkill/querydetail; agentCommon/skillGenerate/queryFileList"
+    },
+    {
+      "platformSkillId": "c45c98070e1041dca4cd449ef94adc96",
+      "skillName": "yaorz26-g1m1-text-length-20261107",
+      "bundleName": "com.g1m1.skillagent",
+      "availableOn": [
+        "cloud"
+      ],
+      "hasTestRelease": false,
+      "status": "Draft",
+      "createTime": "2026-11-07 20:02:07",
+      "modifyTime": "2026-11-07 20:02:50",
+      "displayName": null,
+      "minAPIVersion": null,
+      "targetAPIVersion": null,
+      "initialFileNames": [
+        "yaorz26-g1m1-text-length-20261107.zip"
+      ],
+      "editorFiles": [
+        "yaorz26-g1m1-text-length-20261107/SKILL.md"
+      ],
+      "sourceEndpoint": "agentSkill/querydetail; agentCommon/skillGenerate/queryFileList"
+    }
+  ],
+  "testGroups": [
+    {
+      "platformSkillId": "332320823da94bf1a3b9425d88f03d8d",
+      "groups": [
+        {
+          "name": "test",
+          "enabled": true,
+          "containsCurrentPlatformUser": true,
+          "testerCount": 1,
+          "updateTime": "2026-11-07 19:49:17"
+        }
+      ],
+      "sourceEndpoint": "agentCommon/skillGenerate/queryTestGroup"
+    },
+    {
+      "platformSkillId": "dd010c1a3d8f41caab7cfc9d0a14f15a",
+      "groups": [
+        {
+          "name": "test",
+          "enabled": true,
+          "containsCurrentPlatformUser": true,
+          "testerCount": 1,
+          "updateTime": "2026-11-07 19:49:17"
+        }
+      ],
+      "sourceEndpoint": "agentCommon/skillGenerate/queryTestGroup"
+    }
+  ],
+  "releaseUI": {
+    "entry": "小艺主对话",
+    "selectedGroup": "test",
+    "bothShowCancelAndRepublish": true,
+    "validDaysShown": 15
+  },
+  "agentList": {
+    "query": "celiaplugin/queryagent",
+    "responseCode": 0,
+    "pageNum": 1,
+    "pageSize": 10,
+    "total": 0,
+    "ui": "当前筛选状态下未能找到相关结果"
+  },
+  "limitations": [
+    "containsCurrentPlatformUser refers to the browser's signed-in platform user. The MateBook account was not independently compared in this inspection.",
+    "Initial ZIP filenames can be produced by HAP import. They do not establish that the wrong upload type was chosen.",
+    "availableOn omits pc. This is a configuration mismatch against the documented PC discovery scope, but this inspection alone does not explain the missing client readiness shortcut or prove that correcting the field will make dispatch work.",
+    "No settings were saved; no release, cancellation or account change was performed."
+  ]
+}

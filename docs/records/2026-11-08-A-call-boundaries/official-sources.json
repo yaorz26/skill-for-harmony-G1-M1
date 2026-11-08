@@ -1,0 +1,22 @@
+[
+  {
+    "name": "agentManager",
+    "url": "https://github.com/openharmony/interface_sdk-js/blob/master/api/@ohos.app.agent.agentManager.d.ts",
+    "gitBlobSha": "d11c3c464ab611cfa9f3b966dda49abc6045ec0e"
+  },
+  {
+    "name": "AgentProxy",
+    "url": "https://github.com/openharmony/interface_sdk-js/blob/master/api/application/AgentProxy.d.ts",
+    "gitBlobSha": "bc4755705fd3046f9bc001792c9d56088e5ff4b7"
+  },
+  {
+    "name": "AgentExtensionConnectCallback",
+    "url": "https://github.com/openharmony/interface_sdk-js/blob/master/api/application/AgentExtensionConnectCallback.d.ts",
+    "gitBlobSha": "1d01df890326e7de0019ccab47fcb0dd394594fe"
+  },
+  {
+    "name": "agentManager-guide",
+    "url": "https://github.com/openharmony/docs/blob/master/zh-cn/application-dev/reference/apis-ability-kit/js-apis-app-agent-agentManager-sys.md",
+    "gitBlobSha": "182506a38972a83a1bbacf9ecb7c977e59391216"
+  }
+]

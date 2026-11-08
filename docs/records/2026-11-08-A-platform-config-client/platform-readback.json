@@ -1,0 +1,71 @@
+{
+  "capturedAt": "2026-11-08T06:35:35.203Z",
+  "skills": [
+    {
+      "skillName": "yaorz26-g1m1-echo-20261107",
+      "code": {
+        "config": 0,
+        "detail": 0,
+        "groups": 0
+      },
+      "bundleName": "com.yaorz26.g1m1.skillagent",
+      "hasTestRelease": true,
+      "availableOn": [
+        "cloud"
+      ],
+      "minAPIVersion": 26,
+      "targetAPIVersion": 26,
+      "skillConfig": {
+        "conditions": [],
+        "i18n": {
+          "functions": [],
+          "skill": {
+            "displayName": "G1M1文本回显",
+            "skillName": "yaorz26-g1m1-echo-20261107"
+          }
+        }
+      },
+      "testGroups": [
+        {
+          "name": "test",
+          "enable": true,
+          "hasCurrentUser": true,
+          "testerNum": "1"
+        }
+      ]
+    },
+    {
+      "skillName": "yaorz26-g1m1-text-length-20261107",
+      "code": {
+        "config": 0,
+        "detail": 0,
+        "groups": 0
+      },
+      "bundleName": "com.yaorz26.g1m1.skillagent",
+      "hasTestRelease": true,
+      "availableOn": [
+        "cloud"
+      ],
+      "minAPIVersion": 26,
+      "targetAPIVersion": 26,
+      "skillConfig": {
+        "conditions": [],
+        "i18n": {
+          "functions": [],
+          "skill": {
+            "displayName": "G1M1文本长度",
+            "skillName": "yaorz26-g1m1-text-length-20261107"
+          }
+        }
+      },
+      "testGroups": [
+        {
+          "name": "test",
+          "enable": true,
+          "hasCurrentUser": true,
+          "testerNum": "1"
+        }
+      ]
+    }
+  ]
+}

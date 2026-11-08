@@ -1,0 +1,86 @@
+{
+  "sourceCommit": "34899adbda8270463566632ecd7e066391d9bb07",
+  "kind": "review-of-existing-evidence",
+  "newDeviceExecution": false,
+  "sourceCodeCommit": "ab9691fda02a87c40cc162b166128b1a4d37aa46",
+  "signedHapSha256": "AE81F666F362D7176E8390296F749EF178C6D5C0DE59B18D99FED40006DF8B20",
+  "S01": "passed-on-D-Pura70",
+  "S02Normal": "passed-on-D-Pura70",
+  "S02InvalidArguments": "not-verified",
+  "A01": "not-verified",
+  "A02": "blocked",
+  "A03": "not-verified",
+  "E01": "not-verified",
+  "cases": [
+    {
+      "file": "echo-hilog.txt",
+      "skillId": "g1-echo",
+      "requestId": "7",
+      "expectedText": "T8P2-鸿蒙-47",
+      "result": {
+        "data": {
+          "text": "T8P2-鸿蒙-47"
+        },
+        "errCode": "",
+        "errMsg": "",
+        "executionPath": "system-skill",
+        "requestId": "7",
+        "skillId": "g1-echo",
+        "status": "success",
+        "type": "result"
+      },
+      "matchedDispatchEntryReportAndReply": true
+    },
+    {
+      "file": "length-hilog.txt",
+      "skillId": "g1-text-length",
+      "requestId": "6",
+      "expectedText": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0😀",
+      "result": {
+        "data": {
+          "length": 42,
+          "text": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0😀",
+          "unit": "utf16-code-unit"
+        },
+        "errCode": "",
+        "errMsg": "",
+        "executionPath": "system-skill",
+        "requestId": "6",
+        "skillId": "g1-text-length",
+        "status": "success",
+        "type": "result"
+      },
+      "matchedDispatchEntryReportAndReply": true
+    }
+  ],
+  "files": [
+    {
+      "file": "report.md",
+      "sha256": "a40c85e291c77ee522709846dc0c7cc1f222d275d62146f1b48aea091dd13c15"
+    },
+    {
+      "file": "echo-hilog.txt",
+      "sha256": "d848c30736c728546c18fda5795fb9274b3d5a582db86f342893a40611fd9f54"
+    },
+    {
+      "file": "length-hilog.txt",
+      "sha256": "e60fe4ff3e9cee43c8765cbf02fa6fe85592ffda06a60d0ffae13edf53261a24"
+    },
+    {
+      "file": "echo-expanded.jpeg",
+      "sha256": "2d1eb8891c2b2c3c180ec5883840b70f002e07855ff6866aa184e6bf6cf5bbce"
+    },
+    {
+      "file": "length-expanded.jpeg",
+      "sha256": "209674b9006d6ec876179b3bc1421aeb4d12df39c26852199e562d7fff722029"
+    },
+    {
+      "file": "length-clean.jpeg",
+      "sha256": "49d3dc91b506aa9ef026c6e6c615df9e91ae65e701a22190db599097327edf1c"
+    },
+    {
+      "file": "invalid-attempt.jpeg",
+      "sha256": "a18f7ef6eadea33c0bb932b1e8cf622ccd02aed9e7823667723ffe54206da9b8"
+    }
+  ]
+}

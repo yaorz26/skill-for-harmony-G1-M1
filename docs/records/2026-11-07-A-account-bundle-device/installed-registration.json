@@ -1,0 +1,21 @@
+{
+  "bundleName": "com.yaorz26.g1m1.skillagent",
+  "extensionInfos": [
+    {
+      "name": "AgentExtensionAbility",
+      "type": 37,
+      "bundleName": "com.yaorz26.g1m1.skillagent",
+      "moduleName": "entry",
+      "srcEntrance": "./ets/agentextension/AgentExtensionAbility.ets",
+      "metadata": [
+        {
+          "name": "ohos.extension.agent",
+          "resource": "$profile:agent_config",
+          "value": "",
+          "valueId": 0
+        }
+      ]
+    }
+  ],
+  "note": "Selected installed metadata only; registration does not prove system invocation."
+}

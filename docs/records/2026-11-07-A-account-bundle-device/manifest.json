@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "file": "build-summary.json",
+      "bytes": 1338,
+      "sha256": "851A461EC4C09E2A6F553AA4888534FD0FF8B26978F201FE7C11F076E3FEF0EF"
+    },
+    {
+      "file": "installed-registration.json",
+      "bytes": 595,
+      "sha256": "5FCEF5880E378BF3B27AAB37994C0770F1C1BFA2CFDF47FA10BCFCA6DCBF9321"
+    },
+    {
+      "file": "packaged-registration.json",
+      "bytes": 2242,
+      "sha256": "254E24AA42DEDE5D28B072E2FC980A6BD332F7529BC0B71C93B42A6BCB040C85"
+    },
+    {
+      "file": "report.md",
+      "bytes": 4856,
+      "sha256": "066404A1AF9A4EF038F35CF017C8325C1E8CB8E0BA1A16F25B92CB3C59BCD670"
+    },
+    {
+      "file": "runtime-trace.jsonl",
+      "bytes": 7765,
+      "sha256": "DDBACC6D1ADF96F7AA7EE05699C239071E60B5FF57DBB91756F5C4BF8A162F78"
+    },
+    {
+      "file": "selfcheck.json",
+      "bytes": 1551,
+      "sha256": "8A4AF7B3037F733E8CD17ADFC07AB0D8CD379B213BFA1B9C4C6581ABDF27CB8F"
+    },
+    {
+      "file": "trace-checks.json",
+      "bytes": 3171,
+      "sha256": "59B78017C524B4D005C5E8032E27284CE96D8916810014AEE5386DA2CAE91E6B"
+    },
+    {
+      "file": "ui-results.json",
+      "bytes": 14596,
+      "sha256": "5D3B37BDE781DC5AAA0FD49349017A0635B416B68177E40893B9B0691A5B92C5"
+    }
+  ]
+}

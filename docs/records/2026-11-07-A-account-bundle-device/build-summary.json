@@ -1,0 +1,37 @@
+{
+  "sourceCommit": "c7d23d7f8c669bee56b59db3b246f26e19c4e142",
+  "bundleName": "com.yaorz26.g1m1.skillagent",
+  "hapBytes": 162634,
+  "hapSha256": "8BEAB624AE116B9E81A5733C3F43B92EFBFFE62F3FD88E3E55E05A423877615D",
+  "sourceResourceFilesCompared": 26,
+  "sourceDifferences": [],
+  "build": "BUILD SUCCESSFUL in 9 s 680 ms; 33 tasks",
+  "skillProfiles": [
+    {
+      "abilityName": "EntryAbility",
+      "name": "yaorz26-g1m1-echo-20261107",
+      "srcEntries": [
+        "skills/yaorz26-g1m1-echo-20261107/scripts/EchoSkill.ets"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "abilityName": "EntryAbility",
+      "name": "yaorz26-g1m1-text-length-20261107",
+      "srcEntries": [
+        "skills/yaorz26-g1m1-text-length-20261107/scripts/TextLengthSkill.ets"
+      ],
+      "version": "1.0.0"
+    }
+  ],
+  "installedBytesReadBack": false,
+  "signingProfileBundleName": "com.yaorz26.g1m1.skillagent",
+  "productSigningConfig": "default",
+  "installOutput": "install bundle successfully. / AppMod finish",
+  "initialStart": "Error 10106102: screen locked; user subsequently unlocked device",
+  "unlockedStart": "start ability successfully.",
+  "applicationInputCasesPassed": 13,
+  "selfcheckAssertionsPassed": 9,
+  "requestTraceChecksPassed": 13,
+  "signatureMaterial": "local only, excluded"
+}

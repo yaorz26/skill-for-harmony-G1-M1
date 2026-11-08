@@ -14,3 +14,5 @@ SKILL.md 的 frontmatter、目录、调用声明、module.json5 的 skillProfile
 本机重新上传产物：`D:\Temp\g1m1-skill-namespaced-20261107.hap`。使用 Skill → 新建 Skill → 导入 Skill 入口上传。新名称是否可注册仍以平台校验为准，本轮没有访问全局名称注册表。
 
 设备当前未连接，本轮未重新安装或执行真机用例；此前应用内测试不自动成为新包的系统调用证据。平台导入、真机测试发布和系统入口仍待继续验证。
+
+后续进展：应用包名又改为 `com.yaorz26.g1m1.skillagent`，并完成匹配签名和应用内真机复测，见[新包名真机记录](../2026-11-07-A-account-bundle-device/report.md)。当前平台导入应使用该记录中的新签名 HAP；本页旧包名产物仅保留为历史记录。

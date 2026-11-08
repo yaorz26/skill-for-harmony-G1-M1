@@ -1,0 +1,19 @@
+{
+  "files": [
+    {
+      "file": "echo-file-tree.png",
+      "bytes": 9351,
+      "sha256": "C85BCE208F98C3B08DAAB3560C3BCEA657065CCD235959AD56F8765332B3728F"
+    },
+    {
+      "file": "platform-readback.json",
+      "bytes": 4842,
+      "sha256": "E2A243924B306F723454573DF8058EE2454B5DA0B6E472E4B0F8B0F03A92AD3A"
+    },
+    {
+      "file": "report.md",
+      "bytes": 5101,
+      "sha256": "BF91AB6A69D2EB0656A0F2272F6B918269B1B4AA816816848C0C8B0EAF438585"
+    }
+  ]
+}

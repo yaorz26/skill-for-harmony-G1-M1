@@ -1,0 +1,39 @@
+{
+  "observedAt": "2026-11-08T15:12:40+08:00",
+  "method": "HDC native UI dump; Xiaoyi new conversation central content only; no new request sent",
+  "device": "HUAWEI MateBook 14 MNTXM-24B",
+  "xiaoyiVersion": "11.7.9.300",
+  "visibleCentralTexts": [
+    " ",
+    "随时随地 问问小艺",
+    "小艺搜索",
+    "开始新慧记",
+    "小艺翻译",
+    "帮我写作",
+    "PPT生成",
+    "窗口协同",
+    "深度思考",
+    "玩机技巧",
+    "小艺怎么帮我办公提效",
+    "鸿蒙电脑如何应用分屏",
+    "鸿蒙电脑有什么黑科技",
+    "鸿蒙电脑VS鸿蒙折叠电脑",
+    "鸿蒙电脑黑科技",
+    "鸿蒙电脑更新了哪些新应用",
+    "鸿蒙电脑上有哪些系统快捷键",
+    "Windows怎么迁移到鸿蒙电脑",
+    "一台鸿蒙电脑最多可以添加多少个指纹"
+  ],
+  "skillTestShortcutVisible": false,
+  "appIdReadback": {
+    "method": "Authenticated HarmonyOS developer console APP ID list, rendered row",
+    "bundleName": "com.yaorz26.g1m1.skillagent",
+    "applicationName": "G1M1 Skill Agent Demo",
+    "supportedDevices": [
+      "手机",
+      "PC/2in1"
+    ],
+    "state": "准备提交"
+  },
+  "inferenceLimit": "Missing shortcut in observed UI is not proof all HarmonyOS PCs lack support; client/service eligibility cause remains unconfirmed."
+}

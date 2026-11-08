@@ -1,0 +1,40 @@
+{
+  "hap": {
+    "filename": "g1m1-yaorz26-signed-20261107.hap",
+    "bytes": 162634,
+    "sha256": "8BEAB624AE116B9E81A5733C3F43B92EFBFFE62F3FD88E3E55E05A423877615D"
+  },
+  "bundleName": "com.yaorz26.g1m1.skillagent",
+  "deviceTypes": [
+    "phone",
+    "tablet",
+    "2in1"
+  ],
+  "minAPIVersion": 260000026,
+  "targetAPIVersion": 260000026,
+  "skillProfiles": [
+    {
+      "abilityName": "EntryAbility",
+      "name": "yaorz26-g1m1-echo-20261107",
+      "srcEntries": [
+        "skills/yaorz26-g1m1-echo-20261107/scripts/EchoSkill.ets"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "abilityName": "EntryAbility",
+      "name": "yaorz26-g1m1-text-length-20261107",
+      "srcEntries": [
+        "skills/yaorz26-g1m1-text-length-20261107/scripts/TextLengthSkill.ets"
+      ],
+      "version": "1.0.0"
+    }
+  ],
+  "abcChecks": {
+    "EchoSkill": true,
+    "TextLengthSkill": true,
+    "completeArkTSScriptInApp": true,
+    "system_skill_entered": true,
+    "system_result_reported": true
+  }
+}

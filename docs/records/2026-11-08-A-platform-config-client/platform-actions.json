@@ -1,0 +1,76 @@
+{
+  "configuration": {
+    "minAPIVersion": 26,
+    "targetAPIVersion": 26,
+    "availableOn": [
+      "cloud"
+    ],
+    "saveAndReadbackSucceeded": true
+  },
+  "pcRangeAttempts": [
+    {
+      "availableOn": [
+        "cloud",
+        "pc"
+      ],
+      "httpStatus": 400,
+      "code": 100000112,
+      "desc": "param error!",
+      "originalConfigRetained": true
+    },
+    {
+      "availableOn": [
+        "pc"
+      ],
+      "httpStatus": 400,
+      "code": 100000112,
+      "desc": "param error!",
+      "originalConfigRetained": true
+    }
+  ],
+  "realTestPublication": {
+    "target": "小艺主对话",
+    "group": "test",
+    "echo": {
+      "httpStatus": 200,
+      "code": 0,
+      "hasTestRelease": true
+    },
+    "textLength": {
+      "httpStatus": 200,
+      "code": 0,
+      "hasTestRelease": true
+    }
+  },
+  "knownHapImportExperiment": {
+    "code": 0,
+    "success": 2,
+    "failed": 0,
+    "parsedNames": [
+      "yaorz26-g1m1-echo-20261107.zip",
+      "yaorz26-g1m1-text-length-20261107.zip"
+    ],
+    "temporaryUnpublishedCopiesDeleted": 2,
+    "preExistingRecordsRetained": true,
+    "listCountBefore": 6,
+    "listCountAfterCleanup": 6
+  },
+  "testUiGuide": {
+    "mainChatRequiresHarmonyOs7": true,
+    "requiresUpgradeBetaAndSuccessfulUpgrade": true,
+    "xiaoyiMinVersionText": "11.7.x 或者更高版本",
+    "readinessMarker": "Skill真机测试中",
+    "listedDeviceFamilies": [
+      "Mate",
+      "P",
+      "Nova",
+      "MatePad"
+    ],
+    "pcExplicitlyListed": false
+  },
+  "clawGuideObserved": {
+    "instruction": "将 ZIP 下载解压后安装到默认 Skill 目录",
+    "testTargetChangedOrPublished": false,
+    "signedDownloadUrlOmitted": true
+  }
+}
